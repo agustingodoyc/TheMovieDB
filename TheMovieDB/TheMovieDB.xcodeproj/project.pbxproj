@@ -80,6 +80,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		101EE2CD28F7101000CAE2A5 /* Main Screen */ = {
+			isa = PBXGroup;
+			children = (
+				D67DDA3628EE161A0093B3A0 /* ViewController.swift */,
+				D67DDA3828EE161A0093B3A0 /* Main.storyboard */,
+			);
+			path = "Main Screen";
+			sourceTree = "<group>";
+		};
 		D67DDA2628EE161A0093B3A0 = {
 			isa = PBXGroup;
 			children = (
@@ -180,8 +189,7 @@
 		D67DDA6728EE16A30093B3A0 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D67DDA3628EE161A0093B3A0 /* ViewController.swift */,
-				D67DDA3828EE161A0093B3A0 /* Main.storyboard */,
+				101EE2CD28F7101000CAE2A5 /* Main Screen */,
 				D67DDA3D28EE161D0093B3A0 /* LaunchScreen.storyboard */,
 			);
 			path = View;
