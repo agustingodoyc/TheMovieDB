@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,20 +16,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hYM-IZ-wMq" customClass="LottieAnimationView" customModule="Lottie">
-                                <rect key="frame" x="97.666666666666686" y="324.66666666666669" width="195" height="195.00000000000006"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <rect key="frame" x="0.0" y="227" width="390" height="390"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="hYM-IZ-wMq" secondAttribute="height" multiplier="1:1" id="LBe-f2-KPy"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="movie2"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="movie"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="hYM-IZ-wMq" firstAttribute="width" secondItem="vDu-zF-Fre" secondAttribute="width" multiplier="0.5" id="9hj-Y1-I1A"/>
+                            <constraint firstItem="hYM-IZ-wMq" firstAttribute="width" secondItem="vDu-zF-Fre" secondAttribute="width" priority="900" id="9hj-Y1-I1A"/>
                             <constraint firstItem="hYM-IZ-wMq" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="XIY-n3-dYj"/>
                             <constraint firstItem="hYM-IZ-wMq" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="dlS-lD-gBf"/>
                         </constraints>
@@ -44,9 +42,4 @@
             <point key="canvasLocation" x="129" y="4"/>
         </scene>
     </scenes>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

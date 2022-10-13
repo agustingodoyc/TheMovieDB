@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1041CA6E28F5D07D00D24760 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 1041CA6D28F5D07D00D24760 /* .swiftlint.yml */; };
 		1041CA7228F5D0F800D24760 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 1041CA7128F5D0F700D24760 /* .swiftlint.yml */; };
+		D60EED0A28F899EC00A14F7E /* movie.json in Resources */ = {isa = PBXBuildFile; fileRef = D60EED0928F899EC00A14F7E /* movie.json */; };
 		D67DDA3328EE161A0093B3A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67DDA3228EE161A0093B3A0 /* AppDelegate.swift */; };
 		D67DDA3528EE161A0093B3A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67DDA3428EE161A0093B3A0 /* SceneDelegate.swift */; };
 		D67DDA3728EE161A0093B3A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67DDA3628EE161A0093B3A0 /* ViewController.swift */; };
@@ -24,10 +25,6 @@
 		D6C433AB28F75DD700B61185 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C433AA28F75DD700B61185 /* Coordinator.swift */; };
 		D6C433AD28F75F1D00B61185 /* Storyboeared.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C433AC28F75F1D00B61185 /* Storyboeared.swift */; };
 		D6C433AF28F7603E00B61185 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C433AE28F7603E00B61185 /* MainCoordinator.swift */; };
-		D6EA946D28F88D7E0029A723 /* loader.json in Resources */ = {isa = PBXBuildFile; fileRef = D6EA946C28F88D7E0029A723 /* loader.json */; };
-		D6EA946F28F88E580029A723 /* movie_animation.json in Resources */ = {isa = PBXBuildFile; fileRef = D6EA946E28F88E580029A723 /* movie_animation.json */; };
-		D6EA947128F88F020029A723 /* movie.json in Resources */ = {isa = PBXBuildFile; fileRef = D6EA947028F88F020029A723 /* movie.json */; };
-		D6EA947328F88FC20029A723 /* movie2.json in Resources */ = {isa = PBXBuildFile; fileRef = D6EA947228F88FC20029A723 /* movie2.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +47,7 @@
 /* Begin PBXFileReference section */
 		1041CA6D28F5D07D00D24760 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		1041CA7128F5D0F700D24760 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		D60EED0928F899EC00A14F7E /* movie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = movie.json; sourceTree = "<group>"; };
 		D67DDA2F28EE161A0093B3A0 /* TheMovieDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheMovieDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D67DDA3228EE161A0093B3A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D67DDA3428EE161A0093B3A0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,10 +66,6 @@
 		D6C433AA28F75DD700B61185 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		D6C433AC28F75F1D00B61185 /* Storyboeared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboeared.swift; sourceTree = "<group>"; };
 		D6C433AE28F7603E00B61185 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
-		D6EA946C28F88D7E0029A723 /* loader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loader.json; sourceTree = "<group>"; };
-		D6EA946E28F88E580029A723 /* movie_animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = movie_animation.json; sourceTree = "<group>"; };
-		D6EA947028F88F020029A723 /* movie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = movie.json; sourceTree = "<group>"; };
-		D6EA947228F88FC20029A723 /* movie2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = movie2.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -266,10 +260,7 @@
 		D6C433A728F754F300B61185 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				D6EA947228F88FC20029A723 /* movie2.json */,
-				D6EA947028F88F020029A723 /* movie.json */,
-				D6EA946E28F88E580029A723 /* movie_animation.json */,
-				D6EA946C28F88D7E0029A723 /* loader.json */,
+				D60EED0928F899EC00A14F7E /* movie.json */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -386,11 +377,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D67DDA3F28EE161D0093B3A0 /* LaunchScreen.storyboard in Resources */,
-				D6EA946D28F88D7E0029A723 /* loader.json in Resources */,
+				D60EED0A28F899EC00A14F7E /* movie.json in Resources */,
 				D6C433A128F750CA00B61185 /* SplashScreen.storyboard in Resources */,
-				D6EA947128F88F020029A723 /* movie.json in Resources */,
-				D6EA947328F88FC20029A723 /* movie2.json in Resources */,
-				D6EA946F28F88E580029A723 /* movie_animation.json in Resources */,
 				D67DDA3C28EE161D0093B3A0 /* Assets.xcassets in Resources */,
 				D67DDA3A28EE161A0093B3A0 /* Main.storyboard in Resources */,
 			);
