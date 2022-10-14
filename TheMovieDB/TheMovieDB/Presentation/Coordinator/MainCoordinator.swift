@@ -17,13 +17,18 @@ class MainCoordinator: Coordinator {
     }
     
     func start() {
-        let vc = SplashScreenViewController.instantiate()
+        guard let vc = SplashScreenViewController.instantiate() else {
+            return
+        }
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
     }
     
     func finishSplashScreen() {
-        let vc = ViewController.instantiate()
+        guard let vc = ViewController.instantiate() else {
+            return
+        }
         vc.coordinator = self
-        navigationController.setViewControllers([vc], animated: true)    }
+        navigationController.setViewControllers([vc], animated: true)
+    }
 }

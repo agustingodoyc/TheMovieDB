@@ -9,5 +9,5 @@ import Foundation
 import UIKit
 
 protocol Storyboarded {
-    static func instantiate() -> Self
+    static func instantiate() -> Self?
 }
