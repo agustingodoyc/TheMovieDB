@@ -24,11 +24,10 @@ class SplashScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        animationView.loopMode = .loop
-        animationView.play()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-            self.animationView.stop()
-            self.coordinator?.finishSplashScreen()
+        animationView.play { complition in
+            if complition {
+                self.coordinator?.finishSplashScreen()
+            }
         }
     }
 }
