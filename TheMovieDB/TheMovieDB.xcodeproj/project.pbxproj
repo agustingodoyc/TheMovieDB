@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1041CA6E28F5D07D00D24760 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 1041CA6D28F5D07D00D24760 /* .swiftlint.yml */; };
-		1041CA7228F5D0F800D24760 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 1041CA7128F5D0F700D24760 /* .swiftlint.yml */; };
 		D60EED0A28F899EC00A14F7E /* movie.json in Resources */ = {isa = PBXBuildFile; fileRef = D60EED0928F899EC00A14F7E /* movie.json */; };
 		D67DDA3328EE161A0093B3A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67DDA3228EE161A0093B3A0 /* AppDelegate.swift */; };
 		D67DDA3528EE161A0093B3A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67DDA3428EE161A0093B3A0 /* SceneDelegate.swift */; };
@@ -26,6 +24,7 @@
 		D6C433AD28F75F1D00B61185 /* Storyboeared.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C433AC28F75F1D00B61185 /* Storyboeared.swift */; };
 		D6C433AF28F7603E00B61185 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C433AE28F7603E00B61185 /* MainCoordinator.swift */; };
 		D6C6CC7728F99BF7009F41A1 /* CoordinatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C6CC7628F99BF7009F41A1 /* CoordinatorTest.swift */; };
+		D6C6CC7828F9F08A009F41A1 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 1041CA7128F5D0F700D24760 /* .swiftlint.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -391,8 +390,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1041CA7228F5D0F800D24760 /* .swiftlint.yml in Resources */,
-				1041CA6E28F5D07D00D24760 /* .swiftlint.yml in Resources */,
+				D6C6CC7828F9F08A009F41A1 /* .swiftlint.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -618,7 +616,6 @@
 				INFOPLIST_FILE = TheMovieDB/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = SplashScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -646,7 +643,6 @@
 				INFOPLIST_FILE = TheMovieDB/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = SplashScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;

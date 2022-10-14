@@ -14,16 +14,40 @@ final class CoordinatorTest: XCTestCase {
     
     override func setUpWithError() throws {
         try super.setUpWithError()
+        let testNC = UINavigationController()
+        sut = MainCoordinator(testNC)
+        UIApplication.shared.keyWindow?.rootViewController = testNC
     }
 
     override func tearDownWithError() throws {
         try super.tearDownWithError()
     }
     
-    func testStart() {
+    func testFlow() {
+        
         sut.start()
-        let classType = String(describing: sut.navigationController.topViewController)
-        XCTAssertEqual(classType, "SplashScreenViewController" , "Score computed from guess is wrong")
+        
+        XCTAssertNotNil(sut.navigationController.topViewController as? SplashScreenViewController)
+        
+        let predicate = NSPredicate(block: { testC, _ in
+            guard let testC = (testC as? Coordinator)?.navigationController else {
+                return false
+            }
+            print(testC)
+            return testC.topViewController as? ViewController != nil
+        })
+            
+        let mainScreenExpectation = expectation(
+            for: predicate,
+            evaluatedWith: sut,
+            handler: nil
+        )
+        
+        wait(
+            for: [mainScreenExpectation],
+            timeout: 5
+        )
+        
     }
 
 }
