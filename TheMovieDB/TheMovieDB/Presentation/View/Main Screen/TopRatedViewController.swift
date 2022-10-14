@@ -7,21 +7,22 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class TopRatedViewController: UIViewController {
     
-    @IBOutlet weak var networkError: UIImageView!
+    @IBOutlet weak var networkErrorImage: UIImageView!
     
-    var networking: Bool = true
+    var networkStatus: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        networkError.isHidden = true
+        checkNetworking()
     }
     
     func checkNetworking() {
-        if networking == false {
-            networkError.isHidden = false
+        guard networkStatus == false else {
+            networkErrorImage.isHidden = true
+            return
         }
+        networkErrorImage.isHidden = false
     }
 }
