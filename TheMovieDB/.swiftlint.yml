@@ -15,10 +15,10 @@ excluded:
   - Pods
   - Project/R.generated.swift
 
-force_cast: warning
-force_try: warning
-force_unwrapping: warning
-implicitly_unwrapped_optional: warning
+force_cast: error
+force_try: errr
+force_unwrapping: error
+implicitly_unwrapped_optional: error
 
 type_body_length:
   - 300

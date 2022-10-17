@@ -183,8 +183,7 @@
 		D67DDA6528EE16830093B3A0 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
-				D6C433AA28F75DD700B61185 /* Coordinator.swift */,
-				D6C433AC28F75F1D00B61185 /* Storyboeared.swift */,
+				D691F25528FDC5D900D2F528 /* Protocol */,
 				D6C433AE28F7603E00B61185 /* MainCoordinator.swift */,
 			);
 			path = Coordinator;
@@ -248,6 +247,15 @@
 			children = (
 			);
 			path = Persistent;
+			sourceTree = "<group>";
+		};
+		D691F25528FDC5D900D2F528 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				D6C433AA28F75DD700B61185 /* Coordinator.swift */,
+				D6C433AC28F75F1D00B61185 /* Storyboeared.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 		D6C4339F28F7509B00B61185 /* SplashScreen */ = {
