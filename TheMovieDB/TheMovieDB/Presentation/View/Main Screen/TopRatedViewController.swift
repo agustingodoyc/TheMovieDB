@@ -1,10 +1,11 @@
 //
-//  ViewController.swift
+//  TopRatedViewController.swift
 //  TheMovieDB
 //
-//  Created by Agustin Godoy Cosser on 05/10/2022.
+//  Created by Angela Lee on 17/10/2022.
 //
 
+import Foundation
 import UIKit
 
 class TopRatedViewController: UIViewController {
