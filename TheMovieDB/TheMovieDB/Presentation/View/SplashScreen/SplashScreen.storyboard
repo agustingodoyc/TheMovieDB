@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Splash Screen-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="SplashScreenViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" userLabel="Splash Screen" customClass="SplashScreenViewController" customModule="TheMovieDB" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="S" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hYM-IZ-wMq" customClass="LottieAnimationView" customModule="Lottie">
+                                <rect key="frame" x="0.0" y="227" width="390" height="390"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="hYM-IZ-wMq" secondAttribute="height" multiplier="1:1" id="LBe-f2-KPy"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="movie"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hYM-IZ-wMq" firstAttribute="width" secondItem="vDu-zF-Fre" secondAttribute="width" priority="900" id="9hj-Y1-I1A"/>
+                            <constraint firstItem="hYM-IZ-wMq" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="XIY-n3-dYj"/>
+                            <constraint firstItem="hYM-IZ-wMq" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="dlS-lD-gBf"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="animationView" destination="hYM-IZ-wMq" id="njS-Wa-bKf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="129" y="4"/>
+        </scene>
+    </scenes>
+</document>

@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1041CA6E28F5D07D00D24760 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 1041CA6D28F5D07D00D24760 /* .swiftlint.yml */; };
-		1041CA7228F5D0F800D24760 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 1041CA7128F5D0F700D24760 /* .swiftlint.yml */; };
+		D60EED0A28F899EC00A14F7E /* movie.json in Resources */ = {isa = PBXBuildFile; fileRef = D60EED0928F899EC00A14F7E /* movie.json */; };
 		D67DDA3328EE161A0093B3A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67DDA3228EE161A0093B3A0 /* AppDelegate.swift */; };
 		D67DDA3528EE161A0093B3A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67DDA3428EE161A0093B3A0 /* SceneDelegate.swift */; };
 		D67DDA3728EE161A0093B3A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67DDA3628EE161A0093B3A0 /* ViewController.swift */; };
@@ -18,6 +17,14 @@
 		D67DDA4A28EE161D0093B3A0 /* TheMovieDBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67DDA4928EE161D0093B3A0 /* TheMovieDBTests.swift */; };
 		D67DDA5428EE161D0093B3A0 /* TheMovieDBUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67DDA5328EE161D0093B3A0 /* TheMovieDBUITests.swift */; };
 		D67DDA5628EE161D0093B3A0 /* TheMovieDBUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67DDA5528EE161D0093B3A0 /* TheMovieDBUITestsLaunchTests.swift */; };
+		D6C433A128F750CA00B61185 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6C433A028F750CA00B61185 /* SplashScreen.storyboard */; };
+		D6C433A428F7510100B61185 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = D6C433A328F7510100B61185 /* Lottie */; };
+		D6C433A928F755FE00B61185 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C433A828F755FE00B61185 /* SplashScreenViewController.swift */; };
+		D6C433AB28F75DD700B61185 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C433AA28F75DD700B61185 /* Coordinator.swift */; };
+		D6C433AD28F75F1D00B61185 /* Storyboeared.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C433AC28F75F1D00B61185 /* Storyboeared.swift */; };
+		D6C433AF28F7603E00B61185 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C433AE28F7603E00B61185 /* MainCoordinator.swift */; };
+		D6C6CC7728F99BF7009F41A1 /* CoordinatorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C6CC7628F99BF7009F41A1 /* CoordinatorTest.swift */; };
+		D6C6CC7828F9F08A009F41A1 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 1041CA7128F5D0F700D24760 /* .swiftlint.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +47,7 @@
 /* Begin PBXFileReference section */
 		1041CA6D28F5D07D00D24760 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		1041CA7128F5D0F700D24760 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		D60EED0928F899EC00A14F7E /* movie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = movie.json; sourceTree = "<group>"; };
 		D67DDA2F28EE161A0093B3A0 /* TheMovieDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheMovieDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D67DDA3228EE161A0093B3A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D67DDA3428EE161A0093B3A0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +61,12 @@
 		D67DDA4F28EE161D0093B3A0 /* TheMovieDBUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheMovieDBUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D67DDA5328EE161D0093B3A0 /* TheMovieDBUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMovieDBUITests.swift; sourceTree = "<group>"; };
 		D67DDA5528EE161D0093B3A0 /* TheMovieDBUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMovieDBUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D6C433A028F750CA00B61185 /* SplashScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashScreen.storyboard; sourceTree = "<group>"; };
+		D6C433A828F755FE00B61185 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
+		D6C433AA28F75DD700B61185 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		D6C433AC28F75F1D00B61185 /* Storyboeared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboeared.swift; sourceTree = "<group>"; };
+		D6C433AE28F7603E00B61185 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		D6C6CC7628F99BF7009F41A1 /* CoordinatorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6C433A428F7510100B61185 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +125,7 @@
 				D67DDA3228EE161A0093B3A0 /* AppDelegate.swift */,
 				D67DDA3428EE161A0093B3A0 /* SceneDelegate.swift */,
 				D67DDA3B28EE161D0093B3A0 /* Assets.xcassets */,
+				D6C433A728F754F300B61185 /* Assets */,
 				D67DDA4028EE161D0093B3A0 /* Info.plist */,
 			);
 			path = TheMovieDB;
@@ -120,6 +136,7 @@
 			children = (
 				1041CA7128F5D0F700D24760 /* .swiftlint.yml */,
 				D67DDA4928EE161D0093B3A0 /* TheMovieDBTests.swift */,
+				D6C6CC7628F99BF7009F41A1 /* CoordinatorTest.swift */,
 			);
 			path = TheMovieDBTests;
 			sourceTree = "<group>";
@@ -166,6 +183,8 @@
 		D67DDA6528EE16830093B3A0 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				D691F25528FDC5D900D2F528 /* Protocol */,
+				D6C433AE28F7603E00B61185 /* MainCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -180,6 +199,7 @@
 		D67DDA6728EE16A30093B3A0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D6C4339F28F7509B00B61185 /* SplashScreen */,
 				D67DDA3628EE161A0093B3A0 /* ViewController.swift */,
 				D67DDA3828EE161A0093B3A0 /* Main.storyboard */,
 				D67DDA3D28EE161D0093B3A0 /* LaunchScreen.storyboard */,
@@ -229,6 +249,32 @@
 			path = Persistent;
 			sourceTree = "<group>";
 		};
+		D691F25528FDC5D900D2F528 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				D6C433AA28F75DD700B61185 /* Coordinator.swift */,
+				D6C433AC28F75F1D00B61185 /* Storyboeared.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		D6C4339F28F7509B00B61185 /* SplashScreen */ = {
+			isa = PBXGroup;
+			children = (
+				D6C433A028F750CA00B61185 /* SplashScreen.storyboard */,
+				D6C433A828F755FE00B61185 /* SplashScreenViewController.swift */,
+			);
+			path = SplashScreen;
+			sourceTree = "<group>";
+		};
+		D6C433A728F754F300B61185 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				D60EED0928F899EC00A14F7E /* movie.json */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -246,6 +292,9 @@
 			dependencies = (
 			);
 			name = TheMovieDB;
+			packageProductDependencies = (
+				D6C433A328F7510100B61185 /* Lottie */,
+			);
 			productName = TheMovieDB;
 			productReference = D67DDA2F28EE161A0093B3A0 /* TheMovieDB.app */;
 			productType = "com.apple.product-type.application";
@@ -319,6 +368,7 @@
 			);
 			mainGroup = D67DDA2628EE161A0093B3A0;
 			packageReferences = (
+				D6C433A228F7510100B61185 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = D67DDA3028EE161A0093B3A0 /* Products */;
 			projectDirPath = "";
@@ -337,6 +387,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D67DDA3F28EE161D0093B3A0 /* LaunchScreen.storyboard in Resources */,
+				D60EED0A28F899EC00A14F7E /* movie.json in Resources */,
+				D6C433A128F750CA00B61185 /* SplashScreen.storyboard in Resources */,
 				D67DDA3C28EE161D0093B3A0 /* Assets.xcassets in Resources */,
 				D67DDA3A28EE161A0093B3A0 /* Main.storyboard in Resources */,
 			);
@@ -346,8 +398,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1041CA7228F5D0F800D24760 /* .swiftlint.yml in Resources */,
-				1041CA6E28F5D07D00D24760 /* .swiftlint.yml in Resources */,
+				D6C6CC7828F9F08A009F41A1 /* .swiftlint.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,8 +436,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6C433AD28F75F1D00B61185 /* Storyboeared.swift in Sources */,
+				D6C433AF28F7603E00B61185 /* MainCoordinator.swift in Sources */,
 				D67DDA3728EE161A0093B3A0 /* ViewController.swift in Sources */,
 				D67DDA3328EE161A0093B3A0 /* AppDelegate.swift in Sources */,
+				D6C433AB28F75DD700B61185 /* Coordinator.swift in Sources */,
+				D6C433A928F755FE00B61185 /* SplashScreenViewController.swift in Sources */,
 				D67DDA3528EE161A0093B3A0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -395,6 +450,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6C6CC7728F99BF7009F41A1 /* CoordinatorTest.swift in Sources */,
 				D67DDA4A28EE161D0093B3A0 /* TheMovieDBTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -568,9 +624,9 @@
 				INFOPLIST_FILE = TheMovieDB/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -595,9 +651,9 @@
 				INFOPLIST_FILE = TheMovieDB/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -723,6 +779,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D6C433A228F7510100B61185 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D6C433A328F7510100B61185 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D6C433A228F7510100B61185 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D67DDA2728EE161A0093B3A0 /* Project object */;
 }
