@@ -16,7 +16,7 @@ excluded:
   - Project/R.generated.swift
 
 force_cast: error
-force_try: errr
+force_try: error
 force_unwrapping: error
 implicitly_unwrapped_optional: error
 
