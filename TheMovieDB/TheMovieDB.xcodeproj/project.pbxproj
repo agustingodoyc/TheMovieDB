@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		106CEF5A28FEDD1900AEC45A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106CEF5928FEDD1900AEC45A /* MainViewController.swift */; };
 		10CF712D28F8529600F07ACB /* NowPlayingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CF712C28F8529600F07ACB /* NowPlayingViewController.swift */; };
 		10CF712F28F8531900F07ACB /* UpcomingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CF712E28F8531900F07ACB /* UpcomingViewController.swift */; };
 		10D00DA828FDFD0900244C4E /* TopRatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D00DA728FDFD0900244C4E /* TopRatedViewController.swift */; };
@@ -49,6 +50,7 @@
 /* Begin PBXFileReference section */
 		1041CA6D28F5D07D00D24760 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		1041CA7128F5D0F700D24760 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		106CEF5928FEDD1900AEC45A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		10CF712C28F8529600F07ACB /* NowPlayingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingViewController.swift; sourceTree = "<group>"; };
 		10CF712E28F8531900F07ACB /* UpcomingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingViewController.swift; sourceTree = "<group>"; };
 		10D00DA728FDFD0900244C4E /* TopRatedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRatedViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				10CF712C28F8529600F07ACB /* NowPlayingViewController.swift */,
 				10CF712E28F8531900F07ACB /* UpcomingViewController.swift */,
 				10D00DA728FDFD0900244C4E /* TopRatedViewController.swift */,
+				106CEF5928FEDD1900AEC45A /* MainViewController.swift */,
 				D67DDA3828EE161A0093B3A0 /* Main.storyboard */,
 			);
 			path = "Main Screen";
@@ -459,6 +462,7 @@
 				D6C433A928F755FE00B61185 /* SplashScreenViewController.swift in Sources */,
 				D67DDA3528EE161A0093B3A0 /* SceneDelegate.swift in Sources */,
 				10D00DA828FDFD0900244C4E /* TopRatedViewController.swift in Sources */,
+				106CEF5A28FEDD1900AEC45A /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
