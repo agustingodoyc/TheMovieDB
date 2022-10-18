@@ -25,10 +25,10 @@ class MainCoordinator: Coordinator {
     }
     
     func finishSplashScreen() {
-        /*guard let vc = ViewController.instantiate() else {
+        guard let vc = MainViewController.instantiate() else {
             return
         }
         vc.coordinator = self
-        navigationController.setViewControllers([vc], animated: true)*/
+        navigationController.setViewControllers([vc], animated: true)
     }
 }

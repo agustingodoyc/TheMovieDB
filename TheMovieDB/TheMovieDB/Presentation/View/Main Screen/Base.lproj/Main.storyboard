@@ -11,7 +11,7 @@
         <!--Now playing-->
         <scene sceneID="7FR-Oq-4tE">
             <objects>
-                <viewController id="cpn-Mh-xAX" customClass="NowPlayingViewController" customModule="TheMovieDB" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NowPlayingViewController" id="cpn-Mh-xAX" customClass="NowPlayingViewController" customModule="TheMovieDB" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2rk-FZ-q8m">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -85,7 +85,7 @@
         <!--Movies DB-->
         <scene sceneID="tJP-Uc-BGh">
             <objects>
-                <tabBarController title="Movies DB" keyboardType="off" id="I78-XQ-9nA" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainViewController" title="Movies DB" keyboardType="off" id="I78-XQ-9nA" customClass="MainViewController" customModule="TheMovieDB" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="Movie DB" style="browser" id="KKx-Ch-tfx">
                         <barButtonItem key="rightBarButtonItem" image="magnifyingglass" catalog="system" id="RNi-gV-Kcp"/>
                     </navigationItem>
