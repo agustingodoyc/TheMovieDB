@@ -8,15 +8,16 @@
 import Foundation
 import UIKit
 
-protocol NetworkStatus {
+class NetworkStatusViewController: UIViewController {
     
-    var networkStatus: Bool { get set }
-    var networkErrorImage: UIImageView! { get set }
+    @IBOutlet weak var networkErrorImage: UIImageView!
     
-    func checkNetworking()
-}
-
-extension NetworkStatus {
+    var networkStatus: Bool = false
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        checkNetworking()
+    }
     
     func checkNetworking() {
         guard networkStatus == false else {

@@ -5,16 +5,9 @@
 //  Created by Angela Lee on 13/10/2022.
 //
 
-import UIKit
-
-class NowPlayingViewController: UIViewController, NetworkStatus {
-   
-    @IBOutlet weak var networkErrorImage: UIImageView!
-    
-    var networkStatus: Bool = false
+class NowPlayingViewController: NetworkStatusViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        checkNetworking()
     }
 }
