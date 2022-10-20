@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="W98-vk-6gF">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Now playing-->
+        <scene sceneID="7FR-Oq-4tE">
+            <objects>
+                <viewController storyboardIdentifier="NowPlayingViewController" id="cpn-Mh-xAX" customClass="NowPlayingViewController" customModule="TheMovieDB" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2rk-FZ-q8m">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no-recording" translatesAutoresizingMaskIntoConstraints="NO" id="L5G-cY-iGg">
+                                <rect key="frame" x="97.666666666666686" y="328.66666666666669" width="195" height="195.00000000000006"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="L5G-cY-iGg" secondAttribute="height" multiplier="1:1" id="qk3-8C-vXN"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="P1y-rd-SzK"/>
+                        <color key="backgroundColor" red="0.92197595080020722" green="0.97523039580000004" blue="0.83012495980960543" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" red="0.14117647059999999" green="0.76470588240000004" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="L5G-cY-iGg" firstAttribute="centerY" secondItem="P1y-rd-SzK" secondAttribute="centerY" id="BaQ-mB-rAp"/>
+                            <constraint firstItem="L5G-cY-iGg" firstAttribute="centerX" secondItem="P1y-rd-SzK" secondAttribute="centerX" id="KlB-Xl-dul"/>
+                            <constraint firstItem="L5G-cY-iGg" firstAttribute="width" secondItem="P1y-rd-SzK" secondAttribute="width" multiplier="0.5" id="pjn-pa-WCZ"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Now playing" image="play.tv.fill" catalog="system" id="hjy-Fh-oea"/>
+                    <navigationItem key="navigationItem" id="13f-Sr-ylY">
+                        <barButtonItem key="rightBarButtonItem" image="magnifyingglass" catalog="system" id="cYm-LT-714">
+                            <color key="tintColor" systemColor="linkColor"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="networkErrorImage" destination="L5G-cY-iGg" id="9Wh-PG-mQt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xyw-oL-UA1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-135" y="609"/>
+        </scene>
+        <!--Top Rated View Controller-->
+        <scene sceneID="csM-UI-636">
+            <objects>
+                <viewController id="26g-Xl-fhk" customClass="TopRatedViewController" customModule="TheMovieDB" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="feq-b7-dgY">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no-recording" translatesAutoresizingMaskIntoConstraints="NO" id="O60-da-LpG">
+                                <rect key="frame" x="97.666666666666686" y="328.66666666666669" width="195" height="195.00000000000006"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="O60-da-LpG" secondAttribute="height" multiplier="1:1" id="DDd-gj-dSf"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6al-0F-FOI"/>
+                        <color key="backgroundColor" red="0.97523039580000004" green="0.88149118111183933" blue="0.96988112528727344" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="O60-da-LpG" firstAttribute="centerY" secondItem="6al-0F-FOI" secondAttribute="centerY" id="3ZK-Zt-eVM"/>
+                            <constraint firstItem="O60-da-LpG" firstAttribute="width" secondItem="6al-0F-FOI" secondAttribute="width" multiplier="0.5" id="MGd-S8-kBF"/>
+                            <constraint firstItem="O60-da-LpG" firstAttribute="centerX" secondItem="6al-0F-FOI" secondAttribute="centerX" id="uts-WT-dR8"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="topRated" id="3fK-fm-wGK"/>
+                    <navigationItem key="navigationItem" id="S4Y-Pn-HDG">
+                        <barButtonItem key="rightBarButtonItem" image="magnifyingglass" catalog="system" id="n2o-UD-9vo">
+                            <color key="tintColor" systemColor="systemBlueColor"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="networkErrorImage" destination="O60-da-LpG" id="d8M-KH-dU8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qEO-He-wuD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-135" y="-96"/>
+        </scene>
+        <!--Movies DB-->
+        <scene sceneID="tJP-Uc-BGh">
+            <objects>
+                <tabBarController storyboardIdentifier="MainViewController" title="Movies DB" keyboardType="off" id="I78-XQ-9nA" customClass="MainViewController" customModule="TheMovieDB" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="Movie DB" style="browser" id="KKx-Ch-tfx">
+                        <barButtonItem key="rightBarButtonItem" image="magnifyingglass" catalog="system" id="RNi-gV-Kcp">
+                            <color key="tintColor" red="0.14117647059999999" green="0.76470588240000004" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FZ9-ZS-uIQ">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.023529411764705882" green="0.13333333333333333" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" red="0.14117647058823529" green="0.76470588235294112" blue="0.75686274509803919" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" red="0.14117647059999999" green="0.76470588240000004" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="selectedImageTintColor" red="0.14117647059999999" green="0.76470588240000004" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </tabBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="selectedIndex">
+                            <integer key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="delegate" destination="FZ9-ZS-uIQ" id="vqL-Yl-00A"/>
+                        <segue destination="26g-Xl-fhk" kind="relationship" relationship="viewControllers" id="6lB-Ya-cUm"/>
+                        <segue destination="cpn-Mh-xAX" kind="relationship" relationship="viewControllers" id="u2h-Jg-pmr"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="JT5-qZ-2sb"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WOb-7f-6kC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1255" y="520"/>
+        </scene>
+        <!--Upcoming-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="UpcomingViewController" customModule="TheMovieDB" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no-recording" translatesAutoresizingMaskIntoConstraints="NO" id="lZZ-EL-deA">
+                                <rect key="frame" x="97.666666666666686" y="328.66666666666669" width="195" height="195.00000000000006"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="lZZ-EL-deA" secondAttribute="height" multiplier="1:1" id="zom-2Y-L0T"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.83135576339999995" green="0.97070015909999996" blue="0.97523039580000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="lZZ-EL-deA" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="C7v-Q1-0D2"/>
+                            <constraint firstItem="lZZ-EL-deA" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.5" id="K8k-Qt-FBZ"/>
+                            <constraint firstItem="lZZ-EL-deA" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="LBp-eY-Ued"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Upcoming" image="creditcard.fill" catalog="system" id="bEJ-BT-Pjg"/>
+                    <navigationItem key="navigationItem" id="EFB-xf-azj">
+                        <barButtonItem key="rightBarButtonItem" image="magnifyingglass" catalog="system" id="vRH-Wo-V37">
+                            <color key="tintColor" systemColor="systemBlueColor"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="networkErrorImage" destination="lZZ-EL-deA" id="3Qh-I7-2K0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-135" y="1351"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="vtS-CK-DGm">
+            <objects>
+                <navigationController id="W98-vk-6gF" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bBe-Xi-d4B">
+                        <rect key="frame" x="0.0" y="47" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="20"/>
+                            <color key="textColor" red="0.14117647059999999" green="0.76470588240000004" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="textShadowColor" red="0.14117647059999999" green="0.76470588240000004" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                            <color key="textColor" red="0.14117647059999999" green="0.76470588240000004" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="textShadowColor" red="0.14117647059999999" green="0.76470588240000004" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <outlet property="delegate" destination="bBe-Xi-d4B" id="x8d-d2-qic"/>
+                        <segue destination="I78-XQ-9nA" kind="relationship" relationship="rootViewController" id="fx3-q0-PvJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mlf-Km-xvn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2258" y="520"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="creditcard.fill" catalog="system" width="128" height="88"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <image name="no-recording" width="512" height="512"/>
+        <image name="play.tv.fill" catalog="system" width="128" height="95"/>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

@@ -34,7 +34,7 @@ final class CoordinatorTest: XCTestCase {
                 return false
             }
             print(testC)
-            return testC.topViewController as? ViewController != nil
+            return testC.topViewController as? MainViewController != nil
         })
             
         let mainScreenExpectation = expectation(

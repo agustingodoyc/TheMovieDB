@@ -25,7 +25,7 @@ class MainCoordinator: Coordinator {
     }
     
     func finishSplashScreen() {
-        guard let vc = ViewController.instantiate() else {
+        guard let vc = MainViewController.instantiate() else {
             return
         }
         vc.coordinator = self
