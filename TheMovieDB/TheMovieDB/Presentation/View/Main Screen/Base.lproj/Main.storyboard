@@ -25,6 +25,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="P1y-rd-SzK"/>
                         <color key="backgroundColor" red="0.92197595080020722" green="0.97523039580000004" blue="0.83012495980960543" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" red="0.14117647059999999" green="0.76470588240000004" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="L5G-cY-iGg" firstAttribute="centerY" secondItem="P1y-rd-SzK" secondAttribute="centerY" id="BaQ-mB-rAp"/>
                             <constraint firstItem="L5G-cY-iGg" firstAttribute="centerX" secondItem="P1y-rd-SzK" secondAttribute="centerX" id="KlB-Xl-dul"/>
@@ -87,13 +88,17 @@
             <objects>
                 <tabBarController storyboardIdentifier="MainViewController" title="Movies DB" keyboardType="off" id="I78-XQ-9nA" customClass="MainViewController" customModule="TheMovieDB" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="Movie DB" style="browser" id="KKx-Ch-tfx">
-                        <barButtonItem key="rightBarButtonItem" image="magnifyingglass" catalog="system" id="RNi-gV-Kcp"/>
+                        <barButtonItem key="rightBarButtonItem" image="magnifyingglass" catalog="system" id="RNi-gV-Kcp">
+                            <color key="tintColor" red="0.14117647059999999" green="0.76470588240000004" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </barButtonItem>
                     </navigationItem>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FZ9-ZS-uIQ">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.73023086829999995" green="0.88716357950000002" blue="0.83144504399999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <color key="barTintColor" red="0.19733564049999999" green="0.23116276650000001" blue="0.89071136709999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.023529411764705882" green="0.13333333333333333" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" red="0.14117647058823529" green="0.76470588235294112" blue="0.75686274509803919" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" red="0.14117647059999999" green="0.76470588240000004" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="selectedImageTintColor" red="0.14117647059999999" green="0.76470588240000004" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="selectedIndex">
@@ -157,10 +162,13 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="20"/>
-                            <color key="textColor" systemColor="systemBlueColor"/>
+                            <color key="textColor" red="0.14117647059999999" green="0.76470588240000004" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="textShadowColor" red="0.14117647059999999" green="0.76470588240000004" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                            <color key="textColor" red="0.14117647059999999" green="0.76470588240000004" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="textShadowColor" red="0.14117647059999999" green="0.76470588240000004" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </textAttributes>
                     </navigationBar>
                     <connections>
