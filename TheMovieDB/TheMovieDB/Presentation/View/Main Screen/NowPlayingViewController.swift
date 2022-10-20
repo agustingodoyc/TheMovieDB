@@ -7,22 +7,14 @@
 
 import UIKit
 
-class NowPlayingViewController: UIViewController {
-    
+class NowPlayingViewController: UIViewController, NetworkStatus {
+   
     @IBOutlet weak var networkErrorImage: UIImageView!
     
     var networkStatus: Bool = false
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         checkNetworking()
-    }
-    
-    func checkNetworking() {
-        guard networkStatus == false else {
-            networkErrorImage.isHidden = true
-            return
-        }
-        networkErrorImage.isHidden = false
     }
 }

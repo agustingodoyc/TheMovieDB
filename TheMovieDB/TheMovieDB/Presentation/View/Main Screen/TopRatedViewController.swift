@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class TopRatedViewController: UIViewController {
+class TopRatedViewController: UIViewController, NetworkStatus {
     
     @IBOutlet weak var networkErrorImage: UIImageView!
     
@@ -17,13 +17,5 @@ class TopRatedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         checkNetworking()
-    }
-    
-    func checkNetworking() {
-        guard networkStatus == false else {
-            networkErrorImage.isHidden = true
-            return
-        }
-        networkErrorImage.isHidden = false
     }
 }

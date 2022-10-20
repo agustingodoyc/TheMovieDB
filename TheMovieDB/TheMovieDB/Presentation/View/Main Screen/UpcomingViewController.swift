@@ -7,7 +7,7 @@
 
 import UIKit
 
-class UpcomingViewController: UIViewController {
+class UpcomingViewController: UIViewController, NetworkStatus {
     
     @IBOutlet weak var networkErrorImage: UIImageView!
     
@@ -16,13 +16,5 @@ class UpcomingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         checkNetworking()
-    }
-    
-    func checkNetworking() {
-        guard networkStatus == false else {
-            networkErrorImage.isHidden = true
-            return
-        }
-        networkErrorImage.isHidden = false
     }
 }
