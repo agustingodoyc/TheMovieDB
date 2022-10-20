@@ -14,6 +14,6 @@ protocol DataBase {
     func clearData()
 }
 
-protocol DataManagerDelegate {
+protocol DataManagerDelegate: AnyObject {
     func updateData(data: [Movie])
 }

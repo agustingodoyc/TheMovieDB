@@ -9,12 +9,13 @@ import Foundation
 
 public class DataManager {
     
-    private var service: ServiceProvider
+    private var service: ServiceProtocol
     private var dataBase: DataBase
     var delegate: DataManagerDelegate?
     
-    init(service: ServiceProtocol = ServiceProvider(urlServer: "https://api.themoviedb.org/3/movie"), dataBase: DataBase = RealmDataBase()) {
-        self.service = service as! ServiceProvider
+    init(service: ServiceProtocol = ServiceProvider(urlServer: "https://api.themoviedb.org/3/movie"),
+         dataBase: DataBase = RealmDataBase()) {
+        self.service = service
         self.dataBase = dataBase
     }
     
