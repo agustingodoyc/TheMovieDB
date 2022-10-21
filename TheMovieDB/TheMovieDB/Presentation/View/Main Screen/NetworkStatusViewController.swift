@@ -20,10 +20,13 @@ class NetworkStatusViewController: UIViewController {
     }
     
     func checkNetworking() {
-        guard networkStatus == false else {
-            networkErrorImage.isHidden = true
-            return
-        }
+      guard networkStatus == true else {
         networkErrorImage.isHidden = false
+        hideContent()
+        return
+      }
+      networkErrorImage.isHidden = true
     }
+    
+    func hideContent() {}
 }
