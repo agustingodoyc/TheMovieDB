@@ -20,6 +20,10 @@
 		10CF712D28F8529600F07ACB /* NowPlayingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CF712C28F8529600F07ACB /* NowPlayingViewController.swift */; };
 		10CF712F28F8531900F07ACB /* UpcomingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CF712E28F8531900F07ACB /* UpcomingViewController.swift */; };
 		10D00DA828FDFD0900244C4E /* TopRatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D00DA728FDFD0900244C4E /* TopRatedViewController.swift */; };
+		10F15BE229018A32000C6D88 /* NetworkStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F15BE129018A32000C6D88 /* NetworkStatusViewController.swift */; };
+		D60548EA2901CEBE00C32787 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60548E92901CEBE00C32787 /* CellView.swift */; };
+		D60548EC2901D13000C32787 /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60548EB2901D13000C32787 /* CellModel.swift */; };
+		D60548EF2901D26E00C32787 /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60548EE2901D26E00C32787 /* CellModel.swift */; };
 		D67DDA3328EE161A0093B3A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67DDA3228EE161A0093B3A0 /* AppDelegate.swift */; };
 		D67DDA3528EE161A0093B3A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67DDA3428EE161A0093B3A0 /* SceneDelegate.swift */; };
 		D67DDA3A28EE161A0093B3A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D67DDA3828EE161A0093B3A0 /* Main.storyboard */; };
@@ -69,6 +73,10 @@
 		10CF712C28F8529600F07ACB /* NowPlayingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingViewController.swift; sourceTree = "<group>"; };
 		10CF712E28F8531900F07ACB /* UpcomingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingViewController.swift; sourceTree = "<group>"; };
 		10D00DA728FDFD0900244C4E /* TopRatedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRatedViewController.swift; sourceTree = "<group>"; };
+		10F15BE129018A32000C6D88 /* NetworkStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkStatusViewController.swift; sourceTree = "<group>"; };
+		D60548E92901CEBE00C32787 /* CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
+		D60548EB2901D13000C32787 /* CellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CellModel.swift; path = ../../../Entities/CellModel.swift; sourceTree = "<group>"; };
+		D60548EE2901D26E00C32787 /* CellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CellModel.swift; path = "TheMovieDB/Presentation/View/Main Screen/Top Rated/CellModel.swift"; sourceTree = SOURCE_ROOT; };
 		D67DDA2F28EE161A0093B3A0 /* TheMovieDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheMovieDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D67DDA3228EE161A0093B3A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D67DDA3428EE161A0093B3A0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -122,9 +130,10 @@
 		101EE2CD28F7101000CAE2A5 /* Main Screen */ = {
 			isa = PBXGroup;
 			children = (
+				D60548E82901CE8A00C32787 /* Top Rated */,
+				10F15BE129018A32000C6D88 /* NetworkStatusViewController.swift */,
 				10CF712C28F8529600F07ACB /* NowPlayingViewController.swift */,
 				10CF712E28F8531900F07ACB /* UpcomingViewController.swift */,
-				10D00DA728FDFD0900244C4E /* TopRatedViewController.swift */,
 				106CEF5928FEDD1900AEC45A /* MainViewController.swift */,
 				D67DDA3828EE161A0093B3A0 /* Main.storyboard */,
 			);
@@ -138,6 +147,15 @@
 				104F557C290051830014D4E5 /* Service.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		D60548E82901CE8A00C32787 /* Top Rated */ = {
+			isa = PBXGroup;
+			children = (
+				10D00DA728FDFD0900244C4E /* TopRatedViewController.swift */,
+				D60548E92901CEBE00C32787 /* CellView.swift */,
+			);
+			path = "Top Rated";
 			sourceTree = "<group>";
 		};
 		D67DDA2628EE161A0093B3A0 = {
@@ -238,6 +256,7 @@
 		D67DDA6628EE16910093B3A0 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				D60548EE2901D26E00C32787 /* CellModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -256,6 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				104F556A290033A40014D4E5 /* Movie.swift */,
+				D60548EB2901D13000C32787 /* CellModel.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -493,10 +513,13 @@
 				10CF712D28F8529600F07ACB /* NowPlayingViewController.swift in Sources */,
 				10CF712F28F8531900F07ACB /* UpcomingViewController.swift in Sources */,
 				104F5574290036B50014D4E5 /* RealmDataBase.swift in Sources */,
+				D60548EF2901D26E00C32787 /* CellModel.swift in Sources */,
 				104F556B290033A40014D4E5 /* Movie.swift in Sources */,
 				D6C433AD28F75F1D00B61185 /* Storyboeared.swift in Sources */,
 				D6C433AF28F7603E00B61185 /* MainCoordinator.swift in Sources */,
 				104F5576290038230014D4E5 /* ServiceProvider.swift in Sources */,
+				10F15BE229018A32000C6D88 /* NetworkStatusViewController.swift in Sources */,
+				D60548EA2901CEBE00C32787 /* CellView.swift in Sources */,
 				D67DDA3328EE161A0093B3A0 /* AppDelegate.swift in Sources */,
 				D6C433AB28F75DD700B61185 /* Coordinator.swift in Sources */,
 				104F557D290051830014D4E5 /* Service.swift in Sources */,
@@ -505,6 +528,7 @@
 				10D00DA828FDFD0900244C4E /* TopRatedViewController.swift in Sources */,
 				106CEF5A28FEDD1900AEC45A /* MainViewController.swift in Sources */,
 				104F55722900361C0014D4E5 /* DataManager.swift in Sources */,
+				D60548EC2901D13000C32787 /* CellModel.swift in Sources */,
 				104F5569290032D30014D4E5 /* Database.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

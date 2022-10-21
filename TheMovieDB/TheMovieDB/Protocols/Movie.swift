@@ -9,7 +9,7 @@ import Foundation
 import RealmSwift
 
 class Movie: Object, Codable {
-    @Persisted var posterPath: URL?
+    @Persisted var posterPath: String?
     @Persisted var adult: Bool
     @Persisted var overview: String
     @Persisted var relaseDate: String
