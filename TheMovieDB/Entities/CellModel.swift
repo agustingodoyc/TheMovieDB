@@ -22,7 +22,7 @@ class CellModel {
     let posterPath: String?
     let relaseDate: String
     let title: String
-    let voteAverage: Int
+    let voteAverage: Double
     
     init(_ movie: Movie) {
         self.posterPath = movie.posterPath

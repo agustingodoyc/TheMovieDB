@@ -13,7 +13,7 @@ public class RealmDataBase: DataBase {
     private let realm: Realm
     
     public init() {
-        do {
+       do {
             realm = try Realm()
         } catch {
             print("error: \(error)")
@@ -21,7 +21,9 @@ public class RealmDataBase: DataBase {
         }
     }
     
-    var isEmpty: Bool { return realm.isEmpty }
+    var isEmpty: Bool {
+        return realm.isEmpty
+    }
     
     func persistData(data: [Movie]) {
         do {

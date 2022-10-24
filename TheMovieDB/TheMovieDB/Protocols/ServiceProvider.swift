@@ -12,9 +12,11 @@ class ServiceProvider: ServiceProtocol {
 
     private var urlServer: String
     private var manager: Session
+    private let url: String = "https://api.themoviedb.org/3/movie/76341?api_key=eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlOGViZWNkNjM0ODU3ZmY0NzlhNTI0NTU2MjZjNTBmNCIsInN1YiI6IjYzM2Q5M2RhNWFiODFhMDA4MWMyZWUwOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.sv6xJcNCCzFx0HsmIrJUzJxQ5HdtJJg9wJgasB_ZtU8"
     
-    init(urlServer: String) {
-        self.urlServer = urlServer
+    
+    init() {
+        self.urlServer = url
         
         let configuration: URLSessionConfiguration = {
             let config = URLSessionConfiguration.default

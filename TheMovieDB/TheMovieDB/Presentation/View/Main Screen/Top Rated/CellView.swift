@@ -16,7 +16,10 @@ class CellView: UITableViewCell {
     @IBOutlet weak var place: UILabel!
     @IBOutlet weak var voteAverage: UILabel!
     
-    func loadData(_ tedTalk: CellModel) {
-        
+    func loadData(movie: CellModel, place: Int) {
+        title.text = movie.title
+        relaseDate.text = movie.relaseDate
+        self.place.text = String(place)
+        voteAverage.text = String(movie.voteAverage)
     }
 }
