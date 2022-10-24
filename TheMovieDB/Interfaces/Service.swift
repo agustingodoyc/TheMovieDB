@@ -18,5 +18,5 @@ enum ServiceError: Error {
 }
 
 protocol ServiceProtocol {
-    func parseMovie(endPoint: String, completion: @escaping (Result<[Movie], ServiceError>) -> Void )
+    func parseMovie(completion: @escaping (Result<[Movie], ServiceError>) -> Void )
 }
