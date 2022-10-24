@@ -27,7 +27,7 @@ class ServiceProvider: ServiceProtocol {
         self.manager = Session(configuration: configuration)
     }
 
-    func parseMovie(_ completion: @escaping (Result<[Movie], ServiceError>) -> Void) {
+    func getMovies(_ completion: @escaping (Result<[Movie], ServiceError>) -> Void) {
         manager.request(self.urlServer).response { responseData in
             guard let data = responseData.data else { return }
             do {

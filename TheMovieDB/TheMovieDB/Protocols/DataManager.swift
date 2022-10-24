@@ -21,7 +21,7 @@ public class DataManager {
     
     func getDataMovie(completionHandler: @escaping ([Movie]) -> Void) {
         if dataBase.isEmpty {
-            service.parseMovie() { result in
+            service.getMovies() { result in
                 DispatchQueue.main.async {
                     switch result {
                     case .success(let movie):
@@ -34,7 +34,7 @@ public class DataManager {
             }
         } else {
             completionHandler(dataBase.getData())
-            self.service.parseMovie() { result in
+            self.service.getMovies() { result in
                 DispatchQueue.main.async {
                     switch result {
                     case .success(let movie):
