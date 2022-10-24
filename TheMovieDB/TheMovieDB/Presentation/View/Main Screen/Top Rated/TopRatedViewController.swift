@@ -20,7 +20,7 @@ class TopRatedViewController: NetworkStatusViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate = self
-        viewModel.updateData()
+        viewModel.fetchData()
         reloadData()
     }
     

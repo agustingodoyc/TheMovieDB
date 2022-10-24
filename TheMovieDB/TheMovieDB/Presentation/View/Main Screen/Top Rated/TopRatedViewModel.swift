@@ -24,10 +24,10 @@ class TopRatedViewModel {
     
     // MARK: - Methods
     
-    func updateData() {
-        dataManager.getDataMovie() { result in
+    func fetchData() {
+        dataManager.getTopRatedMovie() { result in
             DispatchQueue.main.async() {
-                //self.movies = result
+                self.movies = result
             }
         }
     }
