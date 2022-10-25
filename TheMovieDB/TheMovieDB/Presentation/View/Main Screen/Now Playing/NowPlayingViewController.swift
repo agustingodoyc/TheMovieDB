@@ -12,18 +12,19 @@ class NowPlayingViewController: NetworkStatusViewController {
     // MARK: - IBOutles
     @IBOutlet weak var collectionView: UICollectionView!
     
-    
     // MARK: - Properties
     lazy var viewModel = NowPlayingViewModel()
     
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.delegate = self
+        viewModel.fetchData() {
+            self.reloadData()
+        }
     }
     
-    override func hideContent() {
-        collectionView.isHidden = false
-    }
+    override func hideContent() { }
 } 
 
 // MARK: - UICollectionView Methods
@@ -38,7 +39,14 @@ extension NowPlayingViewController: UICollectionViewDelegate, UICollectionViewDa
             return UICollectionViewCell()
         }
         let nowPlayingMovie = viewModel.getNowPlayingMovie(indexPath: indexPath.row)
-        cell.showCollectionViewInformation(nowPlayingMovie)
+        cell.loadNowPlayingMovie(movie: nowPlayingMovie)
         return cell
+    }
+}
+
+// MARK: - Delegate
+extension NowPlayingViewController: ViewModelDelegate {
+    func reloadData() {
+        collectionView.reloadData()
     }
 }

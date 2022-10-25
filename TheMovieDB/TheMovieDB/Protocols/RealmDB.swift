@@ -1,5 +1,5 @@
 //
-//  RealmDataBase.swift
+//  RealmDB.swift
 //  TheMovieDB
 //
 //  Created by Angela Lee on 19/10/2022.
@@ -8,28 +8,28 @@
 import Foundation
 import RealmSwift
 
-public class RealmDataBase: DataBase {
+class RealmDB: DataBase {
     
     private let realm: Realm
+    var isEmpty: Bool { return realm.isEmpty }
     
-    public init() {
+    init() {
         do {
             realm = try Realm()
         } catch {
-            print("error: \(error)")
+            print("Error \(error)")
             fatalError("Unable to create an Realm instance")
         }
     }
     
-    var isEmpty: Bool { return realm.isEmpty }
-    
-    func persistData(data: [Movie]) {
+    func persistData(_ movies: [Movie]) {
         do {
-            try realm.write({
-                realm.add(data)
-            })
+            try realm.write {
+                realm.add(movies)
+            }
         } catch {
-            print("Error: \(error)")
+            print(error)
+            return
         }
     }
     
@@ -39,11 +39,12 @@ public class RealmDataBase: DataBase {
     
     func clearData() {
         do {
-            try realm.write({
-                realm.delete(realm.objects(Movie.self))
-            })
+            try realm.write {
+                realm.deleteAll()
+            }
         } catch {
-            print("Error: \(error)")
+            print(error)
+            return
         }
     }
 }

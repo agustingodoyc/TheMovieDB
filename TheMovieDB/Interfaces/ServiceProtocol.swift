@@ -1,5 +1,5 @@
 //
-//  Service.swift
+//  ServiceProtocol.swift
 //  TheMovieDB
 //
 //  Created by Angela Lee on 19/10/2022.
@@ -18,5 +18,5 @@ enum ServiceError: Error {
 }
 
 protocol ServiceProtocol {
-    func parseMovie(_ completion: @escaping (Result<[Movie], ServiceError>) -> Void )
+    func parseMovie(completion: @escaping (Result<[Movie], ServiceError>) -> Void )
 }

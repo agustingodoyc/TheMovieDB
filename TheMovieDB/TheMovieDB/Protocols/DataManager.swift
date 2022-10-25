@@ -10,39 +10,40 @@ import Foundation
 public class DataManager {
     
     private var service: ServiceProtocol
-    private var dataBase: DataBase
     var delegate: DataManagerDelegate?
+    private var dataBase: DataBase
     
-    init(service: ServiceProtocol = ServiceProvider(urlServer: "https://api.themoviedb.org/3/movie"),
-         dataBase: DataBase = RealmDataBase()) {
+    init (service: ServiceProtocol = AlamofireSP(), dataBase: DataBase = RealmDB()) {
         self.service = service
         self.dataBase = dataBase
     }
     
-    func getDataMovie(completionHandler: @escaping ([Movie]) -> Void) {
-        if !dataBase.isEmpty {
-            completionHandler(dataBase.getData())
-            self.service.parseMovie() { result in
+    func getTopRatedMovie(completionHandler: @escaping ([Movie]) -> Void) {
+        if (dataBase.isEmpty) {
+            service.parseMovie() { result in
                 DispatchQueue.main.async {
                     switch result {
-                    case.success(let movie):
-                        self.dataBase.clearData()
-                        self.dataBase.persistData(data: movie)
-                        self.delegate?.updateData(data: movie)
-                    case.failure(_ ):
-                        return
+                    case .success(let movies):
+                        self.dataBase.persistData(movies)
+                        completionHandler(movies)
+                    case .failure(_):
+                        completionHandler([])
                     }
                 }
             }
         } else {
-            service.parseMovie() { result in
-                DispatchQueue.main.async {
-                    switch result {
-                    case.success(let movie):
-                        self.dataBase.persistData(data: movie)
-                        completionHandler(movie)
-                    case.failure(_ ):
-                        completionHandler([])
+            completionHandler(dataBase.getData())
+            DispatchQueue.global(qos: .background).async {
+                self.service.parseMovie() { result in
+                    DispatchQueue.main.async {
+                        switch result {
+                        case .success(let data):
+                            self.dataBase.clearData()
+                            self.dataBase.persistData(data)
+                            self.delegate?.updateData(data)
+                        case .failure(_):
+                            return
+                        }
                     }
                 }
             }
