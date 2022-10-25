@@ -21,6 +21,7 @@
 		10F15BE229018A32000C6D88 /* NetworkStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F15BE129018A32000C6D88 /* NetworkStatusViewController.swift */; };
 		D60548EA2901CEBE00C32787 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60548E92901CEBE00C32787 /* CellView.swift */; };
 		D60548EF2901D26E00C32787 /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60548EE2901D26E00C32787 /* CellModel.swift */; };
+		D64C9EB729086C0C00A1C13E /* MovieList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64C9EB629086C0C00A1C13E /* MovieList.swift */; };
 		D67DDA3328EE161A0093B3A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67DDA3228EE161A0093B3A0 /* AppDelegate.swift */; };
 		D67DDA3528EE161A0093B3A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67DDA3428EE161A0093B3A0 /* SceneDelegate.swift */; };
 		D67DDA3A28EE161A0093B3A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D67DDA3828EE161A0093B3A0 /* Main.storyboard */; };
@@ -77,6 +78,7 @@
 		10F15BE129018A32000C6D88 /* NetworkStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkStatusViewController.swift; sourceTree = "<group>"; };
 		D60548E92901CEBE00C32787 /* CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
 		D60548EE2901D26E00C32787 /* CellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CellModel.swift; path = Entities/CellModel.swift; sourceTree = SOURCE_ROOT; };
+		D64C9EB629086C0C00A1C13E /* MovieList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MovieList.swift; path = Entities/MovieList.swift; sourceTree = SOURCE_ROOT; };
 		D67DDA2F28EE161A0093B3A0 /* TheMovieDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheMovieDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D67DDA3228EE161A0093B3A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D67DDA3428EE161A0093B3A0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -272,6 +274,7 @@
 			children = (
 				104F556A290033A40014D4E5 /* Movie.swift */,
 				D60548EE2901D26E00C32787 /* CellModel.swift */,
+				D64C9EB629086C0C00A1C13E /* MovieList.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -524,6 +527,7 @@
 				104F5576290038230014D4E5 /* AlamofireSP.swift in Sources */,
 				10F15BE229018A32000C6D88 /* NetworkStatusViewController.swift in Sources */,
 				D60548EA2901CEBE00C32787 /* CellView.swift in Sources */,
+				D64C9EB729086C0C00A1C13E /* MovieList.swift in Sources */,
 				D67DDA3328EE161A0093B3A0 /* AppDelegate.swift in Sources */,
 				D6C433AB28F75DD700B61185 /* Coordinator.swift in Sources */,
 				D6C433A928F755FE00B61185 /* SplashScreenViewController.swift in Sources */,

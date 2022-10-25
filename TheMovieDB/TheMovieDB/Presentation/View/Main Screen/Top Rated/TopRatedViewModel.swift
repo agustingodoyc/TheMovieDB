@@ -24,10 +24,11 @@ class TopRatedViewModel {
     
     // MARK: - Methods
     
-    func fetchData() {
+    func fetchData(completionHandler: @escaping () -> Void) {
         dataManager.getTopRatedMovie() { result in
             DispatchQueue.main.async() {
                 self.movies = result
+                completionHandler()
             }
         }
     }

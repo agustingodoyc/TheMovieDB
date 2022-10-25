@@ -20,6 +20,6 @@ class CellView: UITableViewCell {
         title.text = movie.title
         relaseDate.text = movie.releaseDate
         self.place.text = String(place)
-        voteAverage.text = String(movie.voteAverage)
+        voteAverage.text = String(movie.voteAverage ?? 0)
     }
 }

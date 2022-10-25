@@ -19,7 +19,7 @@ class AlamofireSP: ServiceProtocol {
         static let url = "https://api.themoviedb.org/3/movie/"
         
         static let headers: HTTPHeaders = [
-            "api_key": "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlOGViZWNkNjM0ODU3ZmY0NzlhNTI0NTU2MjZjNTBmNCIsInN1YiI6IjYzM2Q5M2RhNWFiODFhMDA4MWMyZWUwOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.sv6xJcNCCzFx0HsmIrJUzJxQ5HdtJJg9wJgasB_ZtU8",
+            "api_key": "307592d8ff6e24827ce965948687c709",
             "language": "en-US",
             "page": "1"
         ]
@@ -38,11 +38,13 @@ class AlamofireSP: ServiceProtocol {
     }
 
     func parseMovie(completion: @escaping (Result<[Movie], ServiceError>) -> Void) {
-        manager.request(ServiceConstants.url + Endpoints.topRated.rawValue, method: .get, headers: ServiceConstants.headers).validate(statusCode: 200..<300).responseDecodable(of: [Movie].self) { response in
+        let url = "https://api.themoviedb.org/3/movie/top_rated?api_key=307592d8ff6e24827ce965948687c709&language=en-US&page=1"
+        manager.request(/*ServiceConstants.url + Endpoints.topRated.rawValue, method: .get, headers: ServiceConstants.headers*/url).validate(statusCode: 100..<300).responseDecodable(of: MovieList.self) { response in
             guard let data = response.value else {
                 return completion(.failure(.parseError))
             }
-            return completion(.success(data))
+            
+            return completion(.success(Array(data.movieList)))
         }
     }
 }

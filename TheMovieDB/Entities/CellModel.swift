@@ -20,9 +20,9 @@ class CellModel {
     }
     
     let posterPath: String?
-    let releaseDate: String
-    let title: String
-    let voteAverage: Double
+    let releaseDate: String?
+    let title: String?
+    let voteAverage: Double?
     
     init(_ movie: Movie) {
         self.posterPath = movie.posterPath
