@@ -10,23 +10,22 @@ import Foundation
 public class DataManager {
     
     private var service: ServiceProtocol
-    private var dataBase: DataBase
     var delegate: DataManagerDelegate?
+    private var dataBase: DataBase
     
-    init(service: ServiceProtocol = ServiceProvider(),
-         dataBase: DataBase = RealmDataBase()) {
+    init (service: ServiceProtocol = AlamofireSP(), dataBase: DataBase = RealmDB()) {
         self.service = service
         self.dataBase = dataBase
     }
     
     func getTopRatedMovie(completionHandler: @escaping ([Movie]) -> Void) {
-        if dataBase.isEmpty {
+        if (dataBase.isEmpty) {
             service.parseMovie() { result in
                 DispatchQueue.main.async {
                     switch result {
-                    case .success(let movie):
-                        self.dataBase.persistData(data: movie)
-                        completionHandler(movie)
+                    case .success(let movies):
+                        self.dataBase.persistData(movies)
+                        completionHandler(movies)
                     case .failure(_):
                         completionHandler([])
                     }
@@ -34,15 +33,17 @@ public class DataManager {
             }
         } else {
             completionHandler(dataBase.getData())
-            self.service.parseMovie() { result in
-                DispatchQueue.main.async {
-                    switch result {
-                    case .success(let movie):
-                        self.dataBase.clearData()
-                        self.dataBase.persistData(data: movie)
-                        self.delegate?.updateData(movie)
-                    case .failure(_):
-                        return
+            DispatchQueue.global(qos: .background).async {
+                self.service.parseMovie() { result in
+                    DispatchQueue.main.async {
+                        switch result {
+                        case .success(let data):
+                            self.dataBase.clearData()
+                            self.dataBase.persistData(data)
+                            self.delegate?.updateData(data)
+                        case .failure(_):
+                            return
+                        }
                     }
                 }
             }

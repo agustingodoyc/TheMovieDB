@@ -9,7 +9,7 @@ import Foundation
 
 protocol DataBase {
     var isEmpty: Bool { get }
-    func persistData(data: [Movie])
+    func persistData(_ data: [Movie])
     func getData() -> [Movie]
     func clearData()
 }

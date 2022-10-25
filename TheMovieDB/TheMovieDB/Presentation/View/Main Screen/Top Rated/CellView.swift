@@ -18,7 +18,7 @@ class CellView: UITableViewCell {
     
     func loadData(movie: CellModel, place: Int) {
         title.text = movie.title
-        relaseDate.text = movie.relaseDate
+        relaseDate.text = movie.releaseDate
         self.place.text = String(place)
         voteAverage.text = String(movie.voteAverage)
     }
