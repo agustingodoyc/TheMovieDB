@@ -16,6 +16,6 @@ class TopRatedViewController: NetworkStatusViewController {
     }
     
     override func hideContent() {
-        tableView.isHidden = true
+       // tableView.isHidden = true
     }
 }

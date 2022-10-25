@@ -22,7 +22,7 @@ class NowPlayingViewController: NetworkStatusViewController {
     }
     
     override func hideContent() {
-        collectionView.isHidden = true
+        collectionView.isHidden = false
     }
 } 
 
@@ -38,7 +38,7 @@ extension NowPlayingViewController: UICollectionViewDelegate, UICollectionViewDa
             return UICollectionViewCell()
         }
         let nowPlayingMovie = viewModel.getNowPlayingMovie(indexPath: indexPath.row)
-        cell.ShowCollectionViweInformation(nowPlayingMovie)
+        cell.showCollectionViewInformation(nowPlayingMovie)
         return cell
     }
 }

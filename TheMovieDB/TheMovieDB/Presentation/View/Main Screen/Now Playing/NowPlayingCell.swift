@@ -13,11 +13,11 @@ class NowPlayingCell: UICollectionViewCell {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var date: UILabel!
     
-    func ShowCollectionViweInformation(_ recived: NowPlayingCellModel) {
-        guard let myURL = URL(string: recived.poster) else { return }
+    func showCollectionViewInformation(_ received: NowPlayingCellModel) {
+        guard let myURL = URL(string: received.poster) else { return }
         let myRequest = URLRequest(url: myURL)
         UIImageView.load()
-        title.text = recived.title
-        date.text = recived.date
+        title.text = received.date
+        date.text = received.date
     }
 }

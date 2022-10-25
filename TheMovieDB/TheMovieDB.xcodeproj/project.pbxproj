@@ -25,7 +25,6 @@
 		10D00DA828FDFD0900244C4E /* TopRatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D00DA728FDFD0900244C4E /* TopRatedViewController.swift */; };
 		10F15BE229018A32000C6D88 /* NetworkStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F15BE129018A32000C6D88 /* NetworkStatusViewController.swift */; };
 		D60548EA2901CEBE00C32787 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60548E92901CEBE00C32787 /* CellView.swift */; };
-		D60548EC2901D13000C32787 /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60548EB2901D13000C32787 /* CellModel.swift */; };
 		D60548EF2901D26E00C32787 /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60548EE2901D26E00C32787 /* CellModel.swift */; };
 		D67DDA3328EE161A0093B3A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67DDA3228EE161A0093B3A0 /* AppDelegate.swift */; };
 		D67DDA3528EE161A0093B3A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67DDA3428EE161A0093B3A0 /* SceneDelegate.swift */; };
@@ -368,7 +367,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D67DDA5928EE161D0093B3A0 /* Build configuration list for PBXNativeTarget "TheMovieDB" */;
 			buildPhases = (
-				1041CA6628F5BB2000D24760 /* ShellScript */,
+				104BC382290827850097C08D /* ShellScript */,
 				D67DDA2B28EE161A0093B3A0 /* Sources */,
 				D67DDA2C28EE161A0093B3A0 /* Frameworks */,
 				D67DDA2D28EE161A0093B3A0 /* Resources */,
@@ -503,9 +502,9 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1041CA6628F5BB2000D24760 /* ShellScript */ = {
+		104BC382290827850097C08D /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
+			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
@@ -518,7 +517,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n swiftlint\nelse\n echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n swiftlint\nelse\n echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -546,7 +545,6 @@
 				10D00DA828FDFD0900244C4E /* TopRatedViewController.swift in Sources */,
 				106CEF5A28FEDD1900AEC45A /* MainViewController.swift in Sources */,
 				104F55722900361C0014D4E5 /* DataManager.swift in Sources */,
-				D60548EC2901D13000C32787 /* CellModel.swift in Sources */,
 				10CCD84E2902EB35001DBABB /* NowPlayingCellModel.swift in Sources */,
 				10CCD84C2902E983001DBABB /* NowPlayingCell.swift in Sources */,
 				104F5569290032D30014D4E5 /* Database.swift in Sources */,
