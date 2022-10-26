@@ -12,11 +12,11 @@ class CellModel {
         static let urlAsString = "https://image.tmdb.org/t/p/original"
     }
     
-    var posterURL: URL? {
+    var posterURL: String {
         guard let posterPath = posterPath else {
-            return nil
+            return ""
         }
-        return URL(string: Configuration.urlAsString + posterPath)
+        return (Configuration.urlAsString + posterPath)
     }
     
     let posterPath: String?

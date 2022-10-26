@@ -40,7 +40,7 @@ extension TopRatedViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "topRatedMovieCell",
-                                                       for: indexPath) as? CellView else {
+                                                       for: indexPath) as? TopRatedCell else {
             return UITableViewCell()
         }
         

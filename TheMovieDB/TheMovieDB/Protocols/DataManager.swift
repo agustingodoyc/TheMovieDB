@@ -18,9 +18,9 @@ public class DataManager {
         self.dataBase = dataBase
     }
     
-    func getTopRatedMovie(completionHandler: @escaping ([Movie]) -> Void) {
+    func getTopRatedMovie(_ endpoint: Endpoints, completionHandler: @escaping ([Movie]) -> Void) {
         if (dataBase.isEmpty) {
-            service.parseMovie() { result in
+            service.parseMovie(endpoint) { result in
                 DispatchQueue.main.async {
                     switch result {
                     case .success(let movies):
@@ -34,7 +34,7 @@ public class DataManager {
         } else {
             completionHandler(dataBase.getData())
             DispatchQueue.global(qos: .background).async {
-                self.service.parseMovie() { result in
+                self.service.parseMovie(endpoint) { result in
                     DispatchQueue.main.async {
                         switch result {
                         case .success(let data):

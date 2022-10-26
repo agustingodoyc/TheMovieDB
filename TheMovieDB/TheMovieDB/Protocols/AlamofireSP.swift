@@ -9,11 +9,6 @@ import Foundation
 import Alamofire
 
 class AlamofireSP: ServiceProtocol {
-    enum Endpoints: String {
-        case topRated = "top_rated"
-        case upcoming
-        case nowPlaying = "now_playing"
-    }
     
     struct ServiceConstants {
         static let url = "https://api.themoviedb.org/3/movie/"
@@ -37,9 +32,11 @@ class AlamofireSP: ServiceProtocol {
         self.manager = Session(configuration: configuration)
     }
 
-    func parseMovie(completion: @escaping (Result<[Movie], ServiceError>) -> Void) {
-        let url = "https://api.themoviedb.org/3/movie/top_rated?api_key=307592d8ff6e24827ce965948687c709&language=en-US&page=1"
-        manager.request(/*ServiceConstants.url + Endpoints.topRated.rawValue, method: .get, headers: ServiceConstants.headers*/url).validate(statusCode: 100..<300).responseDecodable(of: MovieList.self) { response in
+    func parseMovie(_ endpoint: Endpoints, completion: @escaping (Result<[Movie], ServiceError>) -> Void) {
+        manager.request(
+            ServiceConstants.url + endpoint.rawValue, method: .get, headers: ServiceConstants.headers).validate(
+                statusCode: 100..<300).responseDecodable(
+                    of: MovieList.self) { response in
             guard let data = response.value else {
                 return completion(.failure(.parseError))
             }

@@ -19,7 +19,7 @@
 		10CF712F28F8531900F07ACB /* UpcomingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CF712E28F8531900F07ACB /* UpcomingViewController.swift */; };
 		10D00DA828FDFD0900244C4E /* TopRatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D00DA728FDFD0900244C4E /* TopRatedViewController.swift */; };
 		10F15BE229018A32000C6D88 /* NetworkStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F15BE129018A32000C6D88 /* NetworkStatusViewController.swift */; };
-		D60548EA2901CEBE00C32787 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60548E92901CEBE00C32787 /* CellView.swift */; };
+		D60548EA2901CEBE00C32787 /* TopRatedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60548E92901CEBE00C32787 /* TopRatedCell.swift */; };
 		D60548EF2901D26E00C32787 /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60548EE2901D26E00C32787 /* CellModel.swift */; };
 		D64C9EB729086C0C00A1C13E /* MovieList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64C9EB629086C0C00A1C13E /* MovieList.swift */; };
 		D67DDA3328EE161A0093B3A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67DDA3228EE161A0093B3A0 /* AppDelegate.swift */; };
@@ -76,7 +76,7 @@
 		10CF712E28F8531900F07ACB /* UpcomingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingViewController.swift; sourceTree = "<group>"; };
 		10D00DA728FDFD0900244C4E /* TopRatedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRatedViewController.swift; sourceTree = "<group>"; };
 		10F15BE129018A32000C6D88 /* NetworkStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkStatusViewController.swift; sourceTree = "<group>"; };
-		D60548E92901CEBE00C32787 /* CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
+		D60548E92901CEBE00C32787 /* TopRatedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRatedCell.swift; sourceTree = "<group>"; };
 		D60548EE2901D26E00C32787 /* CellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CellModel.swift; path = Entities/CellModel.swift; sourceTree = SOURCE_ROOT; };
 		D64C9EB629086C0C00A1C13E /* MovieList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MovieList.swift; path = Entities/MovieList.swift; sourceTree = SOURCE_ROOT; };
 		D67DDA2F28EE161A0093B3A0 /* TheMovieDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheMovieDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,7 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				10D00DA728FDFD0900244C4E /* TopRatedViewController.swift */,
-				D60548E92901CEBE00C32787 /* CellView.swift */,
+				D60548E92901CEBE00C32787 /* TopRatedCell.swift */,
 			);
 			path = "Top Rated";
 			sourceTree = "<group>";
@@ -526,7 +526,7 @@
 				D6C433AF28F7603E00B61185 /* MainCoordinator.swift in Sources */,
 				104F5576290038230014D4E5 /* AlamofireSP.swift in Sources */,
 				10F15BE229018A32000C6D88 /* NetworkStatusViewController.swift in Sources */,
-				D60548EA2901CEBE00C32787 /* CellView.swift in Sources */,
+				D60548EA2901CEBE00C32787 /* TopRatedCell.swift in Sources */,
 				D64C9EB729086C0C00A1C13E /* MovieList.swift in Sources */,
 				D67DDA3328EE161A0093B3A0 /* AppDelegate.swift in Sources */,
 				D6C433AB28F75DD700B61185 /* Coordinator.swift in Sources */,

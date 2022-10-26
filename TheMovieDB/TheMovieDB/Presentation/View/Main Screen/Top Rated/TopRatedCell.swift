@@ -7,8 +7,9 @@
 
 import Foundation
 import UIKit
+import Alamofire
 
-class CellView: UITableViewCell {
+class TopRatedCell: UITableViewCell {
     
     @IBOutlet weak var poster: UIImageView!
     @IBOutlet weak var title: UILabel!
@@ -19,7 +20,15 @@ class CellView: UITableViewCell {
     func loadData(movie: CellModel, place: Int) {
         title.text = movie.title
         relaseDate.text = movie.releaseDate
-        self.place.text = String(place)
-        voteAverage.text = String(movie.voteAverage ?? 0)
+        self.place.text = "#" + String(place)
+        voteAverage.text = String(movie.voteAverage ?? 0) + "%"
+        AF.request(movie.posterURL).response { data in
+            guard let image = data.data else {
+                return
+            }
+            self.poster.contentMode = .scaleAspectFill
+            self.poster.image = UIImage(data: image)
+        }
+        
     }
 }
