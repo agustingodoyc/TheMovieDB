@@ -6,17 +6,18 @@
 //
 
 import Foundation
+import Alamofire
 
 struct NowPlayingCellModel {
     struct Configuration {
         static let urlAsString = "https://image.tmdb.org/t/p/original"
     }
     
-    var posterURL: URL? {
+    var posterURL: String {
         guard let posterPath = posterPath else {
-            return nil
+            return ""
         }
-        return URL(string: Configuration.urlAsString + posterPath)
+        return (Configuration.urlAsString + posterPath)
     }
     
     let posterPath: String?
@@ -28,13 +29,4 @@ struct NowPlayingCellModel {
         self.releaseDate = movie.releaseDate
         self.title = movie.title
     }
-    /*let poster: String
-    let title: String
-    let date: String
-    
-    init(movie: Movie) {
-        poster = movie.posterPath ?? ""
-        title = movie.originalTitle
-        date = movie.relaseDate
-    }*/
 }

@@ -15,6 +15,7 @@
 		104F5576290038230014D4E5 /* AlamofireSP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104F5575290038230014D4E5 /* AlamofireSP.swift */; };
 		104F557B29003AF50014D4E5 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 104F557A29003AF50014D4E5 /* Alamofire */; };
 		106CEF5A28FEDD1900AEC45A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106CEF5928FEDD1900AEC45A /* MainViewController.swift */; };
+		1080A21529097C4C00E997F2 /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 1080A21429097C4C00E997F2 /* AlamofireImage */; };
 		10CCD84C2902E983001DBABB /* NowPlayingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CCD84B2902E983001DBABB /* NowPlayingCell.swift */; };
 		10CCD84E2902EB35001DBABB /* NowPlayingCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CCD84D2902EB35001DBABB /* NowPlayingCellModel.swift */; };
 		10CCD8512902EC74001DBABB /* NowPlayingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CCD8502902EC74001DBABB /* NowPlayingViewModel.swift */; };
@@ -119,6 +120,7 @@
 			files = (
 				104F5570290035090014D4E5 /* RealmSwift in Frameworks */,
 				104F557B29003AF50014D4E5 /* Alamofire in Frameworks */,
+				1080A21529097C4C00E997F2 /* AlamofireImage in Frameworks */,
 				104F556E290035090014D4E5 /* Realm in Frameworks */,
 				D6C433A428F7510100B61185 /* Lottie in Frameworks */,
 			);
@@ -154,16 +156,6 @@
 			path = "Main Screen";
 			sourceTree = "<group>";
 		};
-
-		104F5567290032B70014D4E5 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				104F5568290032D30014D4E5 /* Database.swift */,
-				104F557C290051830014D4E5 /* Service.swift */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
 		10CCD84A2902E8E1001DBABB /* Now Playing */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,7 +167,6 @@
 			path = "Now Playing";
 			sourceTree = "<group>";
 		};
-
 		D60548E82901CE8A00C32787 /* Top Rated */ = {
 			isa = PBXGroup;
 			children = (
@@ -398,6 +389,7 @@
 				104F556D290035090014D4E5 /* Realm */,
 				104F556F290035090014D4E5 /* RealmSwift */,
 				104F557A29003AF50014D4E5 /* Alamofire */,
+				1080A21429097C4C00E997F2 /* AlamofireImage */,
 			);
 			productName = TheMovieDB;
 			productReference = D67DDA2F28EE161A0093B3A0 /* TheMovieDB.app */;
@@ -475,6 +467,7 @@
 				D6C433A228F7510100B61185 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				104F556C290035090014D4E5 /* XCRemoteSwiftPackageReference "realm-swift" */,
 				104F557929003AF40014D4E5 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				1080A21329097C4C00E997F2 /* XCRemoteSwiftPackageReference "AlamofireImage" */,
 			);
 			productRefGroup = D67DDA3028EE161A0093B3A0 /* Products */;
 			projectDirPath = "";
@@ -566,13 +559,9 @@
 				10D00DA828FDFD0900244C4E /* TopRatedViewController.swift in Sources */,
 				106CEF5A28FEDD1900AEC45A /* MainViewController.swift in Sources */,
 				104F55722900361C0014D4E5 /* DataManager.swift in Sources */,
-
 				10CCD84E2902EB35001DBABB /* NowPlayingCellModel.swift in Sources */,
 				10CCD84C2902E983001DBABB /* NowPlayingCell.swift in Sources */,
-				104F5569290032D30014D4E5 /* Database.swift in Sources */,
-
 				D6A7A8552902EF0F00B9BF61 /* TopRatedViewModel.swift in Sources */,
-
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -927,6 +916,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		1080A21329097C4C00E997F2 /* XCRemoteSwiftPackageReference "AlamofireImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/AlamofireImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 		D6C433A228F7510100B61185 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
@@ -952,6 +949,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 104F557929003AF40014D4E5 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		1080A21429097C4C00E997F2 /* AlamofireImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1080A21329097C4C00E997F2 /* XCRemoteSwiftPackageReference "AlamofireImage" */;
+			productName = AlamofireImage;
 		};
 		D6C433A328F7510100B61185 /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;

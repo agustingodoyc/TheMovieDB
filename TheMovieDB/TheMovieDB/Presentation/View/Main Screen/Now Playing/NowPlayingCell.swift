@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Alamofire
 
 class NowPlayingCell: UICollectionViewCell {
     @IBOutlet weak var poster: UIImageView!
@@ -16,5 +17,10 @@ class NowPlayingCell: UICollectionViewCell {
     func loadNowPlayingMovie(movie: NowPlayingCellModel) {
         title.text = movie.title
         date.text = movie.releaseDate
+        AF.request(movie.posterURL).response { response in
+            if let data = response.data {
+                self.poster.image = UIImage(data: data)
+            }
+        }
     }
 }
