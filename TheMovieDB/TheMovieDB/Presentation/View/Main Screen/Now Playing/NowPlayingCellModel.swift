@@ -21,12 +21,10 @@ struct NowPlayingCellModel {
     }
     
     let posterPath: String?
-    let releaseDate: String?
     let title: String?
     
     init(_ movie: Movie) {
         self.posterPath = movie.posterPath
-        self.releaseDate = movie.releaseDate
         self.title = movie.title
     }
 }

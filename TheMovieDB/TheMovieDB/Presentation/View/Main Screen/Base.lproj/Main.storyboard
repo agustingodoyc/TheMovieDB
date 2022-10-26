@@ -41,41 +41,22 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bYS-bh-Sjd">
-                                                    <rect key="frame" x="0.0" y="0.0" width="170" height="210"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="170" height="240"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Tittle" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" showsExpansionTextWhenTruncated="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zWO-0U-rjl">
-                                                    <rect key="frame" x="8" y="210" width="154" height="58"/>
+                                                    <rect key="frame" x="8" y="248" width="154" height="24"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                                     <color key="textColor" red="0.14117647059999999" green="0.76470588240000004" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Publish Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cWt-8n-4UO">
-                                                    <rect key="frame" x="8" y="276" width="62" height="21"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="MrZ-wb-LCB"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                                    <color key="textColor" red="0.18431372549019609" green="0.24313725490196078" blue="0.27843137254901962" alpha="0.89803921568627454" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                            <integer key="value" value="50"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" red="0.023529411760000001" green="0.1333333333" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <constraints>
-                                                <constraint firstItem="cWt-8n-4UO" firstAttribute="top" secondItem="zWO-0U-rjl" secondAttribute="bottom" constant="8" id="4ua-CO-Mf9"/>
-                                                <constraint firstAttribute="bottom" secondItem="cWt-8n-4UO" secondAttribute="bottom" constant="3" id="5en-Gu-F9P"/>
                                                 <constraint firstItem="bYS-bh-Sjd" firstAttribute="top" secondItem="iUS-Im-rwM" secondAttribute="top" id="8lV-ga-VhU"/>
-                                                <constraint firstAttribute="trailing" secondItem="cWt-8n-4UO" secondAttribute="trailing" constant="100" id="CPQ-oS-Ynt"/>
                                                 <constraint firstItem="zWO-0U-rjl" firstAttribute="leading" secondItem="iUS-Im-rwM" secondAttribute="leading" constant="8" id="RqQ-ce-G0j"/>
-                                                <constraint firstItem="cWt-8n-4UO" firstAttribute="leading" secondItem="iUS-Im-rwM" secondAttribute="leading" constant="8" id="S7O-zf-fz5"/>
-                                                <constraint firstItem="bYS-bh-Sjd" firstAttribute="height" secondItem="iUS-Im-rwM" secondAttribute="height" multiplier="0.7" id="ZDM-L4-gUd"/>
+                                                <constraint firstItem="bYS-bh-Sjd" firstAttribute="height" secondItem="iUS-Im-rwM" secondAttribute="height" multiplier="0.8" id="ZDM-L4-gUd"/>
                                                 <constraint firstAttribute="trailing" secondItem="zWO-0U-rjl" secondAttribute="trailing" constant="8" id="nT1-WN-7Kk"/>
-                                                <constraint firstItem="zWO-0U-rjl" firstAttribute="top" secondItem="bYS-bh-Sjd" secondAttribute="bottom" id="pT9-GV-KAq"/>
+                                                <constraint firstItem="zWO-0U-rjl" firstAttribute="top" secondItem="bYS-bh-Sjd" secondAttribute="bottom" constant="8" id="pT9-GV-KAq"/>
                                                 <constraint firstItem="bYS-bh-Sjd" firstAttribute="centerX" secondItem="iUS-Im-rwM" secondAttribute="centerX" id="u7d-bp-fbm"/>
                                                 <constraint firstItem="bYS-bh-Sjd" firstAttribute="width" secondItem="iUS-Im-rwM" secondAttribute="width" id="xXw-nj-0s3"/>
                                             </constraints>
@@ -86,7 +67,6 @@
                                             </userDefinedRuntimeAttributes>
                                         </collectionViewCellContentView>
                                         <connections>
-                                            <outlet property="date" destination="cWt-8n-4UO" id="y6n-0V-wCP"/>
                                             <outlet property="poster" destination="bYS-bh-Sjd" id="oBp-Um-3mp"/>
                                             <outlet property="title" destination="zWO-0U-rjl" id="xHd-b0-zQY"/>
                                         </connections>
