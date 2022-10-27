@@ -2,7 +2,7 @@
 //  NowPlayingCellModel.swift
 //  TheMovieDB
 //
-//  Created by Angela Lee on 21/10/2022.
+//  Created by Angela Lee on 27/10/2022.
 //
 
 import Foundation
@@ -23,8 +23,8 @@ struct NowPlayingCellModel {
     let posterPath: String?
     let title: String?
     
-    init(_ movie: Movie) {
-        self.posterPath = movie.posterPath
-        self.title = movie.title
+    init(_ movie: MovieNowPlaying) {
+        self.posterPath = movie.path
+        self.title = movie.originalTitle
     }
 }

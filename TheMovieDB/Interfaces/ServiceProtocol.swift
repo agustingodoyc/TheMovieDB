@@ -17,6 +17,13 @@ enum ServiceError: Error {
     case fileNotFound
 }
 
+
+enum Endpoints: String {
+    case topRated = "top_rated"
+    case upcoming
+    case nowPlaying = "now_playing"
+}
+
 protocol ServiceProtocol {
-    func parseMovie(completion: @escaping (Result<[Movie], ServiceError>) -> Void )
+    func getEndPointMovie(_ endpoint: Endpoints, completion: @escaping (Result<[MovieData], ServiceError>) -> Void )
 }

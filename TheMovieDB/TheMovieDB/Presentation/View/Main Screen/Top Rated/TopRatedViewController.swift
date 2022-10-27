@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TopRatedViewController: NetworkStatusViewController {
+/*class TopRatedViewController: CheckNetworkConnection {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -26,7 +26,7 @@ class TopRatedViewController: NetworkStatusViewController {
     }
     
     override func hideContent() {
-       // tableView.isHidden = true
+        //tableView.isHidden = false
     }
 }
 
@@ -40,7 +40,7 @@ extension TopRatedViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "topRatedMovieCell",
-                                                       for: indexPath) as? CellView else {
+                                                       for: indexPath) as? TopRatedCell else {
             return UITableViewCell()
         }
         
@@ -55,5 +55,12 @@ extension TopRatedViewController: ViewModelDelegate {
     
     func reloadData() {
         //tableView.reloadData()
+    }
+}*/
+
+class TopRatedViewController: CheckNetworkConnection {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
     }
 }

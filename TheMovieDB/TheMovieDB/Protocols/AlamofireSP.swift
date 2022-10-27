@@ -9,17 +9,11 @@ import Foundation
 import Alamofire
 
 class AlamofireSP: ServiceProtocol {
-    enum Endpoints: String {
-        case topRated = "top_rated"
-        case upcoming
-        case nowPlaying = "now_playing"
-    }
     
     struct ServiceConstants {
         static let url = "https://api.themoviedb.org/3/movie/"
-        
         static let headers: HTTPHeaders = [
-            "api_key": "307592d8ff6e24827ce965948687c709",
+            "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlOGViZWNkNjM0ODU3ZmY0NzlhNTI0NTU2MjZjNTBmNCIsInN1YiI6IjYzM2Q5M2RhNWFiODFhMDA4MWMyZWUwOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.sv6xJcNCCzFx0HsmIrJUzJxQ5HdtJJg9wJgasB_ZtU8",
             "language": "en-US",
             "page": "1"
         ]
@@ -37,9 +31,14 @@ class AlamofireSP: ServiceProtocol {
         self.manager = Session(configuration: configuration)
     }
 
-    func parseMovie(completion: @escaping (Result<[Movie], ServiceError>) -> Void) {
-        let url = "https://api.themoviedb.org/3/movie/top_rated?api_key=307592d8ff6e24827ce965948687c709&language=en-US&page=1"
-        manager.request(/*ServiceConstants.url + Endpoints.topRated.rawValue, method: .get, headers: ServiceConstants.headers*/url).validate(statusCode: 100..<300).responseDecodable(of: MovieList.self) { response in
+    func getEndPointMovie(_ endpoint: Endpoints, completion: @escaping (Result<[MovieData], ServiceError>) -> Void) {
+        manager.request(
+            ServiceConstants.url + endpoint.rawValue, method: .get, headers: ServiceConstants.headers).cURLDescription() {
+                description in
+                print(description)
+            }.validate(
+                statusCode: 100..<300).responseDecodable(
+                    of: MovieList.self) { response in
             guard let data = response.value else {
                 return completion(.failure(.parseError))
             }

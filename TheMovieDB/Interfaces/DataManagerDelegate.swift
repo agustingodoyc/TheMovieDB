@@ -8,5 +8,5 @@
 import Foundation
 
 protocol DataManagerDelegate: AnyObject {
-    func updateData(_ data: [Movie])
+    func updateData(_ data: [MoviePersisted])
 }

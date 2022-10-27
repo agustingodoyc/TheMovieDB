@@ -9,13 +9,13 @@ import Foundation
 import RealmSwift
 
 class MovieList: Object, Codable {
-    @Persisted var movieList = List<Movie> ()
+    @Persisted var movieList = List<MovieData> ()
 
     enum CodingKeys: String, CodingKey {
         case movieList = "results"
     }
     
-    convenience init(movieList: [Movie]) {
+    convenience init(movieList: [MovieData]) {
         self.init()
         self.movieList.append(objectsIn: movieList)
     }

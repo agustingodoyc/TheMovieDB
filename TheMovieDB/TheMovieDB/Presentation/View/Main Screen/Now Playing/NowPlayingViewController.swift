@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NowPlayingViewController: NetworkStatusViewController {
+class NowPlayingViewController: CheckNetworkConnection {
     
     // MARK: - IBOutles
     @IBOutlet weak var collectionView: UICollectionView!
@@ -19,12 +19,14 @@ class NowPlayingViewController: NetworkStatusViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate = self
-        viewModel.fetchData() {
+        viewModel.getNowPlayingMovie {
             self.reloadData()
         }
     }
     
-    override func hideContent() { }
+    override func hideContent() {
+        collectionView.isHidden = false
+    }
 } 
 
 // MARK: - UICollectionView Methods

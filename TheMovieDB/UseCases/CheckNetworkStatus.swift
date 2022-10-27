@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Alamofire
 
 class NetworkStatusViewController: UIViewController {
     
@@ -17,6 +18,14 @@ class NetworkStatusViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         checkNetworking()
+    }
+    
+    func isConnectedToInternet() {
+        guard ((NetworkReachabilityManager()?.isReachable) == nil) else {
+            networkErrorImage.isHidden = false
+            return
+        }
+        networkErrorImage.isHidden = true
     }
     
     func checkNetworking() {

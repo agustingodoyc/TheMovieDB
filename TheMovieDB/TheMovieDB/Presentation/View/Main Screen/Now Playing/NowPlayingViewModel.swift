@@ -9,28 +9,18 @@ import Foundation
 
 class NowPlayingViewModel {
     
-    //MARK: - Properties
-    private var movies: [Movie] = []
-    private var dataManager: DataManager
+    var movies: [MovieNowPlaying] = []
+    var nowPlayingUseCase: NowPlayingUseCase
     weak var delegate: ViewModelDelegate?
     
-    //MARK: - Init
-    init(_ dataManager: DataManager = DataManager()) {
-        self.dataManager = dataManager
-        self.dataManager.delegate = self
+    init(nowPlayingUseCase: NowPlayingUseCase = NowPlayingUseCase()) {
+        self.nowPlayingUseCase = nowPlayingUseCase
     }
     
-    //MARK: - Closures
-    //var loadTableView: (() -> ())?
-    //var refreshTableView: (() -> ())?
-    
-    // MARK: - Fetching function
-    func fetchData(completionHandler: @escaping () -> Void) {
-        dataManager.getTopRatedMovie() { result in
-            DispatchQueue.main.async() {
-                self.movies = result
-                completionHandler()
-            }
+    func getNowPlayingMovie(completionHandler: @escaping () -> Void) {
+        nowPlayingUseCase.execute() { movie in
+            self.movies = movie
+            completionHandler()
         }
     }
     
@@ -41,12 +31,5 @@ class NowPlayingViewModel {
 
     func getNowPlayingMovie(indexPath: Int) -> NowPlayingCellModel {
         return .init(movies[indexPath])
-    }
-}
-
-// MARK: - Realm
-extension NowPlayingViewModel: DataManagerDelegate {
-    func updateData(_ data: [Movie]) {
-        movies = data
     }
 }
