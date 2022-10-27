@@ -74,7 +74,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Rd-NA-6mj">
                                                     <rect key="frame" x="10" y="5" width="370" height="133"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TMDBImage" translatesAutoresizingMaskIntoConstraints="NO" id="iJZ-LC-fuR">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TMDBImage" translatesAutoresizingMaskIntoConstraints="NO" id="iJZ-LC-fuR">
                                                             <rect key="frame" x="0.0" y="0.0" width="370" height="133"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
