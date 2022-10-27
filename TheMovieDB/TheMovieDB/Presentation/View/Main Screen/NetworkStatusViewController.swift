@@ -12,7 +12,7 @@ class NetworkStatusViewController: UIViewController {
     
     @IBOutlet weak var networkErrorImage: UIImageView!
     
-    var networkStatus: Bool = true
+    var networkStatus: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
