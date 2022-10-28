@@ -7,23 +7,31 @@
 
 import Foundation
 
-class TopRatedUseCase {/*
+class TopRatedUseCase {
     
-    // MARK: - Properties
+    private var dataManager: DataManager
     
-    let dataManager: DataManagerProtocol
-    var delegate: TopRatedUCDelegate?
-    let viewModel: TopRatedViewModel = TopRatedViewModel()
-    
-    init(_ dataManager: DataManagerProtocol = DataManager()) {
+    //MARK: - Init
+    init(_ dataManager: DataManager = DataManager()) {
         self.dataManager = dataManager
+        self.dataManager.delegate = self
     }
     
-    func execute(completionHandler: @escaping ([Movie]) -> Void){
-        dataManager.getData(Endpoints.topRated) { result in
+    // MARK: - Fetching function
+    func execute(completionHandler: @escaping ([Movie]) -> Void) {
+        dataManager.getMovie(Endpoints.topRated) { result in
             DispatchQueue.main.async() {
-                completionHandler(result)
+                completionHandler(result.map({
+                    Movie(moviePersisted: $0)
+                }))
             }
         }
-    }*/
+    }
+}
+
+// MARK: - Realm
+extension TopRatedUseCase: DataManagerDelegate {
+    func updateData(_ data: [MoviePersisted]) {
+        //movies = data
+    }
 }

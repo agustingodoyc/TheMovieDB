@@ -65,17 +65,20 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="topRatedMovieCell" id="Xdx-hM-BUl" userLabel="topRatedMovieCell" customClass="TopRatedCell" customModule="TheMovieDB" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="390" height="143"/>
+                                        <rect key="frame" x="0.0" y="50" width="390" height="158"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xdx-hM-BUl" id="Kdb-FP-0jv">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="143"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="158"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Rd-NA-6mj">
-                                                    <rect key="frame" x="10" y="5" width="370" height="133"/>
+                                                    <rect key="frame" x="10" y="5" width="370" height="148"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TMDBImage" translatesAutoresizingMaskIntoConstraints="NO" id="iJZ-LC-fuR">
-                                                            <rect key="frame" x="0.0" y="0.0" width="370" height="133"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="370" height="148"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="iJZ-LC-fuR" secondAttribute="height" multiplier="5:2" id="w66-DA-U2P"/>
+                                                            </constraints>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                                     <integer key="value" value="10"/>
@@ -135,7 +138,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kYh-rB-pcd">
-                                                            <rect key="frame" x="315.66666666666669" y="78.666666666666671" width="34.333333333333314" height="34.333333333333329"/>
+                                                            <rect key="frame" x="315.66666666666669" y="93.666666666666671" width="34.333333333333314" height="34.333333333333329"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="68f-Ip-wNd">
                                                                     <rect key="frame" x="4.9999999999999982" y="0.0" width="24.333333333333329" height="34.333333333333336"/>
@@ -174,6 +177,7 @@
                                                         <constraint firstAttribute="bottom" secondItem="iJZ-LC-fuR" secondAttribute="bottom" id="H8g-61-nVg"/>
                                                         <constraint firstItem="E2K-EI-YnW" firstAttribute="top" secondItem="Bai-O7-Pod" secondAttribute="bottom" constant="10" id="Mf6-A5-PuM"/>
                                                         <constraint firstItem="E2K-EI-YnW" firstAttribute="leading" secondItem="6Rd-NA-6mj" secondAttribute="leadingMargin" constant="10" id="Mo4-LL-4dB"/>
+                                                        <constraint firstItem="U9Z-39-bpO" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="E2K-EI-YnW" secondAttribute="trailing" constant="8" symbolic="YES" id="QQ4-7N-ude"/>
                                                         <constraint firstItem="iJZ-LC-fuR" firstAttribute="top" secondItem="6Rd-NA-6mj" secondAttribute="top" id="UhS-er-pJe"/>
                                                         <constraint firstItem="Bai-O7-Pod" firstAttribute="leading" secondItem="6Rd-NA-6mj" secondAttribute="leadingMargin" constant="10" id="XII-mX-PEC"/>
                                                         <constraint firstAttribute="bottom" secondItem="kYh-rB-pcd" secondAttribute="bottom" constant="20" id="aPc-sa-Ajp"/>

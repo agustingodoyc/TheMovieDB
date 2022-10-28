@@ -1,14 +1,13 @@
 //
-//  NowPlayingCellModel.swift
+//  TopRatedCellModel.swift
 //  TheMovieDB
 //
-//  Created by Angela Lee on 27/10/2022.
+//  Created by Angela Lee on 28/10/2022.
 //
 
 import Foundation
-import Alamofire
 
-struct NowPlayingCellModel {
+class TopRatedCellModel {
     struct Configuration {
         static let urlAsString = "https://image.tmdb.org/t/p/original"
     }
@@ -21,10 +20,17 @@ struct NowPlayingCellModel {
     }
     
     let posterPath: String?
+    let releaseDate: String?
     let title: String?
+    let voteAverage: Double?
     
     init(_ movie: Movie) {
         self.posterPath = movie.path
+        self.releaseDate = movie.realeaseDate
         self.title = movie.title
+        self.voteAverage = movie.voteAverage
     }
 }
+
+
+

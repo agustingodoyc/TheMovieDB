@@ -7,7 +7,7 @@
 
 import UIKit
 
-/*class TopRatedViewController: CheckNetworkConnection {
+class TopRatedViewController: CheckNetworkConnection {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -20,7 +20,7 @@ import UIKit
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate = self
-        viewModel.fetchData() {
+        viewModel.getTopRatedMovie {
             self.reloadData()
         }
     }
@@ -35,7 +35,7 @@ import UIKit
 extension TopRatedViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.getNumberOfRows()
+        return viewModel.getNumberOfRowOfTopRatedMovie()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -54,13 +54,6 @@ extension TopRatedViewController: UITableViewDataSource {
 extension TopRatedViewController: ViewModelDelegate {
     
     func reloadData() {
-        //tableView.reloadData()
-    }
-}*/
-
-class TopRatedViewController: CheckNetworkConnection {
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+        tableView.reloadData()
     }
 }

@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol TopRatedUCDelegate {
+/*protocol TopRatedUCDelegate {
     func getTopRated()
-}
+}*/

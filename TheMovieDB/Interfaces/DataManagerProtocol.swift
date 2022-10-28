@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol DataManagerProtocol {
+/*protocol DataManagerProtocol {
     func getData(_ endpoint: Endpoints, completionHandler: @escaping ([Movie]) -> Void)
-}
+}*/

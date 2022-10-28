@@ -8,7 +8,6 @@
 import Foundation
 
 class NowPlayingUseCase {
-    //var movies: [Movie] = [] En view model
     private var dataManager: DataManager
     
     //MARK: - Init
@@ -18,11 +17,11 @@ class NowPlayingUseCase {
     }
     
     // MARK: - Fetching function
-    func execute(completionHandler: @escaping ([MovieNowPlaying]) -> Void) {
+    func execute(completionHandler: @escaping ([Movie]) -> Void) {
         dataManager.getMovie(Endpoints.nowPlaying) { result in
             DispatchQueue.main.async() {
                 completionHandler(result.map({
-                    MovieNowPlaying(moviePersisted: $0)
+                    Movie(moviePersisted: $0)
                 }))
             }
         }
