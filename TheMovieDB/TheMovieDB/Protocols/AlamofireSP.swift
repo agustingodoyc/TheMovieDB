@@ -12,9 +12,8 @@ class AlamofireSP: ServiceProtocol {
     
     struct ServiceConstants {
         static let url = "https://api.themoviedb.org/3/movie/"
-        
         static let headers: HTTPHeaders = [
-            "api_key": "307592d8ff6e24827ce965948687c709",
+            "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlOGViZWNkNjM0ODU3ZmY0NzlhNTI0NTU2MjZjNTBmNCIsInN1YiI6IjYzM2Q5M2RhNWFiODFhMDA4MWMyZWUwOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.sv6xJcNCCzFx0HsmIrJUzJxQ5HdtJJg9wJgasB_ZtU8",
             "language": "en-US",
             "page": "1"
         ]
@@ -32,9 +31,12 @@ class AlamofireSP: ServiceProtocol {
         self.manager = Session(configuration: configuration)
     }
 
-    func parseMovie(_ endpoint: Endpoints, completion: @escaping (Result<[Movie], ServiceError>) -> Void) {
+    func getEndPointMovie(_ endpoint: Endpoints, completion: @escaping (Result<[MovieData], ServiceError>) -> Void) {
         manager.request(
-            ServiceConstants.url + endpoint.rawValue, method: .get, headers: ServiceConstants.headers).validate(
+            ServiceConstants.url + endpoint.rawValue, method: .get, headers: ServiceConstants.headers).cURLDescription() {
+                description in
+                print(description)
+            }.validate(
                 statusCode: 100..<300).responseDecodable(
                     of: MovieList.self) { response in
             guard let data = response.value else {

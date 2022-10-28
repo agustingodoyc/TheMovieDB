@@ -18,14 +18,18 @@ public class DataManager {
         self.dataBase = dataBase
     }
     
-    func getTopRatedMovie(_ endpoint: Endpoints, completionHandler: @escaping ([Movie]) -> Void) {
+    func getMovie(_ endpoint: Endpoints, completionHandler: @escaping ([MoviePersisted]) -> Void) {
         if (dataBase.isEmpty) {
-            service.parseMovie(endpoint) { result in
+            service.getEndPointMovie(endpoint) { result in
                 DispatchQueue.main.async {
+                    var moviePersisted: [MoviePersisted]
                     switch result {
                     case .success(let movies):
-                        self.dataBase.persistData(movies)
-                        completionHandler(movies)
+                        moviePersisted = movies.map { (movieData) -> MoviePersisted in
+                                .init(movieData: movieData, movieType: endpoint.rawValue)
+                            }
+                        self.dataBase.persistData(moviePersisted)
+                        completionHandler(moviePersisted)
                     case .failure(_):
                         completionHandler([])
                     }
@@ -34,13 +38,17 @@ public class DataManager {
         } else {
             completionHandler(dataBase.getData())
             DispatchQueue.global(qos: .background).async {
-                self.service.parseMovie(endpoint) { result in
+                self.service.getEndPointMovie(endpoint) { result in
                     DispatchQueue.main.async {
+                        var moviePersisted: [MoviePersisted]
                         switch result {
-                        case .success(let data):
+                        case .success(let movies):
+                            moviePersisted = movies.map { (movieData) -> MoviePersisted in
+                                    .init(movieData: movieData, movieType: endpoint.rawValue)
+                                }
                             self.dataBase.clearData()
-                            self.dataBase.persistData(data)
-                            self.delegate?.updateData(data)
+                            self.dataBase.persistData(moviePersisted)
+                            self.delegate?.updateData(moviePersisted)
                         case .failure(_):
                             return
                         }

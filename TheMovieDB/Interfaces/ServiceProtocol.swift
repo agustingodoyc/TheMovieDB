@@ -25,5 +25,5 @@ enum Endpoints: String {
 }
 
 protocol ServiceProtocol {
-    func parseMovie(_ endpoint: Endpoints, completion: @escaping (Result<[Movie], ServiceError>) -> Void )
+    func getEndPointMovie(_ endpoint: Endpoints, completion: @escaping (Result<[MovieData], ServiceError>) -> Void )
 }

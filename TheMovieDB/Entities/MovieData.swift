@@ -2,13 +2,13 @@
 //  Movie.swift
 //  TheMovieDB
 //
-//  Created by Angela Lee on 19/10/2022.
+//  Created by Angela Lee on 27/10/2022.
 //
 
 import Foundation
 import RealmSwift
 
-class Movie: Object, Codable {
+class MovieData: Object, Codable {
     @Persisted var adult: Bool?
     @Persisted var backdropPath: String?
     @Persisted var genreIDS = List<Int> ()
@@ -72,4 +72,27 @@ class Movie: Object, Codable {
         self.voteAverage = voteAverage
         self.voteCount = voteCount
     }
+    
+    /*func toMoviePersisted() -> MoviePersisted {
+        let aux: MoviePersisted
+        
+        aux.voteAverage = self.voteAverage
+        aux.posterPath = self.posterPath
+        aux.title = self.title
+        aux.originalTitle = self.originalTitle
+        aux.adult =  self.adult
+        aux.backdropPath = self.backdropPath
+        aux.genreIDS = self.genreIDS
+        aux.id = self.id
+        aux.originalLanguage = self.originalLanguage
+        aux.overview = self.overview
+        aux.popularity = self.popularity
+        aux.releaseDate = self.releaseDate
+        aux.video = self.video
+        aux.voteCount = self.voteCount
+        
+        return aux
+    }*/
+    
 }
+

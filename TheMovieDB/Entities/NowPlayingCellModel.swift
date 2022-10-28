@@ -1,13 +1,14 @@
 //
-//  CellModel.swift
+//  NowPlayingCellModel.swift
 //  TheMovieDB
 //
-//  Created by Agustin Godoy Cosser on 20/10/2022.
+//  Created by Angela Lee on 27/10/2022.
 //
 
 import Foundation
+import Alamofire
 
-class CellModel {
+struct NowPlayingCellModel {
     struct Configuration {
         static let urlAsString = "https://image.tmdb.org/t/p/original"
     }
@@ -20,14 +21,10 @@ class CellModel {
     }
     
     let posterPath: String?
-    let releaseDate: String?
     let title: String?
-    let voteAverage: Double?
     
-    init(_ movie: Movie) {
-        self.posterPath = movie.posterPath
-        self.releaseDate = movie.releaseDate
-        self.title = movie.title
-        self.voteAverage = movie.voteAverage
+    init(_ movie: MovieNowPlaying) {
+        self.posterPath = movie.path
+        self.title = movie.originalTitle
     }
 }

@@ -8,12 +8,12 @@
 import Foundation
 import RealmSwift
 
-class RealmDB: DataBase {
+public class RealmDB: DataBase {
     
     private let realm: Realm
     var isEmpty: Bool { return realm.isEmpty }
     
-    init() {
+    public init() {
         do {
             realm = try Realm()
         } catch {
@@ -22,7 +22,7 @@ class RealmDB: DataBase {
         }
     }
     
-    func persistData(_ movies: [Movie]) {
+    func persistData(_ movies: [MoviePersisted]) {
         do {
             try realm.write {
                 realm.add(movies)
@@ -33,8 +33,8 @@ class RealmDB: DataBase {
         }
     }
     
-    func getData() -> [Movie] {
-        return Array(realm.objects(Movie.self))
+    func getData() -> [MoviePersisted] {
+        return Array(realm.objects(MoviePersisted.self))
     }
     
     func clearData() {

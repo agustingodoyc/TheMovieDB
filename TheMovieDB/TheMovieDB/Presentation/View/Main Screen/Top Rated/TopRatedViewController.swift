@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TopRatedViewController: NetworkStatusViewController {
+/*class TopRatedViewController: CheckNetworkConnection {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -26,7 +26,7 @@ class TopRatedViewController: NetworkStatusViewController {
     }
     
     override func hideContent() {
-        tableView.isHidden = true
+        //tableView.isHidden = false
     }
 }
 
@@ -54,6 +54,13 @@ extension TopRatedViewController: UITableViewDataSource {
 extension TopRatedViewController: ViewModelDelegate {
     
     func reloadData() {
-        tableView.reloadData()
+        //tableView.reloadData()
+    }
+}*/
+
+class TopRatedViewController: CheckNetworkConnection {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
     }
 }
