@@ -9,7 +9,7 @@ import Foundation
 
 class NowPlayingViewModel {
     
-    var movies: [MovieNowPlaying] = []
+    var movies: [Movie] = []
     var nowPlayingUseCase: NowPlayingUseCase
     weak var delegate: ViewModelDelegate?
     

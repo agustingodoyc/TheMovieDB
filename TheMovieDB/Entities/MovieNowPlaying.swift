@@ -7,13 +7,17 @@
 
 import Foundation
 
-class MovieNowPlaying {
-    var originalTitle: String?
+class Movie {
+    var title: String?
     var path: String?
+    var realeaseDate: String?
+    var voteAverage: Double?
     
     convenience init(moviePersisted: MoviePersisted) {
         self.init()
-        originalTitle = moviePersisted.originalTitle
+        title = moviePersisted.title
         path = moviePersisted.posterPath
+        realeaseDate = moviePersisted.releaseDate
+        voteAverage = moviePersisted.voteAverage
     }
 }

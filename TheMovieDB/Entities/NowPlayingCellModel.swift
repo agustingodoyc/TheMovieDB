@@ -23,8 +23,8 @@ struct NowPlayingCellModel {
     let posterPath: String?
     let title: String?
     
-    init(_ movie: MovieNowPlaying) {
+    init(_ movie: Movie) {
         self.posterPath = movie.path
-        self.title = movie.originalTitle
+        self.title = movie.title
     }
 }
