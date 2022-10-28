@@ -11,7 +11,7 @@
 		10281B20290AC93600B0C6C8 /* NowPlayingUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10281B1F290AC93600B0C6C8 /* NowPlayingUseCase.swift */; };
 		10281B26290AEEDB00B0C6C8 /* NowPlayingCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10281B25290AEEDB00B0C6C8 /* NowPlayingCellModel.swift */; };
 		10281B28290AFD7100B0C6C8 /* MovieData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10281B27290AFD7100B0C6C8 /* MovieData.swift */; };
-		10281B2A290B10C900B0C6C8 /* MovieNowPlaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10281B29290B10C900B0C6C8 /* MovieNowPlaying.swift */; };
+		10281B2A290B10C900B0C6C8 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10281B29290B10C900B0C6C8 /* Movie.swift */; };
 		104F556B290033A40014D4E5 /* MoviePersisted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104F556A290033A40014D4E5 /* MoviePersisted.swift */; };
 		104F556E290035090014D4E5 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 104F556D290035090014D4E5 /* Realm */; };
 		104F5570290035090014D4E5 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 104F556F290035090014D4E5 /* RealmSwift */; };
@@ -72,7 +72,7 @@
 		10281B1F290AC93600B0C6C8 /* NowPlayingUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NowPlayingUseCase.swift; path = UseCases/NowPlayingUseCase.swift; sourceTree = SOURCE_ROOT; };
 		10281B25290AEEDB00B0C6C8 /* NowPlayingCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NowPlayingCellModel.swift; path = Entities/NowPlayingCellModel.swift; sourceTree = SOURCE_ROOT; };
 		10281B27290AFD7100B0C6C8 /* MovieData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MovieData.swift; path = Entities/MovieData.swift; sourceTree = SOURCE_ROOT; };
-		10281B29290B10C900B0C6C8 /* MovieNowPlaying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MovieNowPlaying.swift; path = Entities/MovieNowPlaying.swift; sourceTree = SOURCE_ROOT; };
+		10281B29290B10C900B0C6C8 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Movie.swift; path = Entities/Movie.swift; sourceTree = SOURCE_ROOT; };
 		1041CA6D28F5D07D00D24760 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		1041CA7128F5D0F700D24760 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		104F556A290033A40014D4E5 /* MoviePersisted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MoviePersisted.swift; path = TheMovieDB/Protocols/MoviePersisted.swift; sourceTree = SOURCE_ROOT; };
@@ -289,7 +289,7 @@
 				104F556A290033A40014D4E5 /* MoviePersisted.swift */,
 				D64C9EB629086C0C00A1C13E /* MovieList.swift */,
 				10281B25290AEEDB00B0C6C8 /* NowPlayingCellModel.swift */,
-				10281B29290B10C900B0C6C8 /* MovieNowPlaying.swift */,
+				10281B29290B10C900B0C6C8 /* Movie.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -558,7 +558,7 @@
 				D697D230290719DA00CE310C /* Database.swift in Sources */,
 				104F5574290036B50014D4E5 /* RealmDB.swift in Sources */,
 				104F556B290033A40014D4E5 /* MoviePersisted.swift in Sources */,
-				10281B2A290B10C900B0C6C8 /* MovieNowPlaying.swift in Sources */,
+				10281B2A290B10C900B0C6C8 /* Movie.swift in Sources */,
 				D6C433AD28F75F1D00B61185 /* Storyboeared.swift in Sources */,
 				D6C433AF28F7603E00B61185 /* MainCoordinator.swift in Sources */,
 				104F5576290038230014D4E5 /* AlamofireSP.swift in Sources */,
