@@ -19,7 +19,6 @@ class NowPlayingCell: UICollectionViewCell {
             if let data = response.data {
                 self.poster.image = UIImage(data: data)
             }
-
         }
     }
 }

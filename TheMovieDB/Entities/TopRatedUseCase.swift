@@ -1,14 +1,14 @@
 //
-//  NowPlayingUseCase.swift
+//  TopRatedUseCase.swift
 //  TheMovieDB
 //
-//  Created by Angela Lee on 27/10/2022.
+//  Created by Agustin Godoy Cosser on 26/10/2022.
 //
 
 import Foundation
 
-class NowPlayingUseCase {
-
+class TopRatedUseCase {
+    
     private var dataManager: DataManager
     
     //MARK: - Init
@@ -19,7 +19,7 @@ class NowPlayingUseCase {
     
     // MARK: - Fetching function
     func execute(completionHandler: @escaping ([Movie]) -> Void) {
-        dataManager.getMovie(Endpoints.nowPlaying) { result in
+        dataManager.getMovie(Endpoints.topRated) { result in
             DispatchQueue.main.async() {
                 completionHandler(result.map({
                     Movie(moviePersisted: $0)
@@ -30,10 +30,8 @@ class NowPlayingUseCase {
 }
 
 // MARK: - Realm
-extension NowPlayingUseCase: DataManagerDelegate {
+extension TopRatedUseCase: DataManagerDelegate {
     func updateData(_ data: [MoviePersisted]) {
         //movies = data
     }
 }
-
-
