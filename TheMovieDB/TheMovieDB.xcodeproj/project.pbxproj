@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		100CA9BC2910036600E73390 /* DataManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100CA9BB2910036500E73390 /* DataManagerTest.swift */; };
+		100CA9C129100CB200E73390 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 100CA9C029100CB200E73390 /* RealmSwift */; };
+		100CA9C329100CB600E73390 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 100CA9C229100CB600E73390 /* Realm */; };
+		100CA9C529100CBD00E73390 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 100CA9C429100CBD00E73390 /* Alamofire */; };
+		100CA9C7291013E600E73390 /* DataBaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100CA9C6291013E600E73390 /* DataBaseTest.swift */; };
+		100CA9C92910163700E73390 /* NowPlayingUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100CA9C82910163700E73390 /* NowPlayingUseCaseTest.swift */; };
+		100CA9CB2910182400E73390 /* DataManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100CA9CA2910182400E73390 /* DataManagerProtocol.swift */; };
+		100CA9CD29101B0000E73390 /* NowPlayingViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100CA9CC29101B0000E73390 /* NowPlayingViewModelTest.swift */; };
+		100CA9D029101B8400E73390 /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100CA9CF29101B8400E73390 /* UseCase.swift */; };
 		10281B1E290AC56C00B0C6C8 /* CheckNetworkConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10281B1D290AC56C00B0C6C8 /* CheckNetworkConnection.swift */; };
 		10281B20290AC93600B0C6C8 /* NowPlayingUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10281B1F290AC93600B0C6C8 /* NowPlayingUseCase.swift */; };
 		10281B26290AEEDB00B0C6C8 /* NowPlayingCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10281B25290AEEDB00B0C6C8 /* NowPlayingCellModel.swift */; };
@@ -68,6 +77,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		100CA9BB2910036500E73390 /* DataManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagerTest.swift; sourceTree = "<group>"; };
+		100CA9C6291013E600E73390 /* DataBaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseTest.swift; sourceTree = "<group>"; };
+		100CA9C82910163700E73390 /* NowPlayingUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingUseCaseTest.swift; sourceTree = "<group>"; };
+		100CA9CA2910182400E73390 /* DataManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DataManagerProtocol.swift; path = Interfaces/DataManagerProtocol.swift; sourceTree = SOURCE_ROOT; };
+		100CA9CC29101B0000E73390 /* NowPlayingViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingViewModelTest.swift; sourceTree = "<group>"; };
+		100CA9CF29101B8400E73390 /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
 		10281B1D290AC56C00B0C6C8 /* CheckNetworkConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CheckNetworkConnection.swift; path = UseCases/CheckNetworkConnection.swift; sourceTree = SOURCE_ROOT; };
 		10281B1F290AC93600B0C6C8 /* NowPlayingUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NowPlayingUseCase.swift; path = UseCases/NowPlayingUseCase.swift; sourceTree = SOURCE_ROOT; };
 		10281B25290AEEDB00B0C6C8 /* NowPlayingCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NowPlayingCellModel.swift; path = Entities/NowPlayingCellModel.swift; sourceTree = SOURCE_ROOT; };
@@ -128,6 +143,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				100CA9C529100CBD00E73390 /* Alamofire in Frameworks */,
+				100CA9C329100CB600E73390 /* Realm in Frameworks */,
+				100CA9C129100CB200E73390 /* RealmSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +159,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		100CA9BF29100CB200E73390 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		100CA9CE29101B7700E73390 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				100CA9CF29101B8400E73390 /* UseCase.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		101EE2CD28F7101000CAE2A5 /* Main Screen */ = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +212,7 @@
 				D67DDA4828EE161D0093B3A0 /* TheMovieDBTests */,
 				D67DDA5228EE161D0093B3A0 /* TheMovieDBUITests */,
 				D67DDA3028EE161A0093B3A0 /* Products */,
+				100CA9BF29100CB200E73390 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -213,6 +247,10 @@
 				1041CA7128F5D0F700D24760 /* .swiftlint.yml */,
 				D67DDA4928EE161D0093B3A0 /* TheMovieDBTests.swift */,
 				D6C6CC7628F99BF7009F41A1 /* CoordinatorTest.swift */,
+				100CA9BB2910036500E73390 /* DataManagerTest.swift */,
+				100CA9C6291013E600E73390 /* DataBaseTest.swift */,
+				100CA9C82910163700E73390 /* NowPlayingUseCaseTest.swift */,
+				100CA9CC29101B0000E73390 /* NowPlayingViewModelTest.swift */,
 			);
 			path = TheMovieDBTests;
 			sourceTree = "<group>";
@@ -240,6 +278,7 @@
 		D67DDA6328EE165D0093B3A0 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				100CA9CE29101B7700E73390 /* Protocols */,
 				D67DDA6828EE16B30093B3A0 /* Entities */,
 				D67DDA6928EE16C10093B3A0 /* UseCases */,
 				D67DDA6A28EE16CD0093B3A0 /* Interfaces */,
@@ -309,6 +348,7 @@
 				D697D22D290719DA00CE310C /* Database.swift */,
 				D697D22B290719DA00CE310C /* DataManagerDelegate.swift */,
 				D697D22C290719DA00CE310C /* ServiceProtocol.swift */,
+				100CA9CA2910182400E73390 /* DataManagerProtocol.swift */,
 			);
 			path = Interfaces;
 			sourceTree = "<group>";
@@ -407,6 +447,11 @@
 				D67DDA4728EE161D0093B3A0 /* PBXTargetDependency */,
 			);
 			name = TheMovieDBTests;
+			packageProductDependencies = (
+				100CA9C029100CB200E73390 /* RealmSwift */,
+				100CA9C229100CB600E73390 /* Realm */,
+				100CA9C429100CBD00E73390 /* Alamofire */,
+			);
 			productName = TheMovieDBTests;
 			productReference = D67DDA4528EE161D0093B3A0 /* TheMovieDBTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -575,6 +620,8 @@
 				10D00DA828FDFD0900244C4E /* TopRatedViewController.swift in Sources */,
 				106CEF5A28FEDD1900AEC45A /* MainViewController.swift in Sources */,
 				104F55722900361C0014D4E5 /* DataManager.swift in Sources */,
+				100CA9D029101B8400E73390 /* UseCase.swift in Sources */,
+				100CA9CB2910182400E73390 /* DataManagerProtocol.swift in Sources */,
 				10CCD84C2902E983001DBABB /* NowPlayingCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -583,7 +630,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				100CA9C92910163700E73390 /* NowPlayingUseCaseTest.swift in Sources */,
+				100CA9BC2910036600E73390 /* DataManagerTest.swift in Sources */,
 				D6C6CC7728F99BF7009F41A1 /* CoordinatorTest.swift in Sources */,
+				100CA9C7291013E600E73390 /* DataBaseTest.swift in Sources */,
+				100CA9CD29101B0000E73390 /* NowPlayingViewModelTest.swift in Sources */,
 				D67DDA4A28EE161D0093B3A0 /* TheMovieDBTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -941,6 +992,21 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		100CA9C029100CB200E73390 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 104F556C290035090014D4E5 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+		100CA9C229100CB600E73390 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 104F556C290035090014D4E5 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		100CA9C429100CBD00E73390 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 104F557929003AF40014D4E5 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
 		104F556D290035090014D4E5 /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 104F556C290035090014D4E5 /* XCRemoteSwiftPackageReference "realm-swift" */;

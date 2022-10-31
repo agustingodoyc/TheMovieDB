@@ -7,7 +7,7 @@
 
 import Foundation
 
-class NowPlayingUseCase {
+class NowPlayingUseCase:UseCase {
     
     private var dataManager: DataManager
     

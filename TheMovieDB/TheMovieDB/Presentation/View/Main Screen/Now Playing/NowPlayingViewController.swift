@@ -19,7 +19,7 @@ class NowPlayingViewController: CheckNetworkConnection {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate = self
-        viewModel.getNowPlayingMovie {
+        viewModel.getUseCaseNowPlayingMovie {
             self.reloadData()
         }
     }

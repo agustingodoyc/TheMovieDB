@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class DataManager {
+public class DataManager: DataManagerProtocol {
     
     private var service: ServiceProtocol
     var delegate: DataManagerDelegate?

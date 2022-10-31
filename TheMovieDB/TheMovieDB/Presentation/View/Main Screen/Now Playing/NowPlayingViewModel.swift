@@ -10,14 +10,14 @@ import Foundation
 class NowPlayingViewModel {
     
     var movies: [Movie] = []
-    var nowPlayingUseCase: NowPlayingUseCase
+    var nowPlayingUseCase: UseCase
     weak var delegate: ViewModelDelegate?
     
-    init(nowPlayingUseCase: NowPlayingUseCase = NowPlayingUseCase()) {
+    init(nowPlayingUseCase: UseCase = NowPlayingUseCase()) {
         self.nowPlayingUseCase = nowPlayingUseCase
     }
     
-    func getNowPlayingMovie(completionHandler: @escaping () -> Void) {
+    func getUseCaseNowPlayingMovie(completionHandler: @escaping () -> Void) {
         nowPlayingUseCase.execute() { movie in
             self.movies = movie
             completionHandler()
