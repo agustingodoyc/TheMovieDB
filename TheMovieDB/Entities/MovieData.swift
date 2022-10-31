@@ -54,7 +54,6 @@ class MovieData: Object, Codable {
         video: Bool,
         voteAverage: Double,
         voteCount: Int
-
     ) {
         self.init()
         self.adult = adult

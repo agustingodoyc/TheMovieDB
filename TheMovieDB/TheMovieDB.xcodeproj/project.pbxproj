@@ -269,7 +269,6 @@
 			children = (
 				D691F25528FDC5D900D2F528 /* Protocol */,
 				D67DDA6528EE16830093B3A0 /* Coordinator */,
-				D67DDA6628EE16910093B3A0 /* ViewModel */,
 				D67DDA6728EE16A30093B3A0 /* View */,
 			);
 			path = Presentation;
@@ -302,13 +301,6 @@
 				D6C433AE28F7603E00B61185 /* MainCoordinator.swift */,
 			);
 			path = Coordinator;
-			sourceTree = "<group>";
-		};
-		D67DDA6628EE16910093B3A0 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		D67DDA6728EE16A30093B3A0 /* View */ = {

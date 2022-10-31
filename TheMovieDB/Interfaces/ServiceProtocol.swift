@@ -17,7 +17,6 @@ enum ServiceError: Error {
     case fileNotFound
 }
 
-
 enum Endpoints: String {
     case topRated = "top_rated"
     case upcoming
