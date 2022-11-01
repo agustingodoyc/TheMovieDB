@@ -10,10 +10,10 @@ import Foundation
 class TopRatedViewModel {
     
     var movies: [Movie] = []
-    var topRatedUseCase: TopRatedUseCase
+    var topRatedUseCase: UseCase
     weak var delegate: ViewModelDelegate?
     
-    init(topRatedUseCase: TopRatedUseCase = TopRatedUseCase()) {
+    init(topRatedUseCase: UseCase = TopRatedUseCase()) {
         self.topRatedUseCase = topRatedUseCase
     }
     
@@ -31,8 +31,9 @@ class TopRatedViewModel {
     
     func getMovie(_ index: Int) -> Movie {
         return movies[index]
-      }
-      func getCell(_ index: Int) -> TopRatedCellModel {
+    }
+    
+    func getCell(_ index: Int) -> TopRatedCellModel {
         return .init(getMovie(index))
-      }
+    }
 }

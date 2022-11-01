@@ -29,9 +29,6 @@ class MainCoordinator: Coordinator {
             return
         }
         vc.coordinator = self
-        
-        
         navigationController.setViewControllers([vc], animated: true)
-        
     }
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class TopRatedUseCase {
+class TopRatedUseCase: UseCase {
     
     private var dataManager: DataManager
     
