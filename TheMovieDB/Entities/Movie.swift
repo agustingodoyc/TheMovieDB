@@ -9,14 +9,14 @@ import Foundation
 
 class Movie {
     var title: String?
-    var path: String?
+    var posterPath: String?
     var realeaseDate: String?
     var voteAverage: Double?
     
     convenience init(moviePersisted: MoviePersisted) {
         self.init()
         title = moviePersisted.title
-        path = moviePersisted.posterPath
+        posterPath = moviePersisted.posterPath
         realeaseDate = moviePersisted.releaseDate
         voteAverage = moviePersisted.voteAverage
     }

@@ -25,7 +25,7 @@ struct UpcomingCellModel {
     let relaseDate: String?
     
     init(_ movie: Movie) {
-        self.posterPath = movie.path
+        self.posterPath = movie.posterPath
         self.title = movie.title
         self.relaseDate = movie.realeaseDate
     }

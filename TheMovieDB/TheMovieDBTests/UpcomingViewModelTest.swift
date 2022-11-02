@@ -1,24 +1,24 @@
 //
-//  TopRatedViewModelTest.swift
+//  UpcomingViewModelTest.swift
 //  TheMovieDBTests
 //
-//  Created by Angela Lee on 01/11/2022.
+//  Created by Angela Lee on 02/11/2022.
 //
 
 import Foundation
 import XCTest
 @testable import TheMovieDB
 
-final class TopRatedViewModelTest: XCTestCase {
+final class UpcomingViewModelTest: XCTestCase {
     
-    var sut: TopRatedViewModel!
+    var sut: UpcomingViewModel!
     
-    class MockTopRatedUseCase: UseCase {
-        var topRatedMovie: [Movie] = [
+    class MockUpcomingUseCase: UseCase {
+        var upcomingMovie: [Movie] = [
                     Movie(moviePersisted: MoviePersisted(adult: true, backdropPath: "backdropPath", genreIDS: [1,2,3], id: 1, originalLanguage: "Spanish", originalTitle: "Movie 1", overview: "Over View 1", popularity: 3, posterPath: "", releaseDate: "2022-10-22", title: "Movie 1", video: true, voteAverage: 3.9, voteCount: 9, movieType: "nowPlaying"))
                     ]
         func execute(completionHandler: @escaping ([TheMovieDB.Movie]) -> Void) {
-            completionHandler(topRatedMovie)
+            completionHandler(upcomingMovie)
         }
     }
 
@@ -32,16 +32,16 @@ final class TopRatedViewModelTest: XCTestCase {
     }
     
     func testGetUseCaseNowPlayingMovie() {
-        sut = TopRatedViewModel(topRatedUseCase: MockTopRatedUseCase())
+        sut = UpcomingViewModel(upcomingUseCase: MockUpcomingUseCase())
         
-        sut.getTopRatedMovie {
-            MockTopRatedUseCase().execute() { result in
+        sut.getUseCaseUpcomingMovie {
+            MockUpcomingUseCase().execute() { result in
                 self.sut.movies = result
                 XCTAssertEqual(self.sut.movies.count, 1)
             }
         }
         
-        XCTAssertEqual(self.sut.getNumberOfRowOfTopRatedMovie(), 1, "Test getNumberOfRowOfNowPlayingMovie() success")
-        XCTAssertEqual(self.sut.getMovie(0).title, MockTopRatedUseCase().topRatedMovie[0].title,"Test getMovie() success")
+        XCTAssertEqual(self.sut.getNumberOfRowOfUpcomingMovie(), 1, "Test getNumberOfRowOfUpcomingMovie() success")
+        XCTAssertEqual(self.sut.getUpcomingMovie(indexPath: 0).title, MockUpcomingUseCase().upcomingMovie[0].title,"Test getUpcomingMovie(indexPath: Int) success")
     }
 }

@@ -149,19 +149,45 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pke-ef-ROK">
-                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="550"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="500"/>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zf6-F8-Fng" userLabel="Date">
+                                                    <rect key="frame" x="129.33333333333334" y="505" width="41.333333333333343" height="40"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                                    <color key="textColor" red="0.14117647059999999" green="0.76470588240000004" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="pke-ef-ROK" firstAttribute="height" secondItem="zQM-rD-whD" secondAttribute="height" id="4Y3-Y4-Q6J"/>
-                                                <constraint firstItem="pke-ef-ROK" firstAttribute="centerY" secondItem="zQM-rD-whD" secondAttribute="centerY" id="8ys-39-Vxa"/>
-                                                <constraint firstItem="pke-ef-ROK" firstAttribute="centerX" secondItem="zQM-rD-whD" secondAttribute="centerX" id="CPP-cz-Rcj"/>
-                                                <constraint firstItem="pke-ef-ROK" firstAttribute="width" secondItem="zQM-rD-whD" secondAttribute="width" id="pT1-JC-dPT"/>
+                                                <constraint firstAttribute="bottom" secondItem="Zf6-F8-Fng" secondAttribute="bottom" constant="5" id="0R4-1W-Hq8"/>
+                                                <constraint firstAttribute="trailing" secondItem="pke-ef-ROK" secondAttribute="trailing" id="BF7-Ug-asF"/>
+                                                <constraint firstAttribute="bottom" secondItem="pke-ef-ROK" secondAttribute="bottom" constant="50" id="NXw-yQ-6D6"/>
+                                                <constraint firstItem="pke-ef-ROK" firstAttribute="top" secondItem="zQM-rD-whD" secondAttribute="top" id="Qvg-At-8dh"/>
+                                                <constraint firstItem="pke-ef-ROK" firstAttribute="leading" secondItem="zQM-rD-whD" secondAttribute="leading" id="ePx-g6-jov"/>
+                                                <constraint firstItem="Zf6-F8-Fng" firstAttribute="top" secondItem="pke-ef-ROK" secondAttribute="bottom" constant="5" id="xaU-HV-hI6"/>
+                                                <constraint firstItem="Zf6-F8-Fng" firstAttribute="centerX" secondItem="zQM-rD-whD" secondAttribute="centerX" id="ys7-Yi-mYt"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="10"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" red="0.023529411760000001" green="0.1333333333" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="poster" destination="pke-ef-ROK" id="dHj-Xh-5rD"/>
+                                            <outlet property="relaseDate" destination="Zf6-F8-Fng" id="Img-qK-lXf"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
