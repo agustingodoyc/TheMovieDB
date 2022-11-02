@@ -3,8 +3,10 @@
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no-recording" translatesAutoresizingMaskIntoConstraints="NO" id="L5G-cY-iGg">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="networkErrorImage" image="no-recording" translatesAutoresizingMaskIntoConstraints="NO" id="L5G-cY-iGg">
                                 <rect key="frame" x="97.666666666666686" y="328.66666666666669" width="195" height="195.00000000000006"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="L5G-cY-iGg" secondAttribute="height" multiplier="1:1" id="qk3-8C-vXN"/>
@@ -25,7 +27,6 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="P1y-rd-SzK"/>
                         <color key="backgroundColor" red="0.92197595080020722" green="0.97523039580000004" blue="0.83012495980960543" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <color key="tintColor" red="0.14117647059999999" green="0.76470588240000004" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="L5G-cY-iGg" firstAttribute="centerY" secondItem="P1y-rd-SzK" secondAttribute="centerY" id="BaQ-mB-rAp"/>
                             <constraint firstItem="L5G-cY-iGg" firstAttribute="centerX" secondItem="P1y-rd-SzK" secondAttribute="centerX" id="KlB-Xl-dul"/>
@@ -54,7 +55,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no-recording" translatesAutoresizingMaskIntoConstraints="NO" id="O60-da-LpG">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="networkErrorImage" image="no-recording" translatesAutoresizingMaskIntoConstraints="NO" id="O60-da-LpG">
                                 <rect key="frame" x="97.666666666666686" y="328.66666666666669" width="195" height="195.00000000000006"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="O60-da-LpG" secondAttribute="height" multiplier="1:1" id="DDd-gj-dSf"/>
@@ -62,7 +63,7 @@
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6al-0F-FOI"/>
-                        <color key="backgroundColor" red="0.97523039580000004" green="0.88149118111183933" blue="0.96988112528727344" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.96566672323409908" green="0.85405481324980126" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="O60-da-LpG" firstAttribute="centerY" secondItem="6al-0F-FOI" secondAttribute="centerY" id="3ZK-Zt-eVM"/>
                             <constraint firstItem="O60-da-LpG" firstAttribute="width" secondItem="6al-0F-FOI" secondAttribute="width" multiplier="0.5" id="MGd-S8-kBF"/>
@@ -81,7 +82,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qEO-He-wuD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-135" y="-96"/>
+            <point key="canvasLocation" x="-135.38461538461539" y="-96.682464454976298"/>
         </scene>
         <!--Movies DB-->
         <scene sceneID="tJP-Uc-BGh">
@@ -89,16 +90,16 @@
                 <tabBarController storyboardIdentifier="MainViewController" title="Movies DB" keyboardType="off" id="I78-XQ-9nA" customClass="MainViewController" customModule="TheMovieDB" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="Movie DB" style="browser" id="KKx-Ch-tfx">
                         <barButtonItem key="rightBarButtonItem" image="magnifyingglass" catalog="system" id="RNi-gV-Kcp">
-                            <color key="tintColor" red="0.14117647059999999" green="0.76470588240000004" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="tintColor" red="0.14117647058823529" green="0.76470588235294112" blue="0.75686274509803919" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
                     </navigationItem>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FZ9-ZS-uIQ">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.023529411764705882" green="0.13333333333333333" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <color key="tintColor" red="0.14117647058823529" green="0.76470588235294112" blue="0.75686274509803919" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <color key="barTintColor" red="0.14117647059999999" green="0.76470588240000004" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <color key="selectedImageTintColor" red="0.14117647059999999" green="0.76470588240000004" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.023529411764705882" green="0.13333333333333333" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.14117647058823529" green="0.76470588235294112" blue="0.75686274509803919" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="selectedIndex">
@@ -124,19 +125,88 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no-recording" translatesAutoresizingMaskIntoConstraints="NO" id="lZZ-EL-deA">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="networkErrorImage" image="no-recording" translatesAutoresizingMaskIntoConstraints="NO" id="lZZ-EL-deA">
                                 <rect key="frame" x="97.666666666666686" y="328.66666666666669" width="195" height="195.00000000000006"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="lZZ-EL-deA" secondAttribute="height" multiplier="1:1" id="zom-2Y-L0T"/>
                                 </constraints>
                             </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="lcr-2N-531">
+                                <rect key="frame" x="0.0" y="91" width="390" height="670"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="40" minimumInteritemSpacing="40" id="jxf-jR-sKo">
+                                    <size key="itemSize" width="300" height="550"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="40" minY="40" maxX="40" maxY="40"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="upcomingCell" id="vT2-Bk-mKt" customClass="UpcomingCell" customModule="TheMovieDB" customModuleProvider="target">
+                                        <rect key="frame" x="40" y="60" width="300" height="550"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="zQM-rD-whD">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="550"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pke-ef-ROK">
+                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="500"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zf6-F8-Fng" userLabel="Date">
+                                                    <rect key="frame" x="131.33333333333334" y="505" width="37.333333333333343" height="40"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                    <color key="textColor" red="0.14117647059999999" green="0.76470588240000004" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="Zf6-F8-Fng" secondAttribute="bottom" constant="5" id="0R4-1W-Hq8"/>
+                                                <constraint firstAttribute="trailing" secondItem="pke-ef-ROK" secondAttribute="trailing" id="BF7-Ug-asF"/>
+                                                <constraint firstAttribute="bottom" secondItem="pke-ef-ROK" secondAttribute="bottom" constant="50" id="NXw-yQ-6D6"/>
+                                                <constraint firstItem="pke-ef-ROK" firstAttribute="top" secondItem="zQM-rD-whD" secondAttribute="top" id="Qvg-At-8dh"/>
+                                                <constraint firstItem="pke-ef-ROK" firstAttribute="leading" secondItem="zQM-rD-whD" secondAttribute="leading" id="ePx-g6-jov"/>
+                                                <constraint firstItem="Zf6-F8-Fng" firstAttribute="top" secondItem="pke-ef-ROK" secondAttribute="bottom" constant="5" id="xaU-HV-hI6"/>
+                                                <constraint firstItem="Zf6-F8-Fng" firstAttribute="centerX" secondItem="zQM-rD-whD" secondAttribute="centerX" id="ys7-Yi-mYt"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="10"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </collectionViewCellContentView>
+                                        <color key="backgroundColor" red="0.023529411760000001" green="0.1333333333" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="poster" destination="pke-ef-ROK" id="dHj-Xh-5rD"/>
+                                            <outlet property="relaseDate" destination="Zf6-F8-Fng" id="Img-qK-lXf"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="2AW-lt-F0g"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="6wb-Mg-BWX"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="0.83135576339999995" green="0.97070015909999996" blue="0.97523039580000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="lcr-2N-531" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="0rg-Pr-Cx3"/>
                             <constraint firstItem="lZZ-EL-deA" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="C7v-Q1-0D2"/>
+                            <constraint firstItem="lcr-2N-531" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="HVV-ee-RL9"/>
                             <constraint firstItem="lZZ-EL-deA" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.5" id="K8k-Qt-FBZ"/>
                             <constraint firstItem="lZZ-EL-deA" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="LBp-eY-Ued"/>
+                            <constraint firstItem="lcr-2N-531" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" id="Mzo-TX-6jW"/>
+                            <constraint firstItem="lcr-2N-531" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" id="fcO-CC-fYh"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Upcoming" image="creditcard.fill" catalog="system" id="bEJ-BT-Pjg"/>
@@ -146,6 +216,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="collectionView" destination="lcr-2N-531" id="cCq-ib-6fv"/>
                         <outlet property="networkErrorImage" destination="lZZ-EL-deA" id="3Qh-I7-2K0"/>
                     </connections>
                 </viewController>
@@ -160,15 +231,15 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bBe-Xi-d4B">
                         <rect key="frame" x="0.0" y="47" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.14117647059999999" green="0.76470588240000004" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="20"/>
-                            <color key="textColor" red="0.14117647059999999" green="0.76470588240000004" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            <color key="textShadowColor" red="0.14117647059999999" green="0.76470588240000004" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="textColor" systemColor="systemBlueColor"/>
                         </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                            <color key="textColor" red="0.14117647059999999" green="0.76470588240000004" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            <color key="textShadowColor" red="0.14117647059999999" green="0.76470588240000004" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="textColor" name="AccentColor"/>
                         </textAttributes>
                     </navigationBar>
                     <connections>
@@ -186,8 +257,14 @@
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="no-recording" width="512" height="512"/>
         <image name="play.tv.fill" catalog="system" width="128" height="95"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

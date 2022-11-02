@@ -13,8 +13,9 @@ class MainViewController: UITabBarController {
     weak var coordinator: MainCoordinator?
     
     override func viewDidLoad() {
-           super.viewDidLoad()
-       }
+        super.viewDidLoad()
+        navigationController?.navigationBar.barTintColor = UIColor(red: 6, green: 34, blue: 68, alpha: 1)
+    }
 }
 
 extension MainViewController: Storyboarded {

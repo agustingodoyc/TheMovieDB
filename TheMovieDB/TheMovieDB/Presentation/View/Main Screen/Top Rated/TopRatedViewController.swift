@@ -5,8 +5,11 @@
 //  Created by Angela Lee on 17/10/2022.
 //
 
-class TopRatedViewController: NetworkStatusViewController {
+import UIKit
+
+class TopRatedViewController: CheckNetworkConnection {
     
+    // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
     }
