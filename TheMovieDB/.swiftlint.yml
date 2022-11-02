@@ -40,3 +40,5 @@ type_name:
   excluded: iPhone 
 reporter: "xcode"
 
+line_length:
+    error: 400
