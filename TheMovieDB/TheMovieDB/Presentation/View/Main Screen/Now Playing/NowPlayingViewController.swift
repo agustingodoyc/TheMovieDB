@@ -5,8 +5,10 @@
 //  Created by Angela Lee on 13/10/2022.
 //
 
-class NowPlayingViewController: NetworkStatusViewController {
+import UIKit
 
+class NowPlayingViewController: CheckNetworkConnection {
+    // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
     }
