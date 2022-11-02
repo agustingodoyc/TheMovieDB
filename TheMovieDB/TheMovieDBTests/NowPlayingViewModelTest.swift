@@ -41,5 +41,6 @@ final class NowPlayingViewModelTest: XCTestCase {
         }
         
         XCTAssertEqual(self.sut.getNumberOfRowOfNowPlayingMovie(), 1, "Test getNumberOfRowOfNowPlayingMovie() success")
+        XCTAssertEqual(self.sut.getNowPlayingMovie (indexPath: 0).title, MockNowPlayingUseCase().nowPlayingMovie[0].title, "Test getNowPlayingMovie(indexPath: Int) success")
     }
 }
