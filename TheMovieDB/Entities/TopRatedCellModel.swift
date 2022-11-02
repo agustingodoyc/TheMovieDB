@@ -25,7 +25,7 @@ class TopRatedCellModel {
     let voteAverage: Double?
     
     init(_ movie: Movie) {
-        self.posterPath = movie.path
+        self.posterPath = movie.posterPath
         self.releaseDate = movie.realeaseDate
         self.title = movie.title
         self.voteAverage = movie.voteAverage
