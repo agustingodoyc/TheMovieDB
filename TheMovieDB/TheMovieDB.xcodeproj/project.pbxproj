@@ -21,6 +21,8 @@
 		10281B26290AEEDB00B0C6C8 /* NowPlayingCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10281B25290AEEDB00B0C6C8 /* NowPlayingCellModel.swift */; };
 		10281B28290AFD7100B0C6C8 /* MovieData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10281B27290AFD7100B0C6C8 /* MovieData.swift */; };
 		10281B2A290B10C900B0C6C8 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10281B29290B10C900B0C6C8 /* Movie.swift */; };
+		10361CB62914081000973644 /* MovieDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10361CB52914081000973644 /* MovieDetails.swift */; };
+		10361CB829140F3D00973644 /* MovieDetailsObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10361CB729140F3D00973644 /* MovieDetailsObjects.swift */; };
 		104F556B290033A40014D4E5 /* MoviePersisted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104F556A290033A40014D4E5 /* MoviePersisted.swift */; };
 		104F556E290035090014D4E5 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 104F556D290035090014D4E5 /* Realm */; };
 		104F5570290035090014D4E5 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 104F556F290035090014D4E5 /* RealmSwift */; };
@@ -88,6 +90,8 @@
 		10281B25290AEEDB00B0C6C8 /* NowPlayingCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NowPlayingCellModel.swift; path = Entities/NowPlayingCellModel.swift; sourceTree = SOURCE_ROOT; };
 		10281B27290AFD7100B0C6C8 /* MovieData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MovieData.swift; path = Entities/MovieData.swift; sourceTree = SOURCE_ROOT; };
 		10281B29290B10C900B0C6C8 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Movie.swift; path = Entities/Movie.swift; sourceTree = SOURCE_ROOT; };
+		10361CB52914081000973644 /* MovieDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetails.swift; sourceTree = SOURCE_ROOT; };
+		10361CB729140F3D00973644 /* MovieDetailsObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsObjects.swift; sourceTree = SOURCE_ROOT; };
 		1041CA6D28F5D07D00D24760 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		1041CA7128F5D0F700D24760 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		104F556A290033A40014D4E5 /* MoviePersisted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MoviePersisted.swift; path = TheMovieDB/Protocols/MoviePersisted.swift; sourceTree = SOURCE_ROOT; };
@@ -321,6 +325,8 @@
 				D64C9EB629086C0C00A1C13E /* MovieList.swift */,
 				10281B25290AEEDB00B0C6C8 /* NowPlayingCellModel.swift */,
 				10281B29290B10C900B0C6C8 /* Movie.swift */,
+				10361CB52914081000973644 /* MovieDetails.swift */,
+				10361CB729140F3D00973644 /* MovieDetailsObjects.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -591,6 +597,7 @@
 				10CF712D28F8529600F07ACB /* NowPlayingViewController.swift in Sources */,
 				10CF712F28F8531900F07ACB /* UpcomingViewController.swift in Sources */,
 				D697D22E290719DA00CE310C /* DataManagerDelegate.swift in Sources */,
+				10361CB62914081000973644 /* MovieDetails.swift in Sources */,
 				10281B28290AFD7100B0C6C8 /* MovieData.swift in Sources */,
 				D697D230290719DA00CE310C /* Database.swift in Sources */,
 				104F5574290036B50014D4E5 /* RealmDB.swift in Sources */,
@@ -602,6 +609,7 @@
 				10CCD8512902EC74001DBABB /* NowPlayingViewModel.swift in Sources */,
 				D64C9EB729086C0C00A1C13E /* MovieList.swift in Sources */,
 				D67DDA3328EE161A0093B3A0 /* AppDelegate.swift in Sources */,
+				10361CB829140F3D00973644 /* MovieDetailsObjects.swift in Sources */,
 				D6C433AB28F75DD700B61185 /* Coordinator.swift in Sources */,
 				D6C433A928F755FE00B61185 /* SplashScreenViewController.swift in Sources */,
 				D67DDA3528EE161A0093B3A0 /* SceneDelegate.swift in Sources */,

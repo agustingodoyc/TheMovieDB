@@ -17,6 +17,10 @@ class AlamofireSP: ServiceProtocol {
             "language": "en-US",
             "page": "1"
         ]
+        static let headerDetails: HTTPHeaders = [
+            "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlOGViZWNkNjM0ODU3ZmY0NzlhNTI0NTU2MjZjNTBmNCIsInN1YiI6IjYzM2Q5M2RhNWFiODFhMDA4MWMyZWUwOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.sv6xJcNCCzFx0HsmIrJUzJxQ5HdtJJg9wJgasB_ZtU8",
+            "language": "en-US"
+        ]
     }
     
     private var manager: Session
@@ -30,7 +34,7 @@ class AlamofireSP: ServiceProtocol {
         
         self.manager = Session(configuration: configuration)
     }
-
+    
     func getEndPointMovie(_ endpoint: Endpoints, completion: @escaping (Result<[MovieData], ServiceError>) -> Void) {
         manager.request(
             ServiceConstants.url + endpoint.rawValue, method: .get, headers: ServiceConstants.headers).cURLDescription() {
@@ -39,11 +43,26 @@ class AlamofireSP: ServiceProtocol {
             }.validate(
                 statusCode: 100..<300).responseDecodable(
                     of: MovieList.self) { response in
-            guard let data = response.value else {
-                return completion(.failure(.parseError))
-            }
-            
-            return completion(.success(Array(data.movieList)))
-        }
+                        guard let data = response.value else {
+                            return completion(.failure(.parseError))
+                        }
+                        
+                        return completion(.success(Array(data.movieList)))
+                    }
+    }
+    
+    func getMovieDetails(_ id: String, completion: @escaping (Result<[MovieDetails], ServiceError>) -> Void) {
+        manager.request(
+            ServiceConstants.url + id, method: .get, headers: ServiceConstants.headerDetails).cURLDescription() {
+                description in
+                print(description)
+            }.validate(
+                statusCode: 100..<300).responseDecodable(
+                    of: [MovieDetails].self) { response in
+                        guard let data = response.value else {
+                            return completion(.failure(.parseError))
+                        }
+                        return completion(.success(data))
+                    }
     }
 }
