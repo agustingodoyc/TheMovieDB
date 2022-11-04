@@ -44,6 +44,20 @@ extension NowPlayingViewController: UICollectionViewDelegate, UICollectionViewDa
         cell.loadNowPlayingMovie(movie: nowPlayingMovie)
         return cell
     }
+    
+
+}
+
+// MARK: SelectedMovie
+
+extension NowPlayingViewController {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let selectedPath = collectionView.indexPathsForSelectedItems else {
+            return
+        }
+        viewModel.getMovieSelectedRow(row: selectedPath[indexPath.row].row)
+    }
 }
 
 // MARK: - Delegate

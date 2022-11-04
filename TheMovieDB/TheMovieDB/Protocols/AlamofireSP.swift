@@ -51,14 +51,14 @@ class AlamofireSP: ServiceProtocol {
                     }
     }
     
-    func getMovieDetails(_ id: String, completion: @escaping (Result<[MovieDetails], ServiceError>) -> Void) {
+    func getMovieDetails(_ id: String, completion: @escaping (Result<MovieDetails, ServiceError>) -> Void) {
         manager.request(
             ServiceConstants.url + id, method: .get, headers: ServiceConstants.headerDetails).cURLDescription() {
                 description in
                 print(description)
             }.validate(
                 statusCode: 100..<300).responseDecodable(
-                    of: [MovieDetails].self) { response in
+                    of: MovieDetails.self) { response in
                         guard let data = response.value else {
                             return completion(.failure(.parseError))
                         }

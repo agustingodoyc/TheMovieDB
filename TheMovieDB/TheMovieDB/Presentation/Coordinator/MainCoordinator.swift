@@ -31,4 +31,15 @@ class MainCoordinator: Coordinator {
         vc.coordinator = self
         navigationController.setViewControllers([vc], animated: true)
     }
+    
+    func goToDetails(movieId: Int) {
+        guard let vc = DetailsViewController.instantiate() else {
+            return
+        }
+        vc.coordinator = self
+        navigationController.setViewControllers([vc], animated: true)
+        let viewModel = DetailsViewModel()
+        viewModel.getMovieDetailsUseCase(movieID: String(movieId))
+        
+    }
 }

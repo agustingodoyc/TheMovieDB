@@ -12,6 +12,7 @@ class Movie {
     var posterPath: String?
     var realeaseDate: String?
     var voteAverage: Double?
+    var id: Int?
     
     convenience init(moviePersisted: MoviePersisted) {
         self.init()
@@ -19,5 +20,6 @@ class Movie {
         posterPath = moviePersisted.posterPath
         realeaseDate = moviePersisted.releaseDate
         voteAverage = moviePersisted.voteAverage
+        id = moviePersisted.id
     }
 }
