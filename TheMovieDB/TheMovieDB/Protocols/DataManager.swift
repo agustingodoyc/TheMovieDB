@@ -58,7 +58,7 @@ public class DataManager: DataManagerProtocol {
         }
     }
     
-    func getDetails(_ movieId: String, completionHandler: @escaping (MovieDetails) -> Void) {
+    func getDetails(_ movieId: String, completionHandler: @escaping (MovieDetailData) -> Void) {
         service.getMovieDetails(movieId) { result in
             DispatchQueue.main.async {
                 switch result {

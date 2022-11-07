@@ -10,8 +10,12 @@ import UIKit
 
 class DetailsViewController: CheckNetworkConnection {
     
-    weak var coordinator: MainCoordinator?
+    //MARK: - OBOutles
     
+    // MARK: - Properties
+    weak var viewModel: DetailsViewModel?
+    
+    // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
     }

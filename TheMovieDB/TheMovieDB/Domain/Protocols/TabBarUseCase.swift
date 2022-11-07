@@ -7,10 +7,10 @@
 
 import Foundation
 
-protocol UseCase {
+protocol TabBarUseCase {
     func execute(completionHandler: @escaping ([Movie]) -> Void)
 }
 
 protocol DetailsUseCase {
-    func execute(movieId: String, completionHandler: @escaping (MovieDetails) -> Void)
+    func execute(movieId: String, completionHandler: @escaping (MovieDetail) -> Void)
 }

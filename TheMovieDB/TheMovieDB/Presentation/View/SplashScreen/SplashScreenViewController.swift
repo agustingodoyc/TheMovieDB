@@ -31,7 +31,7 @@ class SplashScreenViewController: UIViewController {
     }
 }
 
-// MARK: - Storyboard instantiaton
+// MARK: - Storyboard instantiation
 
 extension SplashScreenViewController: Storyboarded {
     static func instantiate() -> Self? {

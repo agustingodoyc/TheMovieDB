@@ -13,8 +13,6 @@ class CheckNetworkConnection: UIViewController {
     
     @IBOutlet weak var networkErrorImage: UIImageView!
     
-    //var networkStatus: Bool = false
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         isConnectedToInternet()

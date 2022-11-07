@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift
 
-class MovieDetails: Object, Codable {
+class MovieDetailData: Object, Codable {
     @Persisted var adult: Bool?
     @Persisted var backdropPath: String?
     @Persisted var belongsToCollection: BelongsToCollection?

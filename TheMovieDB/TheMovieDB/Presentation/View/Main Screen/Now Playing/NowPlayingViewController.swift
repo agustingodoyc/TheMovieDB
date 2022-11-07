@@ -7,8 +7,13 @@
 
 import UIKit
 
-class NowPlayingViewController: CheckNetworkConnection {
+class NowPlayingViewController: CheckNetworkConnection, TabBarViewControllerProtocol {
+    func setUpCoordinator() {
+        viewModel.coordinator = tabBarController.coordinator
+    }
     
+    //var viewModel: TabBarViewModelProtocol
+
     // MARK: - IBOutles
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -36,7 +41,9 @@ extension NowPlayingViewController: UICollectionViewDelegate, UICollectionViewDa
         return viewModel.getNumberOfRowOfNowPlayingMovie()
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) ->
+    UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "nowPlayingCell", for: indexPath) as? NowPlayingCell else {
             return UICollectionViewCell()
         }
@@ -44,19 +51,13 @@ extension NowPlayingViewController: UICollectionViewDelegate, UICollectionViewDa
         cell.loadNowPlayingMovie(movie: nowPlayingMovie)
         return cell
     }
-    
-
 }
 
 // MARK: SelectedMovie
-
 extension NowPlayingViewController {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let selectedPath = collectionView.indexPathsForSelectedItems else {
-            return
-        }
-        viewModel.getMovieSelectedRow(row: selectedPath[indexPath.row].row)
+        viewModel.selectedMovie(row: indexPath.row)
     }
 }
 

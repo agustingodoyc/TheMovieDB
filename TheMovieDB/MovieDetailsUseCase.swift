@@ -10,7 +10,7 @@ import Foundation
 import Foundation
 
 class MovieDetailsUseCase: DetailsUseCase {
-
+    
     private var dataManager: DataManager
     
     //MARK: - Init
@@ -20,9 +20,9 @@ class MovieDetailsUseCase: DetailsUseCase {
     }
     
     // MARK: - Fetching function
-    func execute(movieId: String, completionHandler: @escaping (MovieDetails) -> Void) {
+    func execute(movieId: String, completionHandler: @escaping (MovieDetail) -> Void) {
         dataManager.getDetails(movieId) { result in
-            completionHandler(result)
+            completionHandler(MovieDetail(movieDetailData: result))
         }
     }
 }

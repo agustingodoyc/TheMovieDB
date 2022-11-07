@@ -32,14 +32,13 @@ class MainCoordinator: Coordinator {
         navigationController.setViewControllers([vc], animated: true)
     }
     
-    func goToDetails(movieId: Int) {
+    func goToDetail(movieId: Int) { //Agregar protocolo
+        let viewModel = DetailsViewModel(movieID: String(movieId))
         guard let vc = DetailsViewController.instantiate() else {
+            print(fatalError("Unable to create an DetailsViewController instance"))
             return
         }
-        vc.coordinator = self
-        navigationController.setViewControllers([vc], animated: true)
-        let viewModel = DetailsViewModel()
-        viewModel.getMovieDetailsUseCase(movieID: String(movieId))
-        
+        vc.viewModel = viewModel
+        navigationController.pushViewController(vc, animated: true)
     }
 }

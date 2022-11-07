@@ -9,14 +9,11 @@ import Foundation
 
 class DetailsViewModel {
     
-    var moviesDetails = MovieDetails()
+    var moviesDetails: MovieDetail?
     var detailsUseCase: DetailsUseCase
     
-    init(detailsUseCase: DetailsUseCase = MovieDetailsUseCase()) {
+    init(detailsUseCase: DetailsUseCase = MovieDetailsUseCase(), movieID: String) {
         self.detailsUseCase = detailsUseCase
-    }
-    
-    func getMovieDetailsUseCase(movieID: String) {
         detailsUseCase.execute(movieId: movieID) { movie in
             self.moviesDetails = movie
         }

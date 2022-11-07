@@ -10,11 +10,28 @@ import UIKit
 
 class MainViewController: UITabBarController {
     
-    weak var coordinator: MainCoordinator?
+    weak var coordinator: MainCoordinator? {
+        didSet {
+            setUpTabs()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.barTintColor = UIColor(red: 6, green: 34, blue: 68, alpha: 1)
+    }
+    
+    func setUpTabs() {
+        guard let viewControllers = viewControllers else {
+            return
+        }
+        for viewController in viewControllers {
+            guard let vc = viewController as? TabBarViewControllerProtocol else {
+                return
+            }
+            /*var vc = viewController as? TabBarViewControllerProtocol*/
+            vc.viewModel.coordinator = self.coordinator
+        }
     }
 }
 
