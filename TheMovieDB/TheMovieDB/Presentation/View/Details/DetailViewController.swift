@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class DetailsViewController: CheckNetworkConnection {
+class DetailViewController: CheckNetworkConnection {
     
     //MARK: - OBOutles
     
@@ -21,7 +21,7 @@ class DetailsViewController: CheckNetworkConnection {
     }
 }
 
-extension DetailsViewController: Storyboarded {
+extension DetailViewController: Storyboarded {
     static func instantiate() -> Self? {
         let id = String(describing: self)
         let storyboard = UIStoryboard(name: "DetailsScreen", bundle: Bundle.main)

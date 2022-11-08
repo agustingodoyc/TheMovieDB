@@ -37,7 +37,8 @@ type_name:
   max_length:
     warning: 30
     error: 35
-  excluded: iPhone 
+  excluded:
+    - vc
 reporter: "xcode"
 
 line_length:

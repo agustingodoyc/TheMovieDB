@@ -7,12 +7,11 @@
 
 import Foundation
 
-class NowPlayingViewModel: TabBarViewModelProtocol {
+class NowPlayingViewModel {
     
     var movies: [Movie] = []
     var nowPlayingUseCase: TabBarUseCase
     weak var delegate: ViewModelDelegate?
-    weak var coordinator: MainCoordinator?
     
     init(nowPlayingUseCase: TabBarUseCase = NowPlayingUseCase()) {
         self.nowPlayingUseCase = nowPlayingUseCase
@@ -37,10 +36,10 @@ class NowPlayingViewModel: TabBarViewModelProtocol {
 
 // MARK: - Coordinator 
 extension NowPlayingViewModel {
-    func selectedMovie(row: Int) {
-        guard let movie = movies[row].id else {
-            return
+    func getMovieId(row: Int) -> Int {
+        guard let movieId = movies[row].id else {
+            fatalError("No id.")
         }
-        coordinator?.goToDetail(movieId: movie)
+        return movieId
     }
 }

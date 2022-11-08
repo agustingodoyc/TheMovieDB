@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class MainViewController: UITabBarController {
+class MainViewController: UITabBarController, BaseViewController {
     
     weak var coordinator: MainCoordinator? {
         didSet {
@@ -25,12 +25,12 @@ class MainViewController: UITabBarController {
         guard let viewControllers = viewControllers else {
             return
         }
+
         for viewController in viewControllers {
-            guard let vc = viewController as? TabBarViewControllerProtocol else {
-                return
+            guard let childViewController = viewController as? BaseViewController else {
+                continue
             }
-            /*var vc = viewController as? TabBarViewControllerProtocol*/
-            vc.viewModel.coordinator = self.coordinator
+            childViewController.coordinator = self.coordinator
         }
     }
 }

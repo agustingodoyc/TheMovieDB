@@ -34,7 +34,7 @@ class MainCoordinator: Coordinator {
     
     func goToDetail(movieId: Int) { //Agregar protocolo
         let viewModel = DetailsViewModel(movieID: String(movieId))
-        guard let vc = DetailsViewController.instantiate() else {
+        guard let vc = DetailViewController.instantiate() else {
             print(fatalError("Unable to create an DetailsViewController instance"))
             return
         }

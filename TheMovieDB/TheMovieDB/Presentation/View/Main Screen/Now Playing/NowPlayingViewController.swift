@@ -7,17 +7,14 @@
 
 import UIKit
 
-class NowPlayingViewController: CheckNetworkConnection, TabBarViewControllerProtocol {
-    func setUpCoordinator() {
-        viewModel.coordinator = tabBarController.coordinator
-    }
-    
-    //var viewModel: TabBarViewModelProtocol
+class NowPlayingViewController: CheckNetworkConnection, BaseViewController {
 
     // MARK: - IBOutles
     @IBOutlet weak var collectionView: UICollectionView!
     
     // MARK: - Properties
+    weak var coordinator: MainCoordinator?
+    
     lazy var viewModel = NowPlayingViewModel()
     
     // MARK: - View Life Cycle
@@ -57,7 +54,7 @@ extension NowPlayingViewController: UICollectionViewDelegate, UICollectionViewDa
 extension NowPlayingViewController {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        viewModel.selectedMovie(row: indexPath.row)
+        coordinator?.goToDetail(movieId: viewModel.getMovieId(row: indexPath.row))
     }
 }
 

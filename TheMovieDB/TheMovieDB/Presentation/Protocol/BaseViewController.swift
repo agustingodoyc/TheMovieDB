@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol TabBarViewControllerProtocol {
-    func setUpCoordinator()
+protocol BaseViewController: AnyObject {
+    var coordinator: MainCoordinator? { get set }
 }

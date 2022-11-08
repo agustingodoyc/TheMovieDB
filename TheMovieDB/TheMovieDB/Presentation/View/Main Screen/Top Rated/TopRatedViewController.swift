@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TopRatedViewController: CheckNetworkConnection {
+class TopRatedViewController: CheckNetworkConnection, BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
