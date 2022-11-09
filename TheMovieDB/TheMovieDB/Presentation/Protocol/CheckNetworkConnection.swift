@@ -7,19 +7,19 @@
 
 import Foundation
 import UIKit
-import Alamofire
 
 class CheckNetworkConnection: UIViewController {
     
     @IBOutlet weak var networkErrorImage: UIImageView!
-    
+    var networkConnectionUseCase: NetworkConnectionUseCase = NetworkConnectionUseCase()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         isConnectedToInternet()
     }
     
     func isConnectedToInternet() {
-        guard ((NetworkReachabilityManager()?.isReachable) != nil) else {
+        guard (networkConnectionUseCase.execute() == true) else {
             networkErrorImage.isHidden = false
             return
         }
@@ -28,4 +28,3 @@ class CheckNetworkConnection: UIViewController {
     
     func hideContent() { }
 }
-

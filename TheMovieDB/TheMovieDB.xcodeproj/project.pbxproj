@@ -15,12 +15,13 @@
 		100CA9C92910163700E73390 /* NowPlayingUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100CA9C82910163700E73390 /* NowPlayingUseCaseTest.swift */; };
 		100CA9CB2910182400E73390 /* DataManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100CA9CA2910182400E73390 /* DataManagerProtocol.swift */; };
 		100CA9CD29101B0000E73390 /* NowPlayingViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100CA9CC29101B0000E73390 /* NowPlayingViewModelTest.swift */; };
-		100CA9D029101B8400E73390 /* TabBarUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100CA9CF29101B8400E73390 /* TabBarUseCase.swift */; };
+		100CA9D029101B8400E73390 /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100CA9CF29101B8400E73390 /* UseCase.swift */; };
 		10281B1E290AC56C00B0C6C8 /* CheckNetworkConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10281B1D290AC56C00B0C6C8 /* CheckNetworkConnection.swift */; };
 		10281B20290AC93600B0C6C8 /* NowPlayingUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10281B1F290AC93600B0C6C8 /* NowPlayingUseCase.swift */; };
 		10281B26290AEEDB00B0C6C8 /* NowPlayingCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10281B25290AEEDB00B0C6C8 /* NowPlayingCellModel.swift */; };
 		10281B28290AFD7100B0C6C8 /* MovieData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10281B27290AFD7100B0C6C8 /* MovieData.swift */; };
 		10281B2A290B10C900B0C6C8 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10281B29290B10C900B0C6C8 /* Movie.swift */; };
+		102F2AD6291AADE800F65D55 /* NetworkConnectionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102F2AD5291AADE800F65D55 /* NetworkConnectionUseCase.swift */; };
 		10361CB62914081000973644 /* MovieDetailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10361CB52914081000973644 /* MovieDetailData.swift */; };
 		10361CB829140F3D00973644 /* MovieDetailObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10361CB729140F3D00973644 /* MovieDetailObjects.swift */; };
 		104F556B290033A40014D4E5 /* MoviePersisted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104F556A290033A40014D4E5 /* MoviePersisted.swift */; };
@@ -90,12 +91,13 @@
 		100CA9C82910163700E73390 /* NowPlayingUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingUseCaseTest.swift; sourceTree = "<group>"; };
 		100CA9CA2910182400E73390 /* DataManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DataManagerProtocol.swift; path = Interfaces/DataManagerProtocol.swift; sourceTree = SOURCE_ROOT; };
 		100CA9CC29101B0000E73390 /* NowPlayingViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingViewModelTest.swift; sourceTree = "<group>"; };
-		100CA9CF29101B8400E73390 /* TabBarUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarUseCase.swift; sourceTree = "<group>"; };
+		100CA9CF29101B8400E73390 /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
 		10281B1D290AC56C00B0C6C8 /* CheckNetworkConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CheckNetworkConnection.swift; path = TheMovieDB/Presentation/Protocol/CheckNetworkConnection.swift; sourceTree = SOURCE_ROOT; };
 		10281B1F290AC93600B0C6C8 /* NowPlayingUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NowPlayingUseCase.swift; path = UseCases/NowPlayingUseCase.swift; sourceTree = SOURCE_ROOT; };
 		10281B25290AEEDB00B0C6C8 /* NowPlayingCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NowPlayingCellModel.swift; path = Entities/NowPlayingCellModel.swift; sourceTree = SOURCE_ROOT; };
 		10281B27290AFD7100B0C6C8 /* MovieData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MovieData.swift; path = Entities/MovieData.swift; sourceTree = SOURCE_ROOT; };
 		10281B29290B10C900B0C6C8 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Movie.swift; path = Entities/Movie.swift; sourceTree = SOURCE_ROOT; };
+		102F2AD5291AADE800F65D55 /* NetworkConnectionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConnectionUseCase.swift; sourceTree = SOURCE_ROOT; };
 		10361CB52914081000973644 /* MovieDetailData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailData.swift; sourceTree = SOURCE_ROOT; };
 		10361CB729140F3D00973644 /* MovieDetailObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailObjects.swift; sourceTree = SOURCE_ROOT; };
 		1041CA6D28F5D07D00D24760 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
@@ -185,7 +187,7 @@
 		100CA9CE29101B7700E73390 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				100CA9CF29101B8400E73390 /* TabBarUseCase.swift */,
+				100CA9CF29101B8400E73390 /* UseCase.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -360,6 +362,7 @@
 			children = (
 				10281B1F290AC93600B0C6C8 /* NowPlayingUseCase.swift */,
 				10BD3D4829154A26000A0EBC /* MovieDetailsUseCase.swift */,
+				102F2AD5291AADE800F65D55 /* NetworkConnectionUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -627,6 +630,7 @@
 				10BD3D4C29154D47000A0EBC /* DetailsViewModel.swift in Sources */,
 				D697D22E290719DA00CE310C /* DataManagerDelegate.swift in Sources */,
 				10361CB62914081000973644 /* MovieDetailData.swift in Sources */,
+				102F2AD6291AADE800F65D55 /* NetworkConnectionUseCase.swift in Sources */,
 				10281B28290AFD7100B0C6C8 /* MovieData.swift in Sources */,
 				D697D230290719DA00CE310C /* Database.swift in Sources */,
 				104F5574290036B50014D4E5 /* RealmDB.swift in Sources */,
@@ -652,7 +656,7 @@
 				10F28DF42919546900647235 /* BaseViewController.swift in Sources */,
 				106CEF5A28FEDD1900AEC45A /* MainViewController.swift in Sources */,
 				104F55722900361C0014D4E5 /* DataManager.swift in Sources */,
-				100CA9D029101B8400E73390 /* TabBarUseCase.swift in Sources */,
+				100CA9D029101B8400E73390 /* UseCase.swift in Sources */,
 				100CA9CB2910182400E73390 /* DataManagerProtocol.swift in Sources */,
 				10CCD84C2902E983001DBABB /* NowPlayingCell.swift in Sources */,
 			);

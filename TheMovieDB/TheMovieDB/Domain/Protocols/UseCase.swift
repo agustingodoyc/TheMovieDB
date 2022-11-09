@@ -14,3 +14,7 @@ protocol TabBarUseCase {
 protocol DetailsUseCase {
     func execute(movieId: String, completionHandler: @escaping (MovieDetail) -> Void)
 }
+
+protocol NetworkConnection {
+    func execute() -> Bool
+}

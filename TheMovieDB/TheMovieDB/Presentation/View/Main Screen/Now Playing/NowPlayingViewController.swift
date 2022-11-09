@@ -8,6 +8,7 @@
 import UIKit
 
 class NowPlayingViewController: CheckNetworkConnection, BaseViewController {
+    
 
     // MARK: - IBOutles
     @IBOutlet weak var collectionView: UICollectionView!

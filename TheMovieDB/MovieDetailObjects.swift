@@ -56,18 +56,18 @@ class ProductionCompanies: Object, Codable {
     
     convenience init(name: String, id: Int, logoPath: String, originCountry: String) {
         self.init()
-        self.id = id
         self.name = name
+        self.id = id
         self.logoPath = logoPath
         self.originCountry = originCountry
     }
 }
 
 class ProductionCountries: Object, Codable {
-    @Persisted var iso_3166_1: Int?
+    @Persisted var iso_3166_1: String?
     @Persisted var name: String?
     
-    convenience init(iso_3166_1: Int, name: String) {
+    convenience init(iso_3166_1: String, name: String) {
         self.init()
         self.iso_3166_1 = iso_3166_1
         self.name = name
@@ -75,10 +75,10 @@ class ProductionCountries: Object, Codable {
 }
 
 class SpokenLanguages: Object, Codable {
-    @Persisted var iso_639_1: Int?
+    @Persisted var iso_639_1: String?
     @Persisted var name: String?
     
-    convenience init(iso_639_1: Int, name: String) {
+    convenience init(iso_639_1: String, name: String) {
         self.init()
         self.iso_639_1 = iso_639_1
         self.name = name

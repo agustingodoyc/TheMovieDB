@@ -37,10 +37,7 @@ class AlamofireSP: ServiceProtocol {
     
     func getEndPointMovie(_ endpoint: Endpoints, completion: @escaping (Result<[MovieData], ServiceError>) -> Void) {
         manager.request(
-            ServiceConstants.url + endpoint.rawValue, method: .get, headers: ServiceConstants.headers).cURLDescription() {
-                description in
-                print(description)
-            }.validate(
+            ServiceConstants.url + endpoint.rawValue, method: .get, headers: ServiceConstants.headers).validate(
                 statusCode: 100..<300).responseDecodable(
                     of: MovieList.self) { response in
                         guard let data = response.value else {
@@ -53,12 +50,16 @@ class AlamofireSP: ServiceProtocol {
     
     func getMovieDetails(_ id: String, completion: @escaping (Result<MovieDetailData, ServiceError>) -> Void) {
         manager.request(
-            ServiceConstants.url + id, method: .get, headers: ServiceConstants.headerDetails).validate(
+            ServiceConstants.url + id, method: .get, headers: ServiceConstants.headerDetails).cURLDescription() {
+                description in
+                print(description)
+            }.validate(
                 statusCode: 100..<300).responseDecodable(
                     of: MovieDetailData.self) { response in
                         guard let data = response.value else {
                             return completion(.failure(.parseError))
                         }
+                        print(data)
                         return completion(.success(data))
                     }
     }
