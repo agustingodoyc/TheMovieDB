@@ -26,8 +26,6 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel?.delegate = self
-        //viewModel. get data
-        
     }
 }
 

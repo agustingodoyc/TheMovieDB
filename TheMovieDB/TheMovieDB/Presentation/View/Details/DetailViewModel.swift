@@ -21,8 +21,8 @@ class DetailViewModel {
         return moviesDetail?.posterURL ?? ""
     }
     /*var poster: UIImageView {
-        if let moviesDetailsPosterURL = moviesDetails?.posterURL {
-             AF.request(moviesDetailsPosterURL).response { response in
+        if let moviesDetailPosterURL = moviesDetail?.posterURL {
+             AF.request(moviesDetailPosterURL).response { response in
                 if let data = response.data {
                     return UIImageView(image: UIImage(data: data))
                 }
