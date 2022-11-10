@@ -12,5 +12,5 @@ protocol DataManagerProtocol {
 }
 
 protocol DataManagerDetailProtocol {
-    func getDetails(_ movieId: String, completionHandler: @escaping (MovieDetailData) -> Void)
+    func getDetail(_ movieId: String, completionHandler: @escaping (MovieDetailData) -> Void)
 }

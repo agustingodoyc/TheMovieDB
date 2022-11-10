@@ -21,7 +21,7 @@ class MovieDetailUseCase: DetailsUseCase {
     
     // MARK: - Fetching function
     func execute(movieId: String, completionHandler: @escaping (MovieDetail) -> Void) {
-        dataManager.getDetails(movieId) { result in
+        dataManager.getDetail(movieId) { result in
             completionHandler(MovieDetail(movieDetailData: result))
         }
     }

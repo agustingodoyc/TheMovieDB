@@ -38,7 +38,7 @@ final class MovieDetaiUseCaseTest: XCTestCase {
                         video: false,
                         voteAverage: 4,
                         voteCount: 4)
-        func getDetails(_ movieId: String, completionHandler: @escaping (TheMovieDB.MovieDetailData) -> Void) {
+        func getDetail(_ movieId: String, completionHandler: @escaping (TheMovieDB.MovieDetailData) -> Void) {
             completionHandler(movieDetailData)
         }
     }

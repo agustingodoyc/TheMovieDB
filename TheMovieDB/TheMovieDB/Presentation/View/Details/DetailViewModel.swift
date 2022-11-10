@@ -11,6 +11,7 @@ import UIKit
 
 class DetailViewModel {
     
+    // MARK: - Properties
     private var moviesDetail: MovieDetail?
     private var detailsUseCase: DetailsUseCase
     weak var delegate: ViewModelDelegate?
@@ -20,15 +21,6 @@ class DetailViewModel {
     var poster: String {
         return moviesDetail?.posterURL ?? ""
     }
-    /*var poster: UIImageView {
-        if let moviesDetailPosterURL = moviesDetail?.posterURL {
-             AF.request(moviesDetailPosterURL).response { response in
-                if let data = response.data {
-                    return UIImageView(image: UIImage(data: data))
-                }
-            }
-        }
-    }*/
     var movieTitle: String {
         return moviesDetail?.title ?? ""
     }
@@ -52,22 +44,5 @@ class DetailViewModel {
             self.moviesDetail = movie
             self.delegate?.reloadData()
         }
-        
-        /*guard let moviesDetailsBackdropURL = moviesDetails?.backdropURL else {
-         return
-         }
-         AF.request(moviesDetailsBackdropURL).response { response in
-         if let data = response.data {
-         self.backdrop.image = UIImage(data: data)
-         }
-         }*/
-        /*guard let moviesDetailsPosterURL = moviesDetails?.posterURL else {
-         return
-         }
-         AF.request(moviesDetailsPosterURL).response { response in
-         if let data = response.data {
-         self.poster.image = UIImage(data: data)
-         }
-         }*/
     }
 }

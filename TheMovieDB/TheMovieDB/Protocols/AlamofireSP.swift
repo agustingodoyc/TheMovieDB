@@ -35,6 +35,7 @@ class AlamofireSP: ServiceProtocol {
         self.manager = Session(configuration: configuration)
     }
     
+    //MARK: - Get Movie Endpoint
     func getEndPointMovie(_ endpoint: Endpoints, completion: @escaping (Result<[MovieData], ServiceError>) -> Void) {
         manager.request(
             ServiceConstants.url + endpoint.rawValue, method: .get, headers: ServiceConstants.headers).validate(
@@ -48,7 +49,8 @@ class AlamofireSP: ServiceProtocol {
                     }
     }
     
-    func getMovieDetails(_ id: String, completion: @escaping (Result<MovieDetailData, ServiceError>) -> Void) {
+    //MARK: - Get Movie Detail Endpoint
+    func getMovieDetail(_ id: String, completion: @escaping (Result<MovieDetailData, ServiceError>) -> Void) {
         manager.request(
             ServiceConstants.url + id, method: .get, headers: ServiceConstants.headerDetails).cURLDescription() {
                 description in

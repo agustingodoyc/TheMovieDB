@@ -41,6 +41,5 @@ class MainCoordinator: Coordinator, MovieDetailProtocol {
         }
         vc.viewModel = viewModel
         navigationController.pushViewController(vc, animated: true)
-        
     }
 }

@@ -9,6 +9,7 @@ import Foundation
 
 public class DataManager: DataManagerProtocol, DataManagerDetailProtocol {
     
+    // MARK: - Properties
     private var service: ServiceProtocol
     var delegate: DataManagerDelegate?
     private var dataBase: DataBase
@@ -18,6 +19,7 @@ public class DataManager: DataManagerProtocol, DataManagerDetailProtocol {
         self.dataBase = dataBase
     }
     
+    // MARK: - Get movies
     func getMovie(_ endpoint: Endpoints, completionHandler: @escaping ([MoviePersisted]) -> Void) {
         if (dataBase.isEmpty) {
             service.getEndPointMovie(endpoint) { result in
@@ -58,8 +60,9 @@ public class DataManager: DataManagerProtocol, DataManagerDetailProtocol {
         }
     }
     
-    func getDetails(_ movieId: String, completionHandler: @escaping (MovieDetailData) -> Void) {
-        service.getMovieDetails(movieId) { result in
+    // MARK: - Get Movie Detail
+    func getDetail(_ movieId: String, completionHandler: @escaping (MovieDetailData) -> Void) {
+        service.getMovieDetail(movieId) { result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let movie):

@@ -164,7 +164,7 @@ final class DataManagerTest: XCTestCase {
         
         let promise = self.expectation(description: "Geting Data")
         
-        sut.getDetails("1") { result in
+        sut.getDetail("1") { result in
             XCTAssertEqual(result.title, "title 1")
             promise.fulfill()
         }

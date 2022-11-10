@@ -51,7 +51,6 @@ extension DetailViewController: ViewModelDelegate {
             }
             self.backdrop.image = UIImage(data: image)
         }
-        //self.backdrop = viewModel?.backdrop
         guard let poster = viewModel?.poster else {
             return
         }
@@ -61,7 +60,6 @@ extension DetailViewController: ViewModelDelegate {
             }
             self.poster.image = UIImage(data: image)
         }
-        //self.poster = viewModel?.poster
         self.movieTitle.text = viewModel?.movieTitle
         self.overview.text = viewModel?.overview
         self.releaseDate.text = "Release Date: " + (viewModel?.releaseDate ?? "")
