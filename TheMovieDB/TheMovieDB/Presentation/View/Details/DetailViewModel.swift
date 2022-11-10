@@ -9,16 +9,16 @@ import Foundation
 import Alamofire
 import UIKit
 
-class DetailsViewModel {
+class DetailViewModel {
     
-    private var moviesDetails: MovieDetail?
+    private var moviesDetail: MovieDetail?
     private var detailsUseCase: DetailsUseCase
     weak var delegate: ViewModelDelegate?
     var backdrop: String {
-        return moviesDetails?.backdropURL ?? ""
+        return moviesDetail?.backdropURL ?? ""
     }
     var poster: String {
-        return moviesDetails?.posterURL ?? ""
+        return moviesDetail?.posterURL ?? ""
     }
     /*var poster: UIImageView {
         if let moviesDetailsPosterURL = moviesDetails?.posterURL {
@@ -30,44 +30,44 @@ class DetailsViewModel {
         }
     }*/
     var movieTitle: String {
-        return moviesDetails?.title ?? ""
+        return moviesDetail?.title ?? ""
     }
     var overview: String {
-        return moviesDetails?.overview ?? ""
+        return moviesDetail?.overview ?? ""
     }
     var releaseDate: String {
-        return moviesDetails?.releaseDate ?? ""
+        return moviesDetail?.releaseDate ?? ""
     }
     var voteAverage: String {
-        return String(moviesDetails?.voteAverage ?? 0)
+        return String(moviesDetail?.voteAverage ?? 0)
     }
     var status: String {
-        return moviesDetails?.status ?? ""
+        return moviesDetail?.status ?? ""
     }
     
-    init(detailsUseCase: DetailsUseCase = MovieDetailsUseCase(), movieID: String) { //El execute no va acá es otra función
+    init(detailsUseCase: DetailsUseCase = MovieDetailUseCase(), movieID: String) {
         self.detailsUseCase = detailsUseCase
         
         detailsUseCase.execute(movieId: movieID) { movie in
-            self.moviesDetails = movie
+            self.moviesDetail = movie
             self.delegate?.reloadData()
         }
         
         /*guard let moviesDetailsBackdropURL = moviesDetails?.backdropURL else {
-            return
-        }
-        AF.request(moviesDetailsBackdropURL).response { response in
-            if let data = response.data {
-                self.backdrop.image = UIImage(data: data)
-            }
-        }*/
+         return
+         }
+         AF.request(moviesDetailsBackdropURL).response { response in
+         if let data = response.data {
+         self.backdrop.image = UIImage(data: data)
+         }
+         }*/
         /*guard let moviesDetailsPosterURL = moviesDetails?.posterURL else {
-            return
-        }
-        AF.request(moviesDetailsPosterURL).response { response in
-            if let data = response.data {
-                self.poster.image = UIImage(data: data)
-            }
-        }*/
+         return
+         }
+         AF.request(moviesDetailsPosterURL).response { response in
+         if let data = response.data {
+         self.poster.image = UIImage(data: data)
+         }
+         }*/
     }
 }

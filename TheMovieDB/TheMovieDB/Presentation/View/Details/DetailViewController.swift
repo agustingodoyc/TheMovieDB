@@ -19,9 +19,8 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var releaseDate: UILabel!
     @IBOutlet weak var voteAverage: UILabel!
     
-    //@IBOutlet weak var navigation: UINavigationItem!
     // MARK: - Properties
-    weak var viewModel: DetailsViewModel?
+    weak var viewModel: DetailViewModel?
     
     // MARK: - View Life Cycle
     override func viewDidLoad() {

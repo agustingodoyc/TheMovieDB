@@ -9,7 +9,7 @@ import Foundation
 
 import Foundation
 
-class MovieDetailsUseCase: DetailsUseCase {
+class MovieDetailUseCase: DetailsUseCase {
     
     private var dataManager: DataManager
     
@@ -28,7 +28,7 @@ class MovieDetailsUseCase: DetailsUseCase {
 }
 
 // MARK: - Realm
-extension MovieDetailsUseCase: DataManagerDelegate {
+extension MovieDetailUseCase: DataManagerDelegate {
     func updateData(_ data: [MoviePersisted]) {
         //movies = data
     }

@@ -10,3 +10,7 @@ import Foundation
 protocol DataManagerProtocol {
     func getMovie(_ endpoint: Endpoints, completionHandler: @escaping ([MoviePersisted]) -> Void)
 }
+
+protocol DataManagerDetailProtocol {
+    func getDetails(_ movieId: String, completionHandler: @escaping (MovieDetailData) -> Void)
+}

@@ -34,7 +34,7 @@ class MainCoordinator: Coordinator, MovieDetailProtocol {
     }
     
     func goToDetail(movieId: Int) {
-        let viewModel = DetailsViewModel(movieID: String(movieId))
+        let viewModel = DetailViewModel(movieID: String(movieId))
         guard let vc = DetailViewController.instantiate() else {
             fatalError("Unable to create an DetailsViewController instance")
             return

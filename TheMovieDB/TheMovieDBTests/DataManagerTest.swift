@@ -13,12 +13,44 @@ final class DataManagerTest: XCTestCase {
     var sut: DataManager!
     
     struct MockProvider: ServiceProtocol {
+
         var movieData: [MovieData] = [
             MovieData(adult: true, backdropPath: "backdropPath", genreIDS: [1,2,3], id: 1, originalLanguage: "Spanish", originalTitle: "Movie 1", overview: "Over View 1", popularity: 3, posterPath: "", releaseDate: "2022-10-22", title: "Movie 1", video: true, voteAverage: 3.9, voteCount: 9)
         ]
         
+        var movieDetailData: MovieDetailData =
+        MovieDetailData(adult: true,
+                        backdropPath: "",
+                        belongsToCollection: BelongsToCollection(id: 1, name: "Colletion1", posterPath: "", backdropPath: ""),
+                        budget: 1,
+                        genres: [Genres(id: 1, name: "Horror")],
+                        homepage: "",
+                        id: 3,
+                        imbdId: "",
+                        originalLanguage: "Spanish",
+                        originalTitle: "MovieDetail1",
+                        overview: "",
+                        popularity: 3.2,
+                        posterPath: "",
+                        productionCompanies: [ProductionCompanies(name: "Company 1", id: 1, logoPath: "", originCountry: "Argentina")],
+                        productionCountries: [ProductionCountries(iso_3166_1: "1", name: "Argentina")],
+                        releaseDate: "2022-02-22",
+                        revenue: 1,
+                        runtime: 1,
+                        spokenLanguages: [SpokenLanguages(iso_639_1: "2", name: "English")],
+                        status: "status 1",
+                        tagline: "tagline 1",
+                        title: "title 1",
+                        video: false,
+                        voteAverage: 4,
+                        voteCount: 4)
+        
         func getEndPointMovie(_ endpoint: TheMovieDB.Endpoints, completion: @escaping (Result<[TheMovieDB.MovieData], TheMovieDB.ServiceError>) -> Void) {
             completion(.success(movieData))
+        }
+        
+        func getMovieDetails(_ id: String, completion: @escaping (Result<TheMovieDB.MovieDetailData, TheMovieDB.ServiceError>) -> Void) {
+            completion(.success(movieDetailData))
         }
     }
     
@@ -49,6 +81,10 @@ final class DataManagerTest: XCTestCase {
     class MockServiceFailure: ServiceProtocol {
         func getEndPointMovie(_ endpoint: TheMovieDB.Endpoints, completion: @escaping (Result<[TheMovieDB.MovieData], TheMovieDB.ServiceError>) -> Void) {
             completion(.failure(.emptyData))
+        }
+        
+        func getMovieDetails(_ id: String, completion: @escaping (Result<TheMovieDB.MovieDetailData, TheMovieDB.ServiceError>) -> Void) {
+            completion(.failure(.parseError))
         }
     }
 
@@ -123,5 +159,16 @@ final class DataManagerTest: XCTestCase {
         
         wait(for: [promise,servicePromise], timeout: 5)
     }
-
+    
+    func testGetMovieDetails() {
+        
+        let promise = self.expectation(description: "Geting Data")
+        
+        sut.getDetails("1") { result in
+            XCTAssertEqual(result.title, "title 1")
+            promise.fulfill()
+        }
+        
+        waitForExpectations(timeout: 5, handler: nil)
+    }
 }
