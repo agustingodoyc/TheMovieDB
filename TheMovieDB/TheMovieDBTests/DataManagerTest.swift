@@ -13,7 +13,7 @@ final class DataManagerTest: XCTestCase {
     var sut: DataManager!
     
     struct MockProvider: ServiceProtocol {
-
+    
         var movieData: [MovieData] = [
             MovieData(adult: true, backdropPath: "backdropPath", genreIDS: [1,2,3], id: 1, originalLanguage: "Spanish", originalTitle: "Movie 1", overview: "Over View 1", popularity: 3, posterPath: "", releaseDate: "2022-10-22", title: "Movie 1", video: true, voteAverage: 3.9, voteCount: 9)
         ]
@@ -49,7 +49,7 @@ final class DataManagerTest: XCTestCase {
             completion(.success(movieData))
         }
         
-        func getMovieDetails(_ id: String, completion: @escaping (Result<TheMovieDB.MovieDetailData, TheMovieDB.ServiceError>) -> Void) {
+        func getMovieDetail(_ id: String, completion: @escaping (Result<TheMovieDB.MovieDetailData, TheMovieDB.ServiceError>) -> Void) {
             completion(.success(movieDetailData))
         }
     }
@@ -83,7 +83,7 @@ final class DataManagerTest: XCTestCase {
             completion(.failure(.emptyData))
         }
         
-        func getMovieDetails(_ id: String, completion: @escaping (Result<TheMovieDB.MovieDetailData, TheMovieDB.ServiceError>) -> Void) {
+        func getMovieDetail(_ id: String, completion: @escaping (Result<TheMovieDB.MovieDetailData, TheMovieDB.ServiceError>) -> Void) {
             completion(.failure(.parseError))
         }
     }
