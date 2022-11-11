@@ -1,17 +1,17 @@
 //
-//  TopRatedUseCaseTest.swift
+//  UpcomingUseCaseTest.swift
 //  TheMovieDBTests
 //
-//  Created by Angela Lee on 01/11/2022.
+//  Created by Angela Lee on 11/11/2022.
 //
 
 import Foundation
 import XCTest
 @testable import TheMovieDB
 
-final class TopRatedUseCaseTest: XCTestCase {
+final class UpcomingUseCaseTest: XCTestCase {
     
-    var sut: TopRatedUseCase!
+    var sut: UpcomingUseCase!
     
     class MockDataManager: DataManagerProtocol {
         var moviePersisted: [MoviePersisted] =
@@ -27,7 +27,7 @@ final class TopRatedUseCaseTest: XCTestCase {
 
     override func setUpWithError() throws {
         try super.setUpWithError()
-        sut = TopRatedUseCase()
+        sut = UpcomingUseCase()
     }
 
     override func tearDownWithError() throws {
@@ -38,6 +38,7 @@ final class TopRatedUseCaseTest: XCTestCase {
     func testUseCaseExecute() {
         sut.execute() { movie in
             XCTAssertEqual(movie[0].title, "Title 1")
+            XCTAssertEqual(movie[1].title, "Title 2")
         }
     }
 }

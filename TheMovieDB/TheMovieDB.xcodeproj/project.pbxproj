@@ -42,6 +42,8 @@
 		104F5576290038230014D4E5 /* AlamofireSP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104F5575290038230014D4E5 /* AlamofireSP.swift */; };
 		104F557B29003AF50014D4E5 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 104F557A29003AF50014D4E5 /* Alamofire */; };
 		106CEF5A28FEDD1900AEC45A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106CEF5928FEDD1900AEC45A /* MainViewController.swift */; };
+		106F8F07291E9DBF00B9C256 /* UpcomingUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106F8F06291E9DBF00B9C256 /* UpcomingUseCaseTest.swift */; };
+		106F8F09291E9E1B00B9C256 /* UpcomingViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106F8F08291E9E1B00B9C256 /* UpcomingViewModelTest.swift */; };
 		10BD3D4929154A26000A0EBC /* MovieDetailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BD3D4829154A26000A0EBC /* MovieDetailUseCase.swift */; };
 		10BD3D4C29154D47000A0EBC /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BD3D4B29154D47000A0EBC /* DetailViewModel.swift */; };
 		10BD3D4E29154DC2000A0EBC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BD3D4D29154DC2000A0EBC /* DetailViewController.swift */; };
@@ -129,6 +131,8 @@
 		104F5573290036B50014D4E5 /* RealmDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RealmDB.swift; path = TheMovieDB/Protocols/RealmDB.swift; sourceTree = SOURCE_ROOT; };
 		104F5575290038230014D4E5 /* AlamofireSP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AlamofireSP.swift; path = TheMovieDB/Protocols/AlamofireSP.swift; sourceTree = SOURCE_ROOT; };
 		106CEF5928FEDD1900AEC45A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		106F8F06291E9DBF00B9C256 /* UpcomingUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingUseCaseTest.swift; sourceTree = "<group>"; };
+		106F8F08291E9E1B00B9C256 /* UpcomingViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingViewModelTest.swift; sourceTree = "<group>"; };
 		10BD3D4829154A26000A0EBC /* MovieDetailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailUseCase.swift; sourceTree = SOURCE_ROOT; };
 		10BD3D4B29154D47000A0EBC /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		10BD3D4D29154DC2000A0EBC /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -315,10 +319,12 @@
 				100CA9C6291013E600E73390 /* DataBaseTest.swift */,
 				100CA9C82910163700E73390 /* NowPlayingUseCaseTest.swift */,
 				100CA9CC29101B0000E73390 /* NowPlayingViewModelTest.swift */,
-				10FF07C5291D55B800ECE00E /* MovieDetailUseCaseTest.swift */,
-				10FF07C7291D593D00ECE00E /* DetailViewModelTest.swift */,
 				102E8493291E89F8006BD8B6 /* TopRatedUseCaseTest.swift */,
 				102E8495291E8A26006BD8B6 /* TopRatedViewModelTest.swift */,
+				106F8F06291E9DBF00B9C256 /* UpcomingUseCaseTest.swift */,
+				106F8F08291E9E1B00B9C256 /* UpcomingViewModelTest.swift */,
+				10FF07C5291D55B800ECE00E /* MovieDetailUseCaseTest.swift */,
+				10FF07C7291D593D00ECE00E /* DetailViewModelTest.swift */,
 			);
 			path = TheMovieDBTests;
 			sourceTree = "<group>";
@@ -722,8 +728,10 @@
 				10FF07C6291D55B800ECE00E /* MovieDetailUseCaseTest.swift in Sources */,
 				100CA9BC2910036600E73390 /* DataManagerTest.swift in Sources */,
 				102E8496291E8A26006BD8B6 /* TopRatedViewModelTest.swift in Sources */,
+				106F8F09291E9E1B00B9C256 /* UpcomingViewModelTest.swift in Sources */,
 				102E8494291E89F8006BD8B6 /* TopRatedUseCaseTest.swift in Sources */,
 				10FF07C8291D593D00ECE00E /* DetailViewModelTest.swift in Sources */,
+				106F8F07291E9DBF00B9C256 /* UpcomingUseCaseTest.swift in Sources */,
 				D6C6CC7728F99BF7009F41A1 /* CoordinatorTest.swift in Sources */,
 				100CA9C7291013E600E73390 /* DataBaseTest.swift in Sources */,
 				100CA9CD29101B0000E73390 /* NowPlayingViewModelTest.swift in Sources */,
