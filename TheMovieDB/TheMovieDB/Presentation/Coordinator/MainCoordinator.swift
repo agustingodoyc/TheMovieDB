@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class MainCoordinator: Coordinator {
+class MainCoordinator: Coordinator, MovieDetailProtocol {
     var childCoordinator = [Coordinator]()
     var navigationController: UINavigationController
     
@@ -30,5 +30,16 @@ class MainCoordinator: Coordinator {
         }
         vc.coordinator = self
         navigationController.setViewControllers([vc], animated: true)
+        navigationController.navigationBar.topItem?.title = "Movie DB"
+    }
+    
+    func goToDetail(movieId: Int) {
+        let viewModel = DetailViewModel(movieID: String(movieId))
+        guard let vc = DetailViewController.instantiate() else {
+            fatalError("Unable to create an DetailsViewController instance")
+            return
+        }
+        vc.viewModel = viewModel
+        navigationController.pushViewController(vc, animated: true)
     }
 }

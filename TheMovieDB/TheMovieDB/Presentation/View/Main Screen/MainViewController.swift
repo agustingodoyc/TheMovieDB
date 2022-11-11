@@ -8,13 +8,31 @@
 import Foundation
 import UIKit
 
-class MainViewController: UITabBarController {
+class MainViewController: UITabBarController, BaseViewController {
     
-    weak var coordinator: MainCoordinator?
+    weak var coordinator: MainCoordinator? {
+        didSet {
+            setUpTabs()
+        }
+    }
     
     override func viewDidLoad() {
-           super.viewDidLoad()
-       }
+        super.viewDidLoad()
+        navigationController?.navigationBar.barTintColor = UIColor(red: 6, green: 34, blue: 68, alpha: 1)
+    }
+    
+    func setUpTabs() {
+        guard let viewControllers = viewControllers else {
+            return
+        }
+
+        for viewController in viewControllers {
+            guard let childViewController = viewController as? BaseViewController else {
+                continue
+            }
+            childViewController.coordinator = self.coordinator
+        }
+    }
 }
 
 extension MainViewController: Storyboarded {
