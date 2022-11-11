@@ -9,6 +9,7 @@ import UIKit
 
 class TopRatedViewController: CheckNetworkConnection, BaseViewController {
     
+    // MARK: - IBOutles
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: - Properties
@@ -32,7 +33,7 @@ class TopRatedViewController: CheckNetworkConnection, BaseViewController {
 
 // MARK: - Table View
     
-extension TopRatedViewController: UITableViewDataSource {
+extension TopRatedViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.getNumberOfRowOfTopRatedMovie()
