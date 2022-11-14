@@ -47,7 +47,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Overview" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oXD-EQ-LBZ">
-                                                    <rect key="frame" x="191" y="61.666666666666671" width="184" height="190.33333333333331"/>
+                                                    <rect key="frame" x="191" y="46.666666666666671" width="184" height="205.33333333333331"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -56,7 +56,7 @@
                                             <constraints>
                                                 <constraint firstItem="VQQ-a7-Yux" firstAttribute="leading" secondItem="S14-FS-wpj" secondAttribute="leading" constant="15" id="CJE-Za-4ci"/>
                                                 <constraint firstItem="VQQ-a7-Yux" firstAttribute="width" secondItem="S14-FS-wpj" secondAttribute="width" multiplier="0.4" id="DIG-qF-rI1"/>
-                                                <constraint firstItem="oXD-EQ-LBZ" firstAttribute="top" secondItem="EKG-RA-r0K" secondAttribute="bottom" constant="20" id="HFA-Ya-8Bb"/>
+                                                <constraint firstItem="oXD-EQ-LBZ" firstAttribute="top" secondItem="EKG-RA-r0K" secondAttribute="bottom" constant="5" id="HFA-Ya-8Bb"/>
                                                 <constraint firstItem="VQQ-a7-Yux" firstAttribute="top" secondItem="S14-FS-wpj" secondAttribute="top" constant="15" id="M10-Zb-4zU"/>
                                                 <constraint firstAttribute="trailing" secondItem="oXD-EQ-LBZ" secondAttribute="trailing" constant="15" id="Pn4-yY-CWi"/>
                                                 <constraint firstItem="oXD-EQ-LBZ" firstAttribute="leading" secondItem="VQQ-a7-Yux" secondAttribute="trailing" constant="20" id="Rqv-YL-3et"/>
