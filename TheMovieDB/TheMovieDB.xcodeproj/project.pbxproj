@@ -41,6 +41,12 @@
 		104F5574290036B50014D4E5 /* RealmDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104F5573290036B50014D4E5 /* RealmDB.swift */; };
 		104F5576290038230014D4E5 /* AlamofireSP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104F5575290038230014D4E5 /* AlamofireSP.swift */; };
 		104F557B29003AF50014D4E5 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 104F557A29003AF50014D4E5 /* Alamofire */; };
+		106CADD22922995200D9CE1E /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106CADD12922995200D9CE1E /* SearchViewModel.swift */; };
+		106CADD42922996500D9CE1E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106CADD32922996500D9CE1E /* SearchViewController.swift */; };
+		106CADD62922997700D9CE1E /* SearchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 106CADD52922997700D9CE1E /* SearchScreen.storyboard */; };
+		106CADDC2922B89D00D9CE1E /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106CADDB2922B89D00D9CE1E /* SearchCell.swift */; };
+		106CADDE2922B96000D9CE1E /* SearchCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106CADDD2922B96000D9CE1E /* SearchCellModel.swift */; };
+		106CADE02922BB9900D9CE1E /* SearchUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106CADDF2922BB9800D9CE1E /* SearchUseCase.swift */; };
 		106CEF5A28FEDD1900AEC45A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106CEF5928FEDD1900AEC45A /* MainViewController.swift */; };
 		106F8F07291E9DBF00B9C256 /* UpcomingUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106F8F06291E9DBF00B9C256 /* UpcomingUseCaseTest.swift */; };
 		106F8F09291E9E1B00B9C256 /* UpcomingViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106F8F08291E9E1B00B9C256 /* UpcomingViewModelTest.swift */; };
@@ -130,6 +136,12 @@
 		104F55712900361C0014D4E5 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DataManager.swift; path = TheMovieDB/Protocols/DataManager.swift; sourceTree = SOURCE_ROOT; };
 		104F5573290036B50014D4E5 /* RealmDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RealmDB.swift; path = TheMovieDB/Protocols/RealmDB.swift; sourceTree = SOURCE_ROOT; };
 		104F5575290038230014D4E5 /* AlamofireSP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AlamofireSP.swift; path = TheMovieDB/Protocols/AlamofireSP.swift; sourceTree = SOURCE_ROOT; };
+		106CADD12922995200D9CE1E /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		106CADD32922996500D9CE1E /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		106CADD52922997700D9CE1E /* SearchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchScreen.storyboard; sourceTree = "<group>"; };
+		106CADDB2922B89D00D9CE1E /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
+		106CADDD2922B96000D9CE1E /* SearchCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchCellModel.swift; path = TheMovieDB/Presentation/View/Search/SearchCellModel.swift; sourceTree = SOURCE_ROOT; };
+		106CADDF2922BB9800D9CE1E /* SearchUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchUseCase.swift; path = TheMovieDB/Presentation/View/Search/SearchUseCase.swift; sourceTree = SOURCE_ROOT; };
 		106CEF5928FEDD1900AEC45A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		106F8F06291E9DBF00B9C256 /* UpcomingUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingUseCaseTest.swift; sourceTree = "<group>"; };
 		106F8F08291E9E1B00B9C256 /* UpcomingViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingViewModelTest.swift; sourceTree = "<group>"; };
@@ -240,6 +252,17 @@
 				102E84A2291E9352006BD8B6 /* UpcomingCell.swift */,
 			);
 			path = Upcoming;
+			sourceTree = "<group>";
+		};
+		106CADD02922993B00D9CE1E /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				106CADD12922995200D9CE1E /* SearchViewModel.swift */,
+				106CADD32922996500D9CE1E /* SearchViewController.swift */,
+				106CADDB2922B89D00D9CE1E /* SearchCell.swift */,
+				106CADD52922997700D9CE1E /* SearchScreen.storyboard */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 		10BD3D4A29154D2C000A0EBC /* Details */ = {
@@ -380,6 +403,7 @@
 		D67DDA6728EE16A30093B3A0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				106CADD02922993B00D9CE1E /* Search */,
 				10BD3D4A29154D2C000A0EBC /* Details */,
 				101EE2CD28F7101000CAE2A5 /* Main Screen */,
 				D6C4339F28F7509B00B61185 /* SplashScreen */,
@@ -401,6 +425,7 @@
 				10361CB52914081000973644 /* MovieDetailData.swift */,
 				10361CB729140F3D00973644 /* MovieDetailObjects.swift */,
 				10F28DF72919669B00647235 /* MovieDetail.swift */,
+				106CADDD2922B96000D9CE1E /* SearchCellModel.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -413,6 +438,7 @@
 				10BD3D4829154A26000A0EBC /* MovieDetailUseCase.swift */,
 				102F2AD5291AADE800F65D55 /* NetworkConnectionUseCase.swift */,
 				102E84A8291E9502006BD8B6 /* UpcomingUseCase.swift */,
+				106CADDF2922BB9800D9CE1E /* SearchUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -608,6 +634,7 @@
 				10BD3D5629156AE4000A0EBC /* DetailsScreen.storyboard in Resources */,
 				D67DDA3F28EE161D0093B3A0 /* LaunchScreen.storyboard in Resources */,
 				D6C37DBE2900980C00B0DE7A /* movie.json in Resources */,
+				106CADD62922997700D9CE1E /* SearchScreen.storyboard in Resources */,
 				D6C433A128F750CA00B61185 /* SplashScreen.storyboard in Resources */,
 				D67DDA3C28EE161D0093B3A0 /* Assets.xcassets in Resources */,
 				D67DDA3A28EE161A0093B3A0 /* Main.storyboard in Resources */,
@@ -679,6 +706,8 @@
 				102E84A9291E9502006BD8B6 /* UpcomingUseCase.swift in Sources */,
 				10F28DF82919669B00647235 /* MovieDetail.swift in Sources */,
 				10BD3D4C29154D47000A0EBC /* DetailViewModel.swift in Sources */,
+				106CADD22922995200D9CE1E /* SearchViewModel.swift in Sources */,
+				106CADE02922BB9900D9CE1E /* SearchUseCase.swift in Sources */,
 				D697D22E290719DA00CE310C /* DataManagerDelegate.swift in Sources */,
 				10361CB62914081000973644 /* MovieDetailData.swift in Sources */,
 				102E84A3291E9352006BD8B6 /* UpcomingCell.swift in Sources */,
@@ -708,11 +737,14 @@
 				10281B20290AC93600B0C6C8 /* NowPlayingUseCase.swift in Sources */,
 				D697D22F290719DA00CE310C /* ServiceProtocol.swift in Sources */,
 				10BD3D4929154A26000A0EBC /* MovieDetailUseCase.swift in Sources */,
+				106CADD42922996500D9CE1E /* SearchViewController.swift in Sources */,
 				10281B26290AEEDB00B0C6C8 /* NowPlayingCellModel.swift in Sources */,
 				D6A7A85D29030CF100B9BF61 /* ViewModelDelegate.swift in Sources */,
+				106CADDE2922B96000D9CE1E /* SearchCellModel.swift in Sources */,
 				10D00DA828FDFD0900244C4E /* TopRatedViewController.swift in Sources */,
 				10F28DF42919546900647235 /* BaseViewController.swift in Sources */,
 				106CEF5A28FEDD1900AEC45A /* MainViewController.swift in Sources */,
+				106CADDC2922B89D00D9CE1E /* SearchCell.swift in Sources */,
 				104F55722900361C0014D4E5 /* DataManager.swift in Sources */,
 				100CA9D029101B8400E73390 /* UseCase.swift in Sources */,
 				100CA9CB2910182400E73390 /* DataManagerProtocol.swift in Sources */,

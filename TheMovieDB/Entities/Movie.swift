@@ -13,6 +13,7 @@ class Movie {
     var realeaseDate: String?
     var voteAverage: Double?
     var id: Int?
+    var overview: String?
     
     convenience init(moviePersisted: MoviePersisted) {
         self.init()
@@ -21,5 +22,6 @@ class Movie {
         realeaseDate = moviePersisted.releaseDate
         voteAverage = moviePersisted.voteAverage
         id = moviePersisted.id
+        overview = moviePersisted.overview
     }
 }

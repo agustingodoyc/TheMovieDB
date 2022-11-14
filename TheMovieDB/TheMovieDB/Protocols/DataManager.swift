@@ -73,4 +73,13 @@ public class DataManager: DataManagerProtocol, DataManagerDetailProtocol {
             }
         }
     }
+    
+    // MARK: - Get All Movies
+    func getAllMovies(completionHandler: @escaping ([MoviePersisted]) -> Void) {
+        if (dataBase.isEmpty){
+            completionHandler([])
+        }else {
+            completionHandler(dataBase.getData())
+        }
+    }
 }

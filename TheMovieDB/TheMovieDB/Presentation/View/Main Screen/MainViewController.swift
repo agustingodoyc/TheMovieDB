@@ -9,6 +9,10 @@ import Foundation
 import UIKit
 
 class MainViewController: UITabBarController, BaseViewController {
+
+    @IBAction func searchAction(_ sender: Any) {
+        coordinator?.goToSearchMovieScreen()
+    }
     
     weak var coordinator: MainCoordinator? {
         didSet {
@@ -33,8 +37,10 @@ class MainViewController: UITabBarController, BaseViewController {
             childViewController.coordinator = self.coordinator
         }
     }
+    
 }
 
+// MARK: - Storyboarded
 extension MainViewController: Storyboarded {
     static func instantiate() -> Self? {
         let id = String(describing: self)

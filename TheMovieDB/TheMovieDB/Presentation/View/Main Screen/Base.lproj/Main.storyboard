@@ -306,8 +306,11 @@
             <objects>
                 <tabBarController storyboardIdentifier="MainViewController" title="Movies DB" keyboardType="off" id="I78-XQ-9nA" customClass="MainViewController" customModule="TheMovieDB" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="Movie DB" style="browser" id="KKx-Ch-tfx">
-                        <barButtonItem key="rightBarButtonItem" image="magnifyingglass" catalog="system" id="RNi-gV-Kcp">
+                        <barButtonItem key="rightBarButtonItem" title="SearchIcon" image="magnifyingglass" catalog="system" id="RNi-gV-Kcp">
                             <color key="tintColor" red="0.14117647059999999" green="0.76470588240000004" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="searchAction:" destination="I78-XQ-9nA" id="7ME-L6-t9f"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FZ9-ZS-uIQ">
