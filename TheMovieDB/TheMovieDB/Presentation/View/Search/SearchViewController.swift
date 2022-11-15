@@ -13,17 +13,16 @@ class SearchViewController: UIViewController {
     
     // MARK: - IBOutles
     @IBOutlet weak var tableView: UITableView!
-    
+    @IBOutlet weak var searchBar: UISearchBar!
     // MARK: - Properties
     lazy var viewModel = SearchViewModel()
+    weak var coordinator: MainCoordinator?
     
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate = self
-        viewModel.getSearchUseCase {
-            self.reloadData()
-        }
+        viewModel.getSearchUseCase()
     }
 }
 
@@ -42,6 +41,22 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
         cell.loadAllMovies(movie: viewModel.getMovies(indexPath: indexPath.row))
         
         return cell
+    }
+}
+//MARK: - UISearchBar Methods
+extension SearchViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        viewModel.searchMovie(searchText: searchText)
+    }
+}
+
+// MARK: SelectedMovie
+extension SearchViewController {
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        guard let selectedPath = tableView.indexPathForSelectedRow else {
+            return
+        }
+        coordinator?.goToDetail(movieId: viewModel.getMovieId(row: selectedPath.row))
     }
 }
 

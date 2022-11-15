@@ -93,6 +93,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="searchBar" destination="LXj-DC-ZUk" id="P8U-np-mrr"/>
                         <outlet property="tableView" destination="Gxx-ps-LE2" id="xoI-d4-eCM"/>
                     </connections>
                 </viewController>

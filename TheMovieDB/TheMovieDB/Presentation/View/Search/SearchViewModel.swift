@@ -9,7 +9,12 @@ import Foundation
 
 class SearchViewModel {
     
-    var movies: [Movie] = []
+    private var movies: [Movie] = []
+    private var filterMovie: [Movie] = [] {
+        didSet {
+            delegate?.reloadData()
+        }
+    }
     var searchUseCase : TabBarUseCase
     weak var delegate: ViewModelDelegate?
     
@@ -17,20 +22,49 @@ class SearchViewModel {
         self.searchUseCase = searchUseCase
     }
     
-    func getSearchUseCase(completionHandler: @escaping () -> Void) {
+    func getSearchUseCase() {
         searchUseCase.execute() { movie in
             self.movies = movie
-            completionHandler()
+            self.filterMovie = movie
         }
     }
     
-    //MARK: - SearchViewController functions
+    // MARK: - SearchViewController functions
     
     func getNumberOfRowOfMovies() -> Int {
-        return movies.count
+        return filterMovie.count
     }
 
     func getMovies(indexPath: Int) -> SearchCellModel {
-        return .init(movies[indexPath])
+        return .init(filterMovie[indexPath])
+    }
+}
+
+// MARK: - Filter
+extension SearchViewModel {
+    func searchMovie(searchText: String) {
+        var filteredMovie: [Movie] = []
+        guard searchText != "" else {
+            filterMovie = movies
+            return
+        }
+        for movie in filterMovie {
+            guard let movieTitle = movie.title else {
+                return
+            }
+            if movieTitle.contains(searchText) {
+                filteredMovie.append(movie)
+            }
+        }
+        filterMovie = filteredMovie
+    }
+}
+// MARK: - Coordinator
+extension SearchViewModel {
+    func getMovieId(row: Int) -> Int {
+        guard let movieId = movies[row].id else {
+            fatalError("No id.")
+        }
+        return movieId
     }
 }
