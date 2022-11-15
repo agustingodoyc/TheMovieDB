@@ -53,10 +53,7 @@ extension TopRatedViewController: UITableViewDataSource, UITableViewDelegate {
 // MARK: SelectedMovie
 extension TopRatedViewController {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let selectedPath = tableView.indexPathForSelectedRow else {
-            return
-        }
-        coordinator?.goToDetail(movieId: viewModel.getMovieId(row: selectedPath.row))
+        coordinator?.goToDetail(movieId: viewModel.getMovieId(row: indexPath.row))
     }
 }
 

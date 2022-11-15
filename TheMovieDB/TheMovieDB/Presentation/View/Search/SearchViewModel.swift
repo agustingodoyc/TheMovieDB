@@ -52,7 +52,7 @@ extension SearchViewModel {
             guard let movieTitle = movie.title else {
                 return
             }
-            if movieTitle.contains(searchText) {
+            if movieTitle.lowercased().contains(searchText.lowercased()) {
                 filteredMovie.append(movie)
             }
         }

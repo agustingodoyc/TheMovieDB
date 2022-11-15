@@ -8,8 +8,7 @@
 import Foundation
 import UIKit
 
-class SearchViewController: UIViewController {
-    
+class SearchViewController: UIViewController, BaseViewController {
     
     // MARK: - IBOutles
     @IBOutlet weak var tableView: UITableView!
@@ -23,11 +22,12 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
         viewModel.delegate = self
         viewModel.getSearchUseCase()
+        self.navigationItem.title = "Movie searcher"
     }
 }
 
 // MARK: - Table View
-extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
+extension SearchViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.getNumberOfRowOfMovies()
@@ -43,7 +43,7 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
 }
-//MARK: - UISearchBar Methods
+// MARK: - UISearchBar Methods
 extension SearchViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         viewModel.searchMovie(searchText: searchText)
@@ -51,12 +51,9 @@ extension SearchViewController: UISearchBarDelegate {
 }
 
 // MARK: SelectedMovie
-extension SearchViewController {
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        guard let selectedPath = tableView.indexPathForSelectedRow else {
-            return
-        }
-        coordinator?.goToDetail(movieId: viewModel.getMovieId(row: selectedPath.row))
+extension SearchViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        coordinator?.goToDetail(movieId: viewModel.getMovieId(row: indexPath.row))
     }
 }
 
