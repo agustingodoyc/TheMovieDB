@@ -7,10 +7,8 @@
 
 import Foundation
 
-import Foundation
-
 class MovieDetailUseCase: DetailsUseCase {
-    
+    // MARK: - Properties
     private var dataManager: DataManager
     
     //MARK: - Init

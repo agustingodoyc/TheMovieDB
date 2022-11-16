@@ -8,7 +8,7 @@
 import Foundation
 
 class NowPlayingViewModel {
-    
+    // MARK: - Properties
     var movies: [Movie] = []
     var nowPlayingUseCase: TabBarUseCase
     weak var delegate: ViewModelDelegate?

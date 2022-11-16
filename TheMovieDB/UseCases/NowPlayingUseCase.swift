@@ -8,10 +8,10 @@
 import Foundation
 
 class NowPlayingUseCase: TabBarUseCase {
-    
+    // MARK: - Properties
     private var dataManager: DataManager
     
-    //MARK: - Init
+    // MARK: - Init
     init(_ dataManager: DataManager = DataManager()) {
         self.dataManager = dataManager
         self.dataManager.delegate = self

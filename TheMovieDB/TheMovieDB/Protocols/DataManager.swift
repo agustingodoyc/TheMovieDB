@@ -8,7 +8,6 @@
 import Foundation
 
 public class DataManager: DataManagerProtocol, DataManagerDetailProtocol, DataManagerSearchProtocol {
-    
     // MARK: - Properties
     private var service: ServiceProtocol
     var delegate: DataManagerDelegate?
@@ -76,7 +75,7 @@ public class DataManager: DataManagerProtocol, DataManagerDetailProtocol, DataMa
     
     // MARK: - Get All Movies
     func getAllMovies(completionHandler: @escaping ([MoviePersisted]) -> Void) {
-        if (dataBase.isEmpty){
+        if (dataBase.isEmpty) {
             completionHandler([])
         }else {
             completionHandler(dataBase.getData())

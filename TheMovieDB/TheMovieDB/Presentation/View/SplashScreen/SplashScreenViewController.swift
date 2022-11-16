@@ -10,17 +10,13 @@ import UIKit
 import Lottie
 
 class SplashScreenViewController: UIViewController {
-    
     // MARK: - View Outlets
-    
     @IBOutlet var animationView: LottieAnimationView!
     
     // MARK: - Properties
-    
     weak var coordinator: MainCoordinator?
     
     // MARK: - View Life Cycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         animationView.play { complition in
@@ -32,7 +28,6 @@ class SplashScreenViewController: UIViewController {
 }
 
 // MARK: - Storyboard instantiation
-
 extension SplashScreenViewController: Storyboarded {
     static func instantiate() -> Self? {
         let id = String(describing: self)

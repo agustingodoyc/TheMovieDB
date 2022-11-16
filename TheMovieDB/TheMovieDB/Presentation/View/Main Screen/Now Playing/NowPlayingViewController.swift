@@ -8,14 +8,11 @@
 import UIKit
 
 class NowPlayingViewController: CheckNetworkConnection, BaseViewController {
-    
-
     // MARK: - IBOutles
     @IBOutlet weak var collectionView: UICollectionView!
     
     // MARK: - Properties
     weak var coordinator: MainCoordinator?
-    
     lazy var viewModel = NowPlayingViewModel()
     
     // MARK: - View Life Cycle
@@ -53,7 +50,6 @@ extension NowPlayingViewController: UICollectionViewDelegate, UICollectionViewDa
 
 // MARK: SelectedMovie
 extension NowPlayingViewController {
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         coordinator?.goToDetail(movieId: viewModel.getMovieId(row: indexPath.row))
     }

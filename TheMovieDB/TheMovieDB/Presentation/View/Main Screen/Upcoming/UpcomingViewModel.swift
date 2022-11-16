@@ -8,7 +8,7 @@
 import Foundation
 
 class UpcomingViewModel {
-    
+    // MARK: - Properties
     var movies: [Movie] = []
     var upcomingUseCase: TabBarUseCase
     weak var delegate: ViewModelDelegate?
@@ -24,7 +24,7 @@ class UpcomingViewModel {
         }
     }
     
-    //MARK: - NowPlayingViewController functions
+    // MARK: - NowPlayingViewController functions
     func getNumberOfRowOfUpcomingMovie() -> Int {
         return movies.count
     }

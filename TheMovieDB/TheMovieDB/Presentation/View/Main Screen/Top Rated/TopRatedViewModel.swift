@@ -8,7 +8,7 @@
 import Foundation
 
 class TopRatedViewModel {
-    
+    // MARK: - Properties
     var movies: [Movie] = []
     var topRatedUseCase: TabBarUseCase
     weak var delegate: ViewModelDelegate?
@@ -24,7 +24,7 @@ class TopRatedViewModel {
         }
     }
     
-    //MARK: - NowPlayingViewController functions
+    // MARK: - NowPlayingViewController functions
     func getNumberOfRowOfTopRatedMovie() -> Int {
         return movies.count
     }

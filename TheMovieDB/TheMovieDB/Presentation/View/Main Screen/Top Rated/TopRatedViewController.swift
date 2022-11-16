@@ -8,7 +8,6 @@
 import UIKit
 
 class TopRatedViewController: CheckNetworkConnection, BaseViewController {
-    
     // MARK: - IBOutles
     @IBOutlet weak var tableView: UITableView!
     
@@ -17,7 +16,6 @@ class TopRatedViewController: CheckNetworkConnection, BaseViewController {
     lazy var viewModel = TopRatedViewModel()
     
     // MARK: - View Life Cycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate = self
@@ -32,9 +30,7 @@ class TopRatedViewController: CheckNetworkConnection, BaseViewController {
 }
 
 // MARK: - Table View
-    
 extension TopRatedViewController: UITableViewDataSource, UITableViewDelegate {
-
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.getNumberOfRowOfTopRatedMovie()
     }
@@ -58,9 +54,7 @@ extension TopRatedViewController {
 }
 
 // MARK: - Delegate
-
 extension TopRatedViewController: ViewModelDelegate {
-    
     func reloadData() {
         tableView.reloadData()
     }

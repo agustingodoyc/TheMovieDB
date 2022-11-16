@@ -8,7 +8,6 @@
 import UIKit
 
 class UpcomingViewController: CheckNetworkConnection, BaseViewController {
- 
     // MARK: - IBOutles
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -30,7 +29,6 @@ class UpcomingViewController: CheckNetworkConnection, BaseViewController {
 }
 
 extension UpcomingViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.getNumberOfRowOfUpcomingMovie()
     }

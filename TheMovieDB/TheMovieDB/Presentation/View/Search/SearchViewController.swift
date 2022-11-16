@@ -9,7 +9,6 @@ import Foundation
 import UIKit
 
 class SearchViewController: UIViewController, BaseViewController {
-    
     // MARK: - IBOutles
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -30,7 +29,6 @@ class SearchViewController: UIViewController, BaseViewController {
 
 // MARK: - Table View
 extension SearchViewController: UITableViewDataSource {
-
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.getNumberOfRowOfMovies()
     }
@@ -54,7 +52,6 @@ extension SearchViewController: UISearchBarDelegate {
 
 // MARK: SelectedMovie
 extension SearchViewController: UITableViewDelegate {
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         coordinator?.goToDetail(movieId: viewModel.getMovieId(row: indexPath.row))
     }

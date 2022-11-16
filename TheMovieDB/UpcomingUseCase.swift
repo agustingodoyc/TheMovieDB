@@ -8,7 +8,7 @@
 import Foundation
 
 class UpcomingUseCase: TabBarUseCase {
-    
+    // MARK: - Properties
     private var dataManager: DataManager
     
     //MARK: - Init

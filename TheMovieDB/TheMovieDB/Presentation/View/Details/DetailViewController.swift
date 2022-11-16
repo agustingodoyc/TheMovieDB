@@ -10,7 +10,6 @@ import UIKit
 import Alamofire
 
 class DetailViewController: UIViewController {
-    
     // MARK: - OBOutles
     @IBOutlet weak var backdrop: UIImageView!
     @IBOutlet weak var poster: UIImageView!

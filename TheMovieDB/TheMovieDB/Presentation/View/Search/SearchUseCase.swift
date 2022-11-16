@@ -8,7 +8,7 @@
 import Foundation
 
 class SearchUseCase: TabBarUseCase {
-
+    // MARK: - Properties
     private var dataManager: DataManager
     
     init(_ dataManager: DataManager = DataManager()) {

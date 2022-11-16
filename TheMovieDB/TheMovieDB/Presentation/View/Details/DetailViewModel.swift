@@ -10,7 +10,6 @@ import Alamofire
 import UIKit
 
 class DetailViewModel {
-    
     // MARK: - Properties
     private var moviesDetail: MovieDetail?
     private var detailsUseCase: DetailsUseCase

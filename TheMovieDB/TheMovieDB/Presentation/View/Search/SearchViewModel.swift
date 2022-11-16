@@ -8,7 +8,7 @@
 import Foundation
 
 class SearchViewModel: SearchViewModelProtocol {
-    
+    // MARK: - Properties
     private var movies: [Movie] = []
     private var filterMovie: [Movie] = [] {
         didSet {
@@ -30,7 +30,6 @@ class SearchViewModel: SearchViewModelProtocol {
     }
     
     // MARK: - SearchViewController functions
-    
     func getNumberOfRowOfMovies() -> Int {
         return filterMovie.count
     }

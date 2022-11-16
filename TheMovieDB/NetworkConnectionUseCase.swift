@@ -16,4 +16,3 @@ class NetworkConnectionUseCase: NetworkConnection {
         return true
     }
 }
-
