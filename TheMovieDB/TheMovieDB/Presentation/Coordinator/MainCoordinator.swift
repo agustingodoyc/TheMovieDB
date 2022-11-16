@@ -49,6 +49,7 @@ class MainCoordinator: Coordinator, MovieDetailProtocol {
             fatalError("Unable to create an SearchViewController instance")
             return
         }
+        vc.coordinator = self
         vc.viewModel = viewModel
         navigationController.pushViewController(vc, animated: true)
     }

@@ -52,6 +52,7 @@ extension SearchViewController: UISearchBarDelegate {
 
 // MARK: SelectedMovie
 extension SearchViewController: UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         coordinator?.goToDetail(movieId: viewModel.getMovieId(row: indexPath.row))
     }

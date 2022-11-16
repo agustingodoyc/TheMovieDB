@@ -15,7 +15,7 @@ class SearchViewModel {
             delegate?.reloadData()
         }
     }
-    var searchUseCase : TabBarUseCase
+    var searchUseCase: TabBarUseCase
     weak var delegate: ViewModelDelegate?
     
     init(searchUseCase: TabBarUseCase = SearchUseCase()) {
@@ -25,7 +25,6 @@ class SearchViewModel {
     func getSearchUseCase() {
         searchUseCase.execute() { movie in
             self.movies = movie
-            self.filterMovie = movie
         }
     }
     
@@ -45,10 +44,10 @@ extension SearchViewModel {
     func searchMovie(searchText: String) {
         var filteredMovie: [Movie] = []
         guard searchText != "" else {
-            filterMovie = movies
+            filterMovie = []
             return
         }
-        for movie in filterMovie {
+        for movie in movies {
             guard let movieTitle = movie.title else {
                 return
             }
@@ -62,7 +61,7 @@ extension SearchViewModel {
 // MARK: - Coordinator
 extension SearchViewModel {
     func getMovieId(row: Int) -> Int {
-        guard let movieId = movies[row].id else {
+        guard let movieId = filterMovie[row].id else {
             fatalError("No id.")
         }
         return movieId
