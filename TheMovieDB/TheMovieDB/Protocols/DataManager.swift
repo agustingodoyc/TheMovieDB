@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class DataManager: DataManagerProtocol, DataManagerDetailProtocol {
+public class DataManager: DataManagerProtocol, DataManagerDetailProtocol, DataManagerSearchProtocol {
     
     // MARK: - Properties
     private var service: ServiceProtocol

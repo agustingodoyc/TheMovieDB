@@ -21,7 +21,9 @@ class SearchViewController: UIViewController, BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate = self
-        viewModel.getSearchUseCase()
+        viewModel.getSearchUseCase() {
+            self.reloadData()
+        }
         self.navigationItem.title = "Movie searcher"
     }
 }

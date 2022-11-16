@@ -16,7 +16,9 @@
 		100CA9CB2910182400E73390 /* DataManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100CA9CA2910182400E73390 /* DataManagerProtocol.swift */; };
 		100CA9CD29101B0000E73390 /* NowPlayingViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100CA9CC29101B0000E73390 /* NowPlayingViewModelTest.swift */; };
 		100CA9D029101B8400E73390 /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100CA9CF29101B8400E73390 /* UseCase.swift */; };
-		1019126F292529A300E7AE94 /* SearchUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1019126E292529A300E7AE94 /* SearchUseCaseTest.swift */; };
+		1019127129252D2D00E7AE94 /* SearchUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1019127029252D2D00E7AE94 /* SearchUseCaseTest.swift */; };
+		1019127329252DD100E7AE94 /* SearchViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1019127229252DD100E7AE94 /* SearchViewModelTest.swift */; };
+		10191275292533CF00E7AE94 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10191274292533CF00E7AE94 /* ViewModelProtocol.swift */; };
 		10281B1E290AC56C00B0C6C8 /* CheckNetworkConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10281B1D290AC56C00B0C6C8 /* CheckNetworkConnection.swift */; };
 		10281B20290AC93600B0C6C8 /* NowPlayingUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10281B1F290AC93600B0C6C8 /* NowPlayingUseCase.swift */; };
 		10281B26290AEEDB00B0C6C8 /* NowPlayingCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10281B25290AEEDB00B0C6C8 /* NowPlayingCellModel.swift */; };
@@ -113,7 +115,9 @@
 		100CA9CA2910182400E73390 /* DataManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DataManagerProtocol.swift; path = Interfaces/DataManagerProtocol.swift; sourceTree = SOURCE_ROOT; };
 		100CA9CC29101B0000E73390 /* NowPlayingViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingViewModelTest.swift; sourceTree = "<group>"; };
 		100CA9CF29101B8400E73390 /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
-		1019126E292529A300E7AE94 /* SearchUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUseCaseTest.swift; sourceTree = "<group>"; };
+		1019127029252D2D00E7AE94 /* SearchUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUseCaseTest.swift; sourceTree = "<group>"; };
+		1019127229252DD100E7AE94 /* SearchViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModelTest.swift; sourceTree = "<group>"; };
+		10191274292533CF00E7AE94 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
 		10281B1D290AC56C00B0C6C8 /* CheckNetworkConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CheckNetworkConnection.swift; path = TheMovieDB/Presentation/Protocol/CheckNetworkConnection.swift; sourceTree = SOURCE_ROOT; };
 		10281B1F290AC93600B0C6C8 /* NowPlayingUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NowPlayingUseCase.swift; path = UseCases/NowPlayingUseCase.swift; sourceTree = SOURCE_ROOT; };
 		10281B25290AEEDB00B0C6C8 /* NowPlayingCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NowPlayingCellModel.swift; path = Entities/NowPlayingCellModel.swift; sourceTree = SOURCE_ROOT; };
@@ -350,7 +354,8 @@
 				106F8F08291E9E1B00B9C256 /* UpcomingViewModelTest.swift */,
 				10FF07C5291D55B800ECE00E /* MovieDetailUseCaseTest.swift */,
 				10FF07C7291D593D00ECE00E /* DetailViewModelTest.swift */,
-				1019126E292529A300E7AE94 /* SearchUseCaseTest.swift */,
+				1019127029252D2D00E7AE94 /* SearchUseCaseTest.swift */,
+				1019127229252DD100E7AE94 /* SearchViewModelTest.swift */,
 			);
 			path = TheMovieDBTests;
 			sourceTree = "<group>";
@@ -489,6 +494,7 @@
 				D6A7A85C29030CF100B9BF61 /* ViewModelDelegate.swift */,
 				10F28DF32919546900647235 /* BaseViewController.swift */,
 				10281B1D290AC56C00B0C6C8 /* CheckNetworkConnection.swift */,
+				10191274292533CF00E7AE94 /* ViewModelProtocol.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -709,6 +715,7 @@
 				102E84A9291E9502006BD8B6 /* UpcomingUseCase.swift in Sources */,
 				10F28DF82919669B00647235 /* MovieDetail.swift in Sources */,
 				10BD3D4C29154D47000A0EBC /* DetailViewModel.swift in Sources */,
+				10191275292533CF00E7AE94 /* ViewModelProtocol.swift in Sources */,
 				106CADD22922995200D9CE1E /* SearchViewModel.swift in Sources */,
 				106CADE02922BB9900D9CE1E /* SearchUseCase.swift in Sources */,
 				D697D22E290719DA00CE310C /* DataManagerDelegate.swift in Sources */,
@@ -762,9 +769,10 @@
 				100CA9C92910163700E73390 /* NowPlayingUseCaseTest.swift in Sources */,
 				10FF07C6291D55B800ECE00E /* MovieDetailUseCaseTest.swift in Sources */,
 				100CA9BC2910036600E73390 /* DataManagerTest.swift in Sources */,
-				1019126F292529A300E7AE94 /* SearchUseCaseTest.swift in Sources */,
+				1019127129252D2D00E7AE94 /* SearchUseCaseTest.swift in Sources */,
 				102E8496291E8A26006BD8B6 /* TopRatedViewModelTest.swift in Sources */,
 				106F8F09291E9E1B00B9C256 /* UpcomingViewModelTest.swift in Sources */,
+				1019127329252DD100E7AE94 /* SearchViewModelTest.swift in Sources */,
 				102E8494291E89F8006BD8B6 /* TopRatedUseCaseTest.swift in Sources */,
 				10FF07C8291D593D00ECE00E /* DetailViewModelTest.swift in Sources */,
 				106F8F07291E9DBF00B9C256 /* UpcomingUseCaseTest.swift in Sources */,

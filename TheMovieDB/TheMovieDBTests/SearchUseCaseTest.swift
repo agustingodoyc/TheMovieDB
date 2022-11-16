@@ -6,30 +6,37 @@
 //
 
 import XCTest
+@testable import TheMovieDB
 
 final class SearchUseCaseTest: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    var sut: SearchUseCase!
+    
+    class MockDataManager: DataManagerSearchProtocol {
+        var moviePersisted: [MoviePersisted] =
+        [
+            MoviePersisted(adult: true, backdropPath: "backdropPath 1", genreIDS: [1,2,3], id: 1, originalLanguage: "Spanish", originalTitle: "Original title 1", overview: "Overview 1", popularity: 3.4, posterPath: "posterPath 1", releaseDate: "2022-03-13", title: "Title 1", video: false, voteAverage: 5.8, voteCount: 10, movieType: "movieType 1"),
+            MoviePersisted(adult: true, backdropPath: "backdropPath 2", genreIDS: [1,2,3,4], id: 2, originalLanguage: "English", originalTitle: "Original title 2", overview: "Overview 2", popularity: 3.4, posterPath: "posterPath 2", releaseDate: "2022-01-18", title: "Title 2", video: false, voteAverage: 7.9, voteCount: 100, movieType: "movieType 2")
+        ]
+        
+        func getAllMovies(completionHandler: @escaping ([MoviePersisted]) -> Void) {
+            completionHandler(moviePersisted)
         }
     }
-
+    
+    override func setUpWithError() throws {
+        try super.setUpWithError()
+        sut = SearchUseCase()
+    }
+    
+    override func tearDownWithError() throws {
+        sut = nil
+        try super.tearDownWithError()
+    }
+    
+    func testUseCaseExecute() {
+        sut.execute() { movie in
+            XCTAssertEqual(movie[0].title, "Title 1")
+        }
+    }
 }

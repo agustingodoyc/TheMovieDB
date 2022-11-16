@@ -14,3 +14,7 @@ protocol DataManagerProtocol {
 protocol DataManagerDetailProtocol {
     func getDetail(_ movieId: String, completionHandler: @escaping (MovieDetailData) -> Void)
 }
+
+protocol DataManagerSearchProtocol {
+    func getAllMovies(completionHandler: @escaping ([MoviePersisted]) -> Void)
+}

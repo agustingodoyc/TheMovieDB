@@ -7,7 +7,7 @@
 
 import Foundation
 
-class SearchViewModel {
+class SearchViewModel: SearchViewModelProtocol {
     
     private var movies: [Movie] = []
     private var filterMovie: [Movie] = [] {
@@ -22,9 +22,10 @@ class SearchViewModel {
         self.searchUseCase = searchUseCase
     }
     
-    func getSearchUseCase() {
+    func getSearchUseCase(completionHandler: @escaping () -> Void) {
         searchUseCase.execute() { movie in
             self.movies = movie
+            completionHandler()
         }
     }
     
