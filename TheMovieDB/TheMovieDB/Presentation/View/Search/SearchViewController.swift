@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class SearchViewController: UIViewController, BaseViewController {
+class SearchViewController: CheckNetworkConnection, BaseViewController {
     // MARK: - IBOutles
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!

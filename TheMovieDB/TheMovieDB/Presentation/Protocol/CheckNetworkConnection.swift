@@ -16,14 +16,15 @@ class CheckNetworkConnection: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         isConnectedToInternet()
+        hideContent()
     }
     
     func isConnectedToInternet() {
-        guard (networkConnectionUseCase.execute() == true) else {
-            networkErrorImage.isHidden = false
+        guard (networkConnectionUseCase.execute() == false) else {
+            networkErrorImage.isHidden = true
             return
         }
-        networkErrorImage.isHidden = true
+        networkErrorImage.isHidden = false
     }
     
     func hideContent() { }

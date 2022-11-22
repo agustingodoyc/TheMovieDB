@@ -24,6 +24,10 @@ class UpcomingViewController: CheckNetworkConnection, BaseViewController {
     }
     
     override func hideContent() {
+        guard networkErrorImage.isHidden == true else {
+            collectionView.isHidden = true
+            return
+        }
         collectionView.isHidden = false
     }
 }

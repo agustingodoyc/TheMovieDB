@@ -12,17 +12,11 @@
         <!--Now playing-->
         <scene sceneID="7FR-Oq-4tE">
             <objects>
-                <viewController storyboardIdentifier="NowPlayingViewController" id="cpn-Mh-xAX" customClass="NowPlayingViewController" customModule="TheMovieDB" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NowPlayingViewController" id="cpn-Mh-xAX" customClass="NowPlayingViewController" customModule="TheMovieDB" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2rk-FZ-q8m">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no-recording" translatesAutoresizingMaskIntoConstraints="NO" id="L5G-cY-iGg">
-                                <rect key="frame" x="97.666666666666686" y="328.66666666666669" width="195" height="195.00000000000006"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="L5G-cY-iGg" secondAttribute="height" multiplier="1:1" id="qk3-8C-vXN"/>
-                                </constraints>
-                            </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Asu-4V-Uwi">
                                 <rect key="frame" x="0.0" y="91" width="390" height="670"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -77,6 +71,12 @@
                                     <outlet property="delegate" destination="cpn-Mh-xAX" id="7CL-ng-ZaF"/>
                                 </connections>
                             </collectionView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no-recording" translatesAutoresizingMaskIntoConstraints="NO" id="L5G-cY-iGg">
+                                <rect key="frame" x="97.666666666666686" y="328.66666666666669" width="195" height="195.00000000000006"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="L5G-cY-iGg" secondAttribute="height" multiplier="1:1" id="qk3-8C-vXN"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="P1y-rd-SzK"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -99,7 +99,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="Asu-4V-Uwi" id="Qte-LX-tTu"/>
-                        <outlet property="networkErrorImage" destination="L5G-cY-iGg" id="9Wh-PG-mQt"/>
+                        <outlet property="networkErrorImage" destination="L5G-cY-iGg" id="5cC-xU-bXO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xyw-oL-UA1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -109,7 +109,7 @@
         <!--Top Rated View Controller-->
         <scene sceneID="csM-UI-636">
             <objects>
-                <viewController id="26g-Xl-fhk" customClass="TopRatedViewController" customModule="TheMovieDB" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="26g-Xl-fhk" customClass="TopRatedViewController" customModule="TheMovieDB" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="feq-b7-dgY">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -340,17 +340,11 @@
         <!--Upcoming-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="UpcomingViewController" customModule="TheMovieDB" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="UpcomingViewController" customModule="TheMovieDB" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no-recording" translatesAutoresizingMaskIntoConstraints="NO" id="lZZ-EL-deA">
-                                <rect key="frame" x="97.666666666666686" y="328.66666666666669" width="195" height="195.00000000000006"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="lZZ-EL-deA" secondAttribute="height" multiplier="1:1" id="zom-2Y-L0T"/>
-                                </constraints>
-                            </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="a81-Jv-VMs">
                                 <rect key="frame" x="0.0" y="87" width="390" height="670"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -363,7 +357,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="upcomingCell" id="KgN-IC-ULG" customClass="UpcomingCell" customModule="TheMovieDB" customModuleProvider="target">
-                                        <rect key="frame" x="40" y="60" width="300" height="550"/>
+                                        <rect key="frame" x="40" y="58" width="300" height="550"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="SkU-bN-w2l">
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="550"/>
@@ -417,6 +411,12 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="iM3-HG-YVO"/>
                                 </connections>
                             </collectionView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no-recording" translatesAutoresizingMaskIntoConstraints="NO" id="lZZ-EL-deA">
+                                <rect key="frame" x="97.666666666666686" y="328.66666666666669" width="195" height="195.00000000000006"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="lZZ-EL-deA" secondAttribute="height" multiplier="1:1" id="zom-2Y-L0T"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -434,7 +434,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="a81-Jv-VMs" id="nPB-OL-3tF"/>
-                        <outlet property="networkErrorImage" destination="lZZ-EL-deA" id="3Qh-I7-2K0"/>
+                        <outlet property="networkErrorImage" destination="lZZ-EL-deA" id="cZm-j2-Gll"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

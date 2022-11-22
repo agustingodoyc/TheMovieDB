@@ -25,6 +25,10 @@ class TopRatedViewController: CheckNetworkConnection, BaseViewController {
     }
     
     override func hideContent() {
+        guard networkErrorImage.isHidden == true else {
+            tableView.isHidden = true
+            return
+        }
         tableView.isHidden = false
     }
 }
