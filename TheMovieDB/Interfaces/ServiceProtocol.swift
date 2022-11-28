@@ -21,6 +21,7 @@ enum Endpoints: String {
     case topRated = "top_rated"
     case upcoming
     case nowPlaying = "now_playing"
+    case popular
 }
 
 protocol ServiceProtocol {

@@ -22,17 +22,6 @@ class NowPlayingViewController: CheckNetworkConnection, BaseViewController {
         viewModel.getUseCaseNowPlayingMovie {
             self.reloadData()
         }
-        hideContent()
-    }
-    
-    func hideContent() {
-        guard viewModel.emptyDataBase == true else {
-            networkErrorImage.isHidden = true
-            collectionView.isHidden = false
-            return
-        }
-        networkErrorImage.isHidden = false
-        collectionView.isHidden = true
     }
 } 
 

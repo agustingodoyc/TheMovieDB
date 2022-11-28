@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 class MainViewController: UITabBarController, BaseViewController {
+    
     @IBAction func searchAction(_ sender: Any) {
         coordinator?.goToSearchMovieScreen()
     }
@@ -25,10 +26,18 @@ class MainViewController: UITabBarController, BaseViewController {
     }
     
     func setUpTabs() {
+        let popularVC = PopularViewController()
+            
+        popularVC.view.backgroundColor = .green
+        let popularItem = UITabBarItem(title: "Popular", image: .init(systemName: "popcorn.fill"), tag: 3)
+        
+        popularVC.tabBarItem = popularItem
+        
+        viewControllers?.append(popularVC)
+        
         guard let viewControllers = viewControllers else {
             return
         }
-
         for viewController in viewControllers {
             guard let childViewController = viewController as? BaseViewController else {
                 continue
