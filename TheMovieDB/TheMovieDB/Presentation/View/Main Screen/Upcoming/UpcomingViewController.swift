@@ -22,14 +22,6 @@ class UpcomingViewController: CheckNetworkConnection, BaseViewController {
             self.reloadData()
         }
     }
-    
-    override func hideContent() {
-        guard networkErrorImage.isHidden == true else {
-            collectionView.isHidden = true
-            return
-        }
-        collectionView.isHidden = false
-    }
 }
 
 extension UpcomingViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -57,6 +49,13 @@ extension UpcomingViewController {
 // MARK: - Delegate
 extension UpcomingViewController: ViewModelDelegate {
     func reloadData() {
-        collectionView.reloadData()
+        guard viewModel.isMoviesEmpty() else {
+            networkErrorImage.isHidden = true
+            collectionView.isHidden = false
+            collectionView.reloadData()
+            return
+        }
+        networkErrorImage.isHidden = false
+        collectionView.isHidden = true
     }
 }

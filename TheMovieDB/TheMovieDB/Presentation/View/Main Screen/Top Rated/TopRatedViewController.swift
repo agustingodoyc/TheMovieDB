@@ -23,14 +23,6 @@ class TopRatedViewController: CheckNetworkConnection, BaseViewController {
             self.reloadData()
         }
     }
-    
-    override func hideContent() {
-        guard networkErrorImage.isHidden == true else {
-            tableView.isHidden = true
-            return
-        }
-        tableView.isHidden = false
-    }
 }
 
 // MARK: - Table View
@@ -60,6 +52,13 @@ extension TopRatedViewController {
 // MARK: - Delegate
 extension TopRatedViewController: ViewModelDelegate {
     func reloadData() {
-        tableView.reloadData()
+        guard viewModel.isMoviesEmpty() else {
+            networkErrorImage.isHidden = true
+            tableView.isHidden = false
+            tableView.reloadData()
+            return
+        }
+        networkErrorImage.isHidden = false
+        tableView.isHidden = true
     }
 }

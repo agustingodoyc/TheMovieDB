@@ -10,6 +10,7 @@ import Foundation
 class TopRatedViewModel {
     // MARK: - Properties
     var movies: [Movie] = []
+    var emptyDataBase: Bool?
     var topRatedUseCase: TabBarUseCase
     weak var delegate: ViewModelDelegate?
     
@@ -19,9 +20,16 @@ class TopRatedViewModel {
     
     func getTopRatedMovie(completionHandler: @escaping () -> Void) {
         topRatedUseCase.execute() { movie in
+            if movie.isEmpty {
+                self.emptyDataBase = true
+            }
             self.movies = movie
             completionHandler()
         }
+    }
+    
+    func isMoviesEmpty() -> Bool {
+        return movies.isEmpty
     }
     
     // MARK: - NowPlayingViewController functions

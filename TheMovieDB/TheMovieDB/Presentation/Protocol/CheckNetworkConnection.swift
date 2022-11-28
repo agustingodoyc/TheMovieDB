@@ -16,7 +16,6 @@ class CheckNetworkConnection: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         isConnectedToInternet()
-        hideContent()
     }
     
     func isConnectedToInternet() {
@@ -26,6 +25,4 @@ class CheckNetworkConnection: UIViewController {
         }
         networkErrorImage.isHidden = false
     }
-    
-    func hideContent() { }
 }

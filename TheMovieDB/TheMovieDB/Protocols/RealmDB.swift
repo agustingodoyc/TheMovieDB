@@ -37,10 +37,12 @@ public class RealmDB: DataBase {
         return Array(realm.objects(MoviePersisted.self))
     }
     
-    func clearData() {
+    func clearData(endPoint: String) {
         do {
             try realm.write {
-                realm.deleteAll()
+                realm.delete(realm.objects(MoviePersisted.self).where {
+                    $0.movieType == endPoint
+                })
             }
         } catch {
             print(error)

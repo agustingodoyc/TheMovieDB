@@ -47,7 +47,7 @@ public class DataManager: DataManagerProtocol, DataManagerDetailProtocol, DataMa
                             moviePersisted = movies.map { (movieData) -> MoviePersisted in
                                     .init(movieData: movieData, movieType: endpoint.rawValue)
                                 }
-                            self.dataBase.clearData()
+                            self.dataBase.clearData(endPoint: endpoint.rawValue)
                             self.dataBase.persistData(moviePersisted)
                             self.delegate?.updateData(moviePersisted)
                         case .failure(_):
@@ -77,7 +77,7 @@ public class DataManager: DataManagerProtocol, DataManagerDetailProtocol, DataMa
     func getAllMovies(completionHandler: @escaping ([MoviePersisted]) -> Void) {
         if (dataBase.isEmpty) {
             completionHandler([])
-        }else {
+        } else {
             completionHandler(dataBase.getData())
         }
     }

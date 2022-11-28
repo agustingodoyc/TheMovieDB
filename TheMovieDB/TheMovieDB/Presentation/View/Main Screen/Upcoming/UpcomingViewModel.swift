@@ -32,6 +32,10 @@ class UpcomingViewModel {
     func getUpcomingMovie(indexPath: Int) -> UpcomingCellModel {
         return .init(movies[indexPath])
     }
+    
+    func isMoviesEmpty() -> Bool {
+        return movies.isEmpty
+    }
 }
 
 // MARK: - Coordinator

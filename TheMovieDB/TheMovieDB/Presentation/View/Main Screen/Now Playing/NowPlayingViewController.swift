@@ -22,14 +22,17 @@ class NowPlayingViewController: CheckNetworkConnection, BaseViewController {
         viewModel.getUseCaseNowPlayingMovie {
             self.reloadData()
         }
+        hideContent()
     }
     
-    override func hideContent() {
-        guard networkErrorImage.isHidden == true else {
-            collectionView.isHidden = true
+    func hideContent() {
+        guard viewModel.emptyDataBase == true else {
+            networkErrorImage.isHidden = true
+            collectionView.isHidden = false
             return
         }
-        collectionView.isHidden = false
+        networkErrorImage.isHidden = false
+        collectionView.isHidden = true
     }
 } 
 
@@ -62,6 +65,13 @@ extension NowPlayingViewController {
 // MARK: - Delegate
 extension NowPlayingViewController: ViewModelDelegate {
     func reloadData() {
-        collectionView.reloadData()
+        guard viewModel.isMoviesEmpty() else {
+            networkErrorImage.isHidden = true
+            collectionView.isHidden = false
+            collectionView.reloadData()
+            return
+        }
+        networkErrorImage.isHidden = false
+        collectionView.isHidden = true
     }
 }

@@ -55,6 +55,7 @@ final class DataManagerTest: XCTestCase {
     }
     
     class MockDataBase: DataBase {
+    
         var moviePersisted: [MoviePersisted] = []
         var isEmpty: Bool { return moviePersisted.isEmpty }
         
@@ -66,8 +67,10 @@ final class DataManagerTest: XCTestCase {
             return moviePersisted
         }
         
-        func clearData() {
-            moviePersisted.removeAll()
+        func clearData(endPoint: String) {
+            moviePersisted.removeAll(where: {
+                $0.movieType == endPoint
+            })
         }
     }
     

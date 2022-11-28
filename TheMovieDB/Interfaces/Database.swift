@@ -11,5 +11,5 @@ protocol DataBase {
     var isEmpty: Bool { get }
     func persistData(_ data: [MoviePersisted]) 
     func getData() -> [MoviePersisted]
-    func clearData()
+    func clearData(endPoint: String)
 }
