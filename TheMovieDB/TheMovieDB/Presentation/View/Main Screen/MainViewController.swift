@@ -26,12 +26,10 @@ class MainViewController: UITabBarController, BaseViewController {
     }
     
     func setUpTabs() {
-        let popularVC = PopularViewController()
-        popularVC.view.backgroundColor = .white
+        let popularVC = UINavigationController(rootViewController: PopularViewController())
+            popularVC.view.backgroundColor = .white
         let popularItem = UITabBarItem(title: "Popular", image: .init(systemName: "popcorn.fill"), tag: 3)
-        
         popularVC.tabBarItem = popularItem
-        
         viewControllers?.append(popularVC)
         
         guard let viewControllers = viewControllers else {

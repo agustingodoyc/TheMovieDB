@@ -20,9 +20,6 @@ class TopRatedViewModel {
     
     func getTopRatedMovie(completionHandler: @escaping () -> Void) {
         topRatedUseCase.execute() { movie in
-            if movie.isEmpty {
-                self.emptyDataBase = true
-            }
             self.movies = movie
             completionHandler()
         }

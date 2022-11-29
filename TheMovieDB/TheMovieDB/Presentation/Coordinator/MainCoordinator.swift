@@ -53,4 +53,15 @@ class MainCoordinator: Coordinator, MovieDetailProtocol {
         vc.viewModel = viewModel
         navigationController.pushViewController(vc, animated: true)
     }
+    
+    func goToPopularMoviesScreen() {
+        let viewModel = PopularViewModel()
+        guard let vc = PopularViewController.instantiate() else {
+            fatalError("Unable to create an SearchViewController instance")
+            return
+        }
+        vc.coordinator = self
+        vc.viewModel = viewModel
+        navigationController.pushViewController(vc, animated: true)
+    }
 }
