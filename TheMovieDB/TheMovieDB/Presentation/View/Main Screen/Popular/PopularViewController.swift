@@ -10,8 +10,42 @@ import UIKit
 
 class PopularViewController: UIViewController {
     
+    var tableView = UITableView()
+    lazy var viewModel = PopularViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.delegate = self
+        viewModel.getUseCasePopularMovie {
+            self.reloadData()
+        }
+    }
+    
+    func configureTableView() {
+        view.addSubview(tableView)
+        setTableViewDelegates()
+        tableView.rowHeight = 100
+        tableView.pin(to: view)
+    }
+    
+    func setTableViewDelegates() {
+        tableView.delegate = self
+        tableView.dataSource = self
+    }
+}
+
+extension PopularViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.getNumberOfRowOfPopularMovie()
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "popularCell", for: indexPath) as? PopularCell else {
+            return UITableViewCell()
+        }
+        let popularMovie = viewModel.getPopularMovie(indexPath: indexPath.row)
+        cell.loadPopularMovie(movie: popularMovie)
+        return cell
     }
 }
 
@@ -21,5 +55,12 @@ extension PopularViewController: Storyboarded {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         
         return storyboard.instantiateViewController(withIdentifier: id) as? Self
+    }
+}
+
+// MARK: - Delegate
+extension PopularViewController: ViewModelDelegate {
+    func reloadData() {
+        tableView.reloadData()
     }
 }

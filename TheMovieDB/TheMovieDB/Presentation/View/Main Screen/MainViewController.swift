@@ -27,8 +27,7 @@ class MainViewController: UITabBarController, BaseViewController {
     
     func setUpTabs() {
         let popularVC = PopularViewController()
-            
-        popularVC.view.backgroundColor = .green
+        popularVC.view.backgroundColor = .white
         let popularItem = UITabBarItem(title: "Popular", image: .init(systemName: "popcorn.fill"), tag: 3)
         
         popularVC.tabBarItem = popularItem
