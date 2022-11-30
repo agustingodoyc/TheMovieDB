@@ -22,9 +22,13 @@ struct PopularCellModel {
     
     let posterPath: String?
     let title: String?
+    let releaseDate: String?
+    let voteAverage: Double?
     
     init(_ movie: Movie) {
         self.posterPath = movie.posterPath
         self.title = movie.title
+        self.releaseDate = movie.realeaseDate
+        self.voteAverage = movie.voteAverage
     }
 }

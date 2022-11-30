@@ -30,7 +30,8 @@ class PopularViewController: UIViewController, BaseViewController {
     func configureTableView() {
         view.addSubview(tableView)
         setTableViewDelegates()
-        tableView.rowHeight = 100
+        tableView.rowHeight = 160
+        tableView.separatorStyle = .none
         tableView.register(PopularCell.self, forCellReuseIdentifier: Cells.popularCell)
         tableView.pin(to: view)
     }
@@ -53,15 +54,6 @@ extension PopularViewController: UITableViewDelegate, UITableViewDataSource {
         let popularMovie = viewModel.getPopularMovie(indexPath: indexPath.row)
         cell.loadPopularMovie(movie: popularMovie)
         return cell
-    }
-}
-
-extension PopularViewController: Storyboarded {
-    static func instantiate() -> Self? {
-        let id = String(describing: self)
-        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        
-        return storyboard.instantiateViewController(withIdentifier: id) as? Self
     }
 }
 

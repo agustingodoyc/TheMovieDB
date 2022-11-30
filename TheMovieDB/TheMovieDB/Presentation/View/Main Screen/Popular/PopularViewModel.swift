@@ -47,4 +47,3 @@ extension PopularViewModel {
         return movieId
     }
 }
-

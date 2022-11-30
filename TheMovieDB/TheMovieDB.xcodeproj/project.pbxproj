@@ -253,10 +253,10 @@
 		101EE2CD28F7101000CAE2A5 /* Main Screen */ = {
 			isa = PBXGroup;
 			children = (
-				10F5046D293504A000AFA95F /* Popular */,
-				10CCD84A2902E8E1001DBABB /* Now Playing */,
 				D60548E82901CE8A00C32787 /* Top Rated */,
+				10CCD84A2902E8E1001DBABB /* Now Playing */,
 				102E849B291E9168006BD8B6 /* Upcoming */,
+				10F5046D293504A000AFA95F /* Popular */,
 				106CEF5928FEDD1900AEC45A /* MainViewController.swift */,
 				D67DDA3828EE161A0093B3A0 /* Main.storyboard */,
 			);
