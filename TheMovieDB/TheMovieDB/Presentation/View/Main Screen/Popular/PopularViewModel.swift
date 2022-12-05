@@ -7,7 +7,7 @@
 
 import Foundation
 
-class PopularViewModel {
+class PopularViewModel { //Protocolo para view models 
     // MARK: - Properties
     var movies: [Movie] = []
     var popularUseCase: TabBarUseCase
@@ -15,6 +15,7 @@ class PopularViewModel {
     
     init(popularUseCase: TabBarUseCase = PopularUseCase()) {
         self.popularUseCase = popularUseCase
+        self.popularUseCase.delegate = self
     }
     
     func getUseCasePopularMovie(completionHandler: @escaping () -> Void) {
@@ -28,7 +29,7 @@ class PopularViewModel {
         return movies.isEmpty
     }
     
-    // MARK: - NowPlayingViewController functions
+    // MARK: - PopularViewController functions
     func getNumberOfRowOfPopularMovie() -> Int {
         return movies.count
     }
@@ -45,5 +46,12 @@ extension PopularViewModel {
             fatalError("No id.")
         }
         return movieId
+    }
+}
+
+// MARK: - UseCaseDelegate
+extension PopularViewModel: UseCaseDelegate { //Mover al protocolo
+    func updateMovie(data: [Movie]) {
+        self.movies = data
     }
 }

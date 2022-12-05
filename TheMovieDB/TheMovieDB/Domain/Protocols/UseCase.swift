@@ -8,6 +8,7 @@
 import Foundation
 
 protocol TabBarUseCase {
+    var delegate
     func execute(completionHandler: @escaping ([Movie]) -> Void)
 }
 
@@ -17,4 +18,8 @@ protocol DetailsUseCase {
 
 protocol NetworkConnection {
     func execute() -> Bool
+}
+
+protocol UseCaseDelegate {
+    func updateMovie(data: [Movie])
 }

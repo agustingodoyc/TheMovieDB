@@ -52,3 +52,10 @@ extension TopRatedViewModel {
         return movieId
     }
 }
+
+// MARK: - UseCaseDelegate
+extension TopRatedViewModel: UseCaseDelegate {
+    func updateMovie(data: [Movie]) {
+        self.movies = data
+    }
+}

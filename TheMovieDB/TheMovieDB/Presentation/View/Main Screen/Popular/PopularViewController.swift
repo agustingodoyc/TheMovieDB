@@ -28,6 +28,7 @@ class PopularViewController: UIViewController, BaseViewController {
     }
     
     func configureTableView() {
+        view.backgroundColor = .white
         view.addSubview(tableView)
         setTableViewDelegates()
         tableView.rowHeight = 160

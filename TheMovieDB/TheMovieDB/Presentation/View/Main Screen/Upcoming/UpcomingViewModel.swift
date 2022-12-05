@@ -47,3 +47,10 @@ extension UpcomingViewModel {
         return movieId
     }
 }
+
+// MARK: - UseCaseDelegate
+extension UpcomingViewModel: UseCaseDelegate {
+    func updateMovie(data: [Movie]) {
+        self.movies = data
+    }
+}

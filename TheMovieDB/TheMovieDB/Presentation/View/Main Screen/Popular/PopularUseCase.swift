@@ -11,6 +11,7 @@ class PopularUseCase: TabBarUseCase {
 
     // MARK: - Properties
     private var dataManager: DataManager
+    var delegate: UseCaseDelegate?
     
     // MARK: - Init
     init(_ dataManager: DataManager = DataManager()) {
@@ -33,6 +34,8 @@ class PopularUseCase: TabBarUseCase {
 // MARK: - Realm
 extension PopularUseCase: DataManagerDelegate {
     func updateData(_ data: [MoviePersisted]) {
-        //movies = data
+        self.delegate?.updateMovie(data: data.map({
+            Movie(moviePersisted: $0)
+        }))
     }
 }

@@ -10,6 +10,8 @@ import Foundation
 class NowPlayingUseCase: TabBarUseCase {
     // MARK: - Properties
     private var dataManager: DataManager
+    private var movies: [MoviePersisted] = []
+    var delegate: UseCaseDelegate?
     
     // MARK: - Init
     init(_ dataManager: DataManager = DataManager()) {
@@ -32,7 +34,9 @@ class NowPlayingUseCase: TabBarUseCase {
 // MARK: - Realm
 extension NowPlayingUseCase: DataManagerDelegate {
     func updateData(_ data: [MoviePersisted]) {
-        //movies = data
+        self.delegate?.updateMovie(data: data.map({
+            Movie(moviePersisted: $0)
+        }))
     }
 }
 

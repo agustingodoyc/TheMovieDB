@@ -10,7 +10,6 @@ import Foundation
 class NowPlayingViewModel {
     // MARK: - Properties
     var movies: [Movie] = []
-    var emptyDataBase: Bool?
     var nowPlayingUseCase: TabBarUseCase
     weak var delegate: ViewModelDelegate?
     
@@ -20,9 +19,6 @@ class NowPlayingViewModel {
     
     func getUseCaseNowPlayingMovie(completionHandler: @escaping () -> Void) {
         nowPlayingUseCase.execute() { movie in
-            if movie.isEmpty {
-                self.emptyDataBase = true
-            }
             self.movies = movie
             completionHandler()
         }
@@ -49,5 +45,12 @@ extension NowPlayingViewModel {
             fatalError("No id.")
         }
         return movieId
+    }
+}
+
+// MARK: - UseCaseDelegate
+extension NowPlayingViewModel: UseCaseDelegate {
+    func updateMovie(data: [Movie]) {
+        self.movies = data
     }
 }

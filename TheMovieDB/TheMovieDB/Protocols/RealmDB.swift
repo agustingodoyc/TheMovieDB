@@ -33,7 +33,7 @@ public class RealmDB: DataBase {
         }
     }
     
-    func getData() -> [MoviePersisted] {
+    func getData() -> [MoviePersisted] { //con el endpoint correspondiente
         return Array(realm.objects(MoviePersisted.self))
     }
     
