@@ -58,6 +58,13 @@ extension PopularViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
+// MARK: SelectedMovie
+extension PopularViewController {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        coordinator?.goToDetail(movieId: viewModel.getMovieId(row: indexPath.row))
+    }
+}
+
 // MARK: - Delegate
 extension PopularViewController: ViewModelDelegate {
     func reloadData() {
