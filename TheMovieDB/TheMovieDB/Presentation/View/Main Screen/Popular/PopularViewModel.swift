@@ -7,19 +7,19 @@
 
 import Foundation
 
-class PopularViewModel { //Protocolo para view models 
+class PopularViewModel: ViewModel {
     // MARK: - Properties
     var movies: [Movie] = []
-    var popularUseCase: TabBarUseCase
+    var useCase: TabBarUseCase
     weak var delegate: ViewModelDelegate?
     
     init(popularUseCase: TabBarUseCase = PopularUseCase()) {
-        self.popularUseCase = popularUseCase
-        self.popularUseCase.delegate = self
+        useCase = popularUseCase
+        useCase.delegate = self
     }
     
     func getUseCasePopularMovie(completionHandler: @escaping () -> Void) {
-        popularUseCase.execute() { movie in
+        useCase.execute() { movie in
             self.movies = movie
             completionHandler()
         }
@@ -50,8 +50,6 @@ extension PopularViewModel {
 }
 
 // MARK: - UseCaseDelegate
-extension PopularViewModel: UseCaseDelegate { //Mover al protocolo
-    func updateMovie(data: [Movie]) {
-        self.movies = data
-    }
+extension PopularViewModel: UseCaseDelegate {
+    func updateMovie(data: [Movie]) { }
 }

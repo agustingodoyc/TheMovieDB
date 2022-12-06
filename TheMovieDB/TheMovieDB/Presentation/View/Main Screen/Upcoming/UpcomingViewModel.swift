@@ -7,18 +7,19 @@
 
 import Foundation
 
-class UpcomingViewModel {
+class UpcomingViewModel: ViewModel {
     // MARK: - Properties
     var movies: [Movie] = []
-    var upcomingUseCase: TabBarUseCase
+    var useCase: TabBarUseCase
     weak var delegate: ViewModelDelegate?
     
     init(upcomingUseCase: TabBarUseCase = UpcomingUseCase()) {
-        self.upcomingUseCase = upcomingUseCase
+        useCase = upcomingUseCase
+        useCase.delegate = self
     }
     
     func getUseCaseUpcomingMovie(completionHandler: @escaping () -> Void) {
-        upcomingUseCase.execute() { movie in
+        useCase.execute() { movie in
             self.movies = movie
             completionHandler()
         }
@@ -50,7 +51,5 @@ extension UpcomingViewModel {
 
 // MARK: - UseCaseDelegate
 extension UpcomingViewModel: UseCaseDelegate {
-    func updateMovie(data: [Movie]) {
-        self.movies = data
-    }
+    func updateMovie(data: [Movie]) { }
 }

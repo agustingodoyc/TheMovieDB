@@ -11,7 +11,7 @@ class NowPlayingUseCase: TabBarUseCase {
     // MARK: - Properties
     private var dataManager: DataManager
     private var movies: [MoviePersisted] = []
-    var delegate: UseCaseDelegate?
+    weak var delegate: UseCaseDelegate?
     
     // MARK: - Init
     init(_ dataManager: DataManager = DataManager()) {

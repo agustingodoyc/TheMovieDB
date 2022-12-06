@@ -7,18 +7,19 @@
 
 import Foundation
 
-class NowPlayingViewModel {
+class NowPlayingViewModel: ViewModel {
     // MARK: - Properties
     var movies: [Movie] = []
-    var nowPlayingUseCase: TabBarUseCase
+    var useCase: TabBarUseCase
     weak var delegate: ViewModelDelegate?
     
     init(nowPlayingUseCase: TabBarUseCase = NowPlayingUseCase()) {
-        self.nowPlayingUseCase = nowPlayingUseCase
+        useCase = nowPlayingUseCase
+        useCase.delegate = self
     }
     
     func getUseCaseNowPlayingMovie(completionHandler: @escaping () -> Void) {
-        nowPlayingUseCase.execute() { movie in
+        useCase.execute() { movie in
             self.movies = movie
             completionHandler()
         }
@@ -50,7 +51,5 @@ extension NowPlayingViewModel {
 
 // MARK: - UseCaseDelegate
 extension NowPlayingViewModel: UseCaseDelegate {
-    func updateMovie(data: [Movie]) {
-        self.movies = data
-    }
+    func updateMovie(data: [Movie]) { }
 }

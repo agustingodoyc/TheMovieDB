@@ -20,7 +20,7 @@ public class DataManager: DataManagerProtocol, DataManagerDetailProtocol, DataMa
     
     // MARK: - Get movies
     func getMovie(_ endpoint: Endpoints, completionHandler: @escaping ([MoviePersisted]) -> Void) {
-        if (dataBase.isEmpty) { //Del endpoint específico
+        if (dataBase.isEmpty) {
             service.getEndPointMovie(endpoint) { result in
                 DispatchQueue.main.async {
                     var moviePersisted: [MoviePersisted]
@@ -38,7 +38,7 @@ public class DataManager: DataManagerProtocol, DataManagerDetailProtocol, DataMa
                 }
             }
         } else {
-            completionHandler(dataBase.getData()) //Revisar
+            completionHandler(dataBase.getData(endPoint: endpoint.rawValue))
             DispatchQueue.global(qos: .background).async {
                 self.service.getEndPointMovie(endpoint) { result in
                     DispatchQueue.main.async {
@@ -79,7 +79,7 @@ public class DataManager: DataManagerProtocol, DataManagerDetailProtocol, DataMa
         if (dataBase.isEmpty) {
             completionHandler([])
         } else {
-            completionHandler(dataBase.getData())
+            completionHandler(dataBase.getAllData())
         }
     }
 }

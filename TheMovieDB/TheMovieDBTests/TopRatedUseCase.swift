@@ -10,7 +10,7 @@ import Foundation
 class TopRatedUseCase: TabBarUseCase {
     // MARK: - Properties
     private var dataManager: DataManager
-    var delegate: UseCaseDelegate?
+    weak var delegate: UseCaseDelegate?
     // MARK: - Init
     init(_ dataManager: DataManager = DataManager()) {
         self.dataManager = dataManager

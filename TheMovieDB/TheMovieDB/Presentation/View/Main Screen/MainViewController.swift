@@ -16,7 +16,6 @@ class MainViewController: UITabBarController, BaseViewController {
     
     weak var coordinator: MainCoordinator? {
         didSet {
-            //popularViewController()
             setUpTabs()
         }
     }
@@ -41,15 +40,6 @@ class MainViewController: UITabBarController, BaseViewController {
             }
             childViewController.coordinator = self.coordinator
         }
-    }
-    
-    func popularViewController() {
-        let popularItem = UITabBarItem(title: "Popular", image: .init(systemName: "popcorn.fill"), tag: 3)
-        tabBarItem = popularItem
-        let popularVC = PopularViewController()
-        popularVC.view.backgroundColor = .white
-        popularVC.tabBarItem = popularItem
-        viewControllers?.append(popularVC)
     }
 }
 

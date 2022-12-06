@@ -7,19 +7,20 @@
 
 import Foundation
 
-class TopRatedViewModel {
+class TopRatedViewModel: ViewModel {
+    
     // MARK: - Properties
     var movies: [Movie] = []
-    var emptyDataBase: Bool?
-    var topRatedUseCase: TabBarUseCase
+    var useCase: TabBarUseCase
     weak var delegate: ViewModelDelegate?
     
     init(topRatedUseCase: TabBarUseCase = TopRatedUseCase()) {
-        self.topRatedUseCase = topRatedUseCase
+        useCase = topRatedUseCase
+        useCase.delegate = self
     }
     
     func getTopRatedMovie(completionHandler: @escaping () -> Void) {
-        topRatedUseCase.execute() { movie in
+        useCase.execute() { movie in
             self.movies = movie
             completionHandler()
         }
@@ -55,7 +56,5 @@ extension TopRatedViewModel {
 
 // MARK: - UseCaseDelegate
 extension TopRatedViewModel: UseCaseDelegate {
-    func updateMovie(data: [Movie]) {
-        self.movies = data
-    }
+    func updateMovie(data: [Movie]) { }
 }

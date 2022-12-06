@@ -7,8 +7,12 @@
 
 import Foundation
 
-protocol TabBarUseCase {
-    var delegate
+protocol TabBarUseCase: AnyObject {
+    var delegate: UseCaseDelegate? { get set }
+    func execute(completionHandler: @escaping ([Movie]) -> Void)
+}
+
+protocol SearchUseCaseProtocol {
     func execute(completionHandler: @escaping ([Movie]) -> Void)
 }
 
@@ -20,6 +24,6 @@ protocol NetworkConnection {
     func execute() -> Bool
 }
 
-protocol UseCaseDelegate {
+protocol UseCaseDelegate: AnyObject {
     func updateMovie(data: [Movie])
 }
