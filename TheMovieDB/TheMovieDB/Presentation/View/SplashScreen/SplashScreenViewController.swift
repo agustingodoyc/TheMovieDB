@@ -19,8 +19,8 @@ class SplashScreenViewController: UIViewController {
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        animationView.play { complition in
-            if complition {
+        animationView.play { completion in
+            if completion {
                 self.coordinator?.finishSplashScreen()
             }
         }

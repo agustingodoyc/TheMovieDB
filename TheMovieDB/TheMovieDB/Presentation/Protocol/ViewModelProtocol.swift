@@ -16,6 +16,7 @@ protocol ViewModel {
     var movies: [Movie] { get set }
     var useCase: TabBarUseCase { get set }
     var delegate: ViewModelDelegate? { get set }
+    
     func updateMovie(data: [Movie])
 }
 

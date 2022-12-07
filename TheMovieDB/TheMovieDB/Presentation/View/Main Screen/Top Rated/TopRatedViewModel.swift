@@ -8,7 +8,6 @@
 import Foundation
 
 class TopRatedViewModel: ViewModel {
-    
     // MARK: - Properties
     var movies: [Movie] = []
     var useCase: TabBarUseCase

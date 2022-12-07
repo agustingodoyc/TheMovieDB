@@ -8,7 +8,6 @@
 import Foundation
 
 class MovieDetail {
-    
     struct Configuration {
         static let urlAsString = "https://image.tmdb.org/t/p/original"
     }

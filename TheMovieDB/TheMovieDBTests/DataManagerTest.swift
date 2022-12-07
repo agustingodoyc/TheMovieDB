@@ -55,7 +55,7 @@ final class DataManagerTest: XCTestCase {
     }
     
     class MockDataBase: DataBase {
-    
+        
         var moviePersisted: [MoviePersisted] = []
         var isEmpty: Bool { return moviePersisted.isEmpty }
         
@@ -63,7 +63,7 @@ final class DataManagerTest: XCTestCase {
             moviePersisted = movies
         }
         
-        func getData() -> [MoviePersisted] {
+        func getData(endPoint: String) -> [MoviePersisted] {
             return moviePersisted
         }
         
@@ -72,6 +72,11 @@ final class DataManagerTest: XCTestCase {
                 $0.movieType == endPoint
             })
         }
+        
+        func getAllData() -> [MoviePersisted] {
+            return moviePersisted
+        }
+
     }
     
     class MockDataManagerDelegate: DataManagerDelegate {
@@ -140,14 +145,14 @@ final class DataManagerTest: XCTestCase {
     func testDelegate() {
         let dataBase = MockDataBase()
         dataBase.moviePersisted = [
-            MoviePersisted(adult: true, backdropPath: "backdropPath 1", genreIDS: [1,2,3], id: 1, originalLanguage: "Spanish", originalTitle: "Original title 1", overview: "Overview 1", popularity: 3.4, posterPath: "posterPath 1", releaseDate: "2022-03-13", title: "Title 1", video: false, voteAverage: 5.8, voteCount: 10, movieType: "movieType 1"),
-            MoviePersisted(adult: true, backdropPath: "backdropPath 2", genreIDS: [1,2,3,4], id: 2, originalLanguage: "English", originalTitle: "Original title 2", overview: "Overview 2", popularity: 3.4, posterPath: "posterPath 2", releaseDate: "2022-01-18", title: "Title 2", video: false, voteAverage: 7.9, voteCount: 100, movieType: "movieType 2")
+            MoviePersisted(adult: true, backdropPath: "backdropPath 1", genreIDS: [1, 2, 3], id: 1, originalLanguage: "Spanish", originalTitle: "Original title 1", overview: "Overview 1", popularity: 3.4, posterPath: "posterPath 1", releaseDate: "2022-03-13", title: "Title 1", video: false, voteAverage: 5.8, voteCount: 10, movieType: "movieType 1"),
+            MoviePersisted(adult: true, backdropPath: "backdropPath 2", genreIDS: [1, 2, 3, 4], id: 2, originalLanguage: "English", originalTitle: "Original title 2", overview: "Overview 2", popularity: 3.4, posterPath: "posterPath 2", releaseDate: "2022-01-18", title: "Title 2", video: false, voteAverage: 7.9, voteCount: 100, movieType: "movieType 2")
         ]
         let sut: DataManager = DataManager(service: MockProvider(), dataBase: dataBase)
         let delegate = MockDataManagerDelegate()
         sut.delegate = delegate
         
-        let promise = self.expectation(description: "Geting data")
+        let promise = self.expectation(description: "Getting data")
         let servicePromise = self.expectation(description: "Calling delegate")
         
         sut.getMovie(Endpoints.nowPlaying) { data in
@@ -160,11 +165,11 @@ final class DataManagerTest: XCTestCase {
             servicePromise.fulfill()
         }
         
-        wait(for: [promise,servicePromise], timeout: 5)
+        wait(for: [promise, servicePromise], timeout: 5)
     }
     
     func testGetMovieDetails() {
-        let promise = self.expectation(description: "Geting Data")
+        let promise = self.expectation(description: "Getting Data")
         
         sut.getDetail("1") { result in
             XCTAssertEqual(result.title, "title 1")
@@ -177,8 +182,8 @@ final class DataManagerTest: XCTestCase {
     func testGetAllMovie() {
         let dataBase = MockDataBase()
         dataBase.moviePersisted = [
-            MoviePersisted(adult: true, backdropPath: "backdropPath 1", genreIDS: [1,2,3], id: 1, originalLanguage: "Spanish", originalTitle: "Original title 1", overview: "Overview 1", popularity: 3.4, posterPath: "posterPath 1", releaseDate: "2022-03-13", title: "Title 1", video: false, voteAverage: 5.8, voteCount: 10, movieType: "movieType 1"),
-            MoviePersisted(adult: true, backdropPath: "backdropPath 2", genreIDS: [1,2,3,4], id: 2, originalLanguage: "English", originalTitle: "Original title 2", overview: "Overview 2", popularity: 3.4, posterPath: "posterPath 2", releaseDate: "2022-01-18", title: "Title 2", video: false, voteAverage: 7.9, voteCount: 100, movieType: "movieType 2")
+            MoviePersisted(adult: true, backdropPath: "backdropPath 1", genreIDS: [1, 2, 3], id: 1, originalLanguage: "Spanish", originalTitle: "Original title 1", overview: "Overview 1", popularity: 3.4, posterPath: "posterPath 1", releaseDate: "2022-03-13", title: "Title 1", video: false, voteAverage: 5.8, voteCount: 10, movieType: "movieType 1"),
+            MoviePersisted(adult: true, backdropPath: "backdropPath 2", genreIDS: [1, 2, 3, 4], id: 2, originalLanguage: "English", originalTitle: "Original title 2", overview: "Overview 2", popularity: 3.4, posterPath: "posterPath 2", releaseDate: "2022-01-18", title: "Title 2", video: false, voteAverage: 7.9, voteCount: 100, movieType: "movieType 2")
         ]
         let sut: DataManager = DataManager(service: MockProvider(), dataBase: dataBase)
         

@@ -12,7 +12,9 @@ final class SearchViewModelTest: XCTestCase {
 
     var sut: SearchViewModel!
     
-    class MockSearchUseCase: TabBarUseCase {
+    class MockSearchUseCase: SearchUseCaseProtocol {
+        var delegate: TheMovieDB.UseCaseDelegate?
+        
         var movies: [Movie] = [
                     Movie(moviePersisted: MoviePersisted(adult: true, backdropPath: "backdropPath", genreIDS: [1,2,3], id: 1, originalLanguage: "Spanish", originalTitle: "Movie 1", overview: "Over View 1", popularity: 3, posterPath: "", releaseDate: "2022-10-22", title: "Movie 1", video: true, voteAverage: 3.9, voteCount: 9, movieType: "nowPlaying"))
                     ]

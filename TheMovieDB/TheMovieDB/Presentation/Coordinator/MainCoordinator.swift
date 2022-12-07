@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 class MainCoordinator: Coordinator, MovieDetailProtocol {
+    // MARK: - Properties
     var childCoordinator = [Coordinator]()
     var navigationController: UINavigationController
     
@@ -16,6 +17,7 @@ class MainCoordinator: Coordinator, MovieDetailProtocol {
         self.navigationController = navigationController
     }
     
+    // MARK: - Screens
     func start() {
         guard let vc = SplashScreenViewController.instantiate() else {
             return

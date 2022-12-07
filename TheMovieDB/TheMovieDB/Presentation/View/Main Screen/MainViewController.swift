@@ -9,7 +9,6 @@ import Foundation
 import UIKit
 
 class MainViewController: UITabBarController, BaseViewController {
-    
     @IBAction func searchAction(_ sender: Any) {
         coordinator?.goToSearchMovieScreen()
     }

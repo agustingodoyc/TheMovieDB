@@ -20,7 +20,7 @@ public class DataManager: DataManagerProtocol, DataManagerDetailProtocol, DataMa
     
     // MARK: - Get movies
     func getMovie(_ endpoint: Endpoints, completionHandler: @escaping ([MoviePersisted]) -> Void) {
-        if (dataBase.isEmpty) {
+        if (dataBase.getData(endPoint: endpoint.rawValue).isEmpty) {
             service.getEndPointMovie(endpoint) { result in
                 DispatchQueue.main.async {
                     var moviePersisted: [MoviePersisted]

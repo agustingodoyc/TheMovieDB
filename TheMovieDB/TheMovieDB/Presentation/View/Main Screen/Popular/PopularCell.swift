@@ -10,7 +10,6 @@ import UIKit
 import Alamofire
 
 class PopularCell: UITableViewCell {
-    
     lazy var poster: UIImageView = {
         let poster = UIImageView()
         poster.layer.cornerRadius = 10
