@@ -30,6 +30,11 @@ class MainViewController: UITabBarController, BaseViewController {
         popularVC.tabBarItem = popularItem
         viewControllers?.append(popularVC)
         
+        let loginItem = UITabBarItem(title: "Profile", image: .init(systemName: "person.fill"), tag: 4)
+        let loginVC = ProfileViewController()
+        loginVC.tabBarItem = loginItem
+        viewControllers?.append(loginVC)
+        
         guard let viewControllers = viewControllers else {
             return
         }
