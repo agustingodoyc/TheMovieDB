@@ -16,7 +16,6 @@
 		100CA9CB2910182400E73390 /* DataManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100CA9CA2910182400E73390 /* DataManagerProtocol.swift */; };
 		100CA9CD29101B0000E73390 /* NowPlayingViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100CA9CC29101B0000E73390 /* NowPlayingViewModelTest.swift */; };
 		100CA9D029101B8400E73390 /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100CA9CF29101B8400E73390 /* UseCase.swift */; };
-		100DD0CC29476A2E00339EAD /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100DD0CB29476A2E00339EAD /* LoginViewModel.swift */; };
 		100DD0CE29476A4600339EAD /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100DD0CD29476A4600339EAD /* ProfileViewController.swift */; };
 		1019127129252D2D00E7AE94 /* SearchUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1019127029252D2D00E7AE94 /* SearchUseCaseTest.swift */; };
 		1019127329252DD100E7AE94 /* SearchViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1019127229252DD100E7AE94 /* SearchViewModelTest.swift */; };
@@ -66,6 +65,10 @@
 		10CF712D28F8529600F07ACB /* NowPlayingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CF712C28F8529600F07ACB /* NowPlayingViewController.swift */; };
 		10CF712F28F8531900F07ACB /* UpcomingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CF712E28F8531900F07ACB /* UpcomingViewController.swift */; };
 		10D00DA828FDFD0900244C4E /* TopRatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D00DA728FDFD0900244C4E /* TopRatedViewController.swift */; };
+		10EBD39C2948B6D8004921A4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EBD39B2948B6D8004921A4 /* LoginViewController.swift */; };
+		10EBD39E2948B6E7004921A4 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EBD39D2948B6E7004921A4 /* LoginViewModel.swift */; };
+		10EBD3A12948E2B1004921A4 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EBD3A02948E2B1004921A4 /* RegisterViewController.swift */; };
+		10EBD3A32948E2CB004921A4 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EBD3A22948E2CB004921A4 /* RegisterViewModel.swift */; };
 		10F28DF42919546900647235 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F28DF32919546900647235 /* BaseViewController.swift */; };
 		10F28DF82919669B00647235 /* MovieDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F28DF72919669B00647235 /* MovieDetail.swift */; };
 		10F5046F293504B000AFA95F /* PopularViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F5046E293504B000AFA95F /* PopularViewModel.swift */; };
@@ -123,7 +126,6 @@
 		100CA9CA2910182400E73390 /* DataManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DataManagerProtocol.swift; path = Interfaces/DataManagerProtocol.swift; sourceTree = SOURCE_ROOT; };
 		100CA9CC29101B0000E73390 /* NowPlayingViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingViewModelTest.swift; sourceTree = "<group>"; };
 		100CA9CF29101B8400E73390 /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
-		100DD0CB29476A2E00339EAD /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		100DD0CD29476A4600339EAD /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		1019127029252D2D00E7AE94 /* SearchUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUseCaseTest.swift; sourceTree = "<group>"; };
 		1019127229252DD100E7AE94 /* SearchViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModelTest.swift; sourceTree = "<group>"; };
@@ -172,6 +174,10 @@
 		10CF712C28F8529600F07ACB /* NowPlayingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingViewController.swift; sourceTree = "<group>"; };
 		10CF712E28F8531900F07ACB /* UpcomingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingViewController.swift; sourceTree = "<group>"; };
 		10D00DA728FDFD0900244C4E /* TopRatedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopRatedViewController.swift; sourceTree = "<group>"; };
+		10EBD39B2948B6D8004921A4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		10EBD39D2948B6E7004921A4 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		10EBD3A02948E2B1004921A4 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		10EBD3A22948E2CB004921A4 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		10F28DF32919546900647235 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		10F28DF72919669B00647235 /* MovieDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MovieDetail.swift; path = TheMovieDB/Presentation/Protocol/MovieDetail.swift; sourceTree = SOURCE_ROOT; };
 		10F5046E293504B000AFA95F /* PopularViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularViewModel.swift; sourceTree = "<group>"; };
@@ -254,19 +260,18 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
-		100DD0CA29476A1700339EAD /* Login */ = {
+		100DD0CA29476A1700339EAD /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				100DD0CB29476A2E00339EAD /* LoginViewModel.swift */,
 				100DD0CD29476A4600339EAD /* ProfileViewController.swift */,
 			);
-			path = Login;
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		101EE2CD28F7101000CAE2A5 /* Main Screen */ = {
 			isa = PBXGroup;
 			children = (
-				100DD0CA29476A1700339EAD /* Login */,
+				100DD0CA29476A1700339EAD /* Profile */,
 				D60548E82901CE8A00C32787 /* Top Rated */,
 				10CCD84A2902E8E1001DBABB /* Now Playing */,
 				102E849B291E9168006BD8B6 /* Upcoming */,
@@ -316,6 +321,24 @@
 				10CCD84B2902E983001DBABB /* NowPlayingCell.swift */,
 			);
 			path = "Now Playing";
+			sourceTree = "<group>";
+		};
+		10EBD39A2948B6C1004921A4 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				10EBD39D2948B6E7004921A4 /* LoginViewModel.swift */,
+				10EBD39B2948B6D8004921A4 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		10EBD39F2948E295004921A4 /* Regtister */ = {
+			isa = PBXGroup;
+			children = (
+				10EBD3A22948E2CB004921A4 /* RegisterViewModel.swift */,
+				10EBD3A02948E2B1004921A4 /* RegisterViewController.swift */,
+			);
+			path = Regtister;
 			sourceTree = "<group>";
 		};
 		10F5046D293504A000AFA95F /* Popular */ = {
@@ -449,6 +472,8 @@
 		D67DDA6728EE16A30093B3A0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				10EBD39F2948E295004921A4 /* Regtister */,
+				10EBD39A2948B6C1004921A4 /* Login */,
 				106CADD02922993B00D9CE1E /* Search */,
 				10BD3D4A29154D2C000A0EBC /* Details */,
 				101EE2CD28F7101000CAE2A5 /* Main Screen */,
@@ -784,22 +809,25 @@
 				10361CB829140F3D00973644 /* MovieDetailObjects.swift in Sources */,
 				102E8498291E8AAC006BD8B6 /* TopRatedCellModel.swift in Sources */,
 				102E8490291E894A006BD8B6 /* TopRatedViewModel.swift in Sources */,
+				10EBD39C2948B6D8004921A4 /* LoginViewController.swift in Sources */,
 				100DD0CE29476A4600339EAD /* ProfileViewController.swift in Sources */,
 				D6C433AB28F75DD700B61185 /* Coordinator.swift in Sources */,
-				100DD0CC29476A2E00339EAD /* LoginViewModel.swift in Sources */,
 				D6C433A928F755FE00B61185 /* SplashScreenViewController.swift in Sources */,
 				10BF06522936414900B52BCE /* PopularCellModel.swift in Sources */,
 				10F50473293504CB00AFA95F /* PopularCell.swift in Sources */,
 				D67DDA3528EE161A0093B3A0 /* SceneDelegate.swift in Sources */,
 				10281B20290AC93600B0C6C8 /* NowPlayingUseCase.swift in Sources */,
+				10EBD3A32948E2CB004921A4 /* RegisterViewModel.swift in Sources */,
 				D697D22F290719DA00CE310C /* ServiceProtocol.swift in Sources */,
 				10BD3D4929154A26000A0EBC /* MovieDetailUseCase.swift in Sources */,
 				106CADD42922996500D9CE1E /* SearchViewController.swift in Sources */,
+				10EBD39E2948B6E7004921A4 /* LoginViewModel.swift in Sources */,
 				10F5046F293504B000AFA95F /* PopularViewModel.swift in Sources */,
 				10281B26290AEEDB00B0C6C8 /* NowPlayingCellModel.swift in Sources */,
 				D6A7A85D29030CF100B9BF61 /* ViewModelDelegate.swift in Sources */,
 				106CADDE2922B96000D9CE1E /* SearchCellModel.swift in Sources */,
 				10D00DA828FDFD0900244C4E /* TopRatedViewController.swift in Sources */,
+				10EBD3A12948E2B1004921A4 /* RegisterViewController.swift in Sources */,
 				10F28DF42919546900647235 /* BaseViewController.swift in Sources */,
 				106CEF5A28FEDD1900AEC45A /* MainViewController.swift in Sources */,
 				10BF065429364D0500B52BCE /* UIViewExtensions.swift in Sources */,

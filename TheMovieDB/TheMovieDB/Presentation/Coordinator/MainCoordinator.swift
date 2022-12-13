@@ -55,4 +55,20 @@ class MainCoordinator: Coordinator, MovieDetailProtocol {
         vc.viewModel = viewModel
         navigationController.pushViewController(vc, animated: true)
     }
+    
+    func loginScreen() {
+        let viewModel = LoginViewModel()
+        let vc = LoginViewController()
+        vc.coordinator = self
+        vc.viewModel = viewModel
+        navigationController.pushViewController(vc, animated: true)
+    }
+    
+    func registerScreen() {
+        let viewModel = RegisterViewModel()
+        let vc = RegisterViewController()
+        vc.coordinator = self
+        vc.viewModel = viewModel
+        navigationController.pushViewController(vc, animated: true)
+    }
 }
