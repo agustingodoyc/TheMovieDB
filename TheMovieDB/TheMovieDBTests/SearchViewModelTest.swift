@@ -12,7 +12,7 @@ final class SearchViewModelTest: XCTestCase {
 
     var sut: SearchViewModel!
     
-    class MockSearchUseCase: SearchUseCaseProtocol {
+    class MockSearchUseCase: UseCaseProtocol {
         var delegate: TheMovieDB.UseCaseDelegate?
         
         var movies: [Movie] = [

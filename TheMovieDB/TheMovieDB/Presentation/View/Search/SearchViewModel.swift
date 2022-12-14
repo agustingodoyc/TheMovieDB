@@ -15,10 +15,10 @@ class SearchViewModel: SearchViewModelProtocol {
             delegate?.reloadData()
         }
     }
-    var searchUseCase: SearchUseCaseProtocol
+    var searchUseCase: UseCaseProtocol
     weak var delegate: ViewModelDelegate?
     
-    init(searchUseCase: SearchUseCaseProtocol = SearchUseCase() ) {
+    init(searchUseCase: UseCaseProtocol = SearchUseCase() ) {
         self.searchUseCase = searchUseCase
     }
     

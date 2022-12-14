@@ -13,7 +13,7 @@ final class UpcomingViewModelTest: XCTestCase {
     
     var sut: UpcomingViewModel!
     
-    class MockUpcomingUseCase: TabBarUseCase {
+    class MockUpcomingUseCase: TabBarUseCaseProtocol {
         
         var delegate: TheMovieDB.UseCaseDelegate?
         var upcomingMovie: [Movie] = [

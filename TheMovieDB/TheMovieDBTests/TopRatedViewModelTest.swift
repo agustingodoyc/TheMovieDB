@@ -13,7 +13,7 @@ final class TopRatedViewModelTest: XCTestCase {
     
     var sut: TopRatedViewModel!
     
-    class MockTopRatedUseCase: TabBarUseCase {
+    class MockTopRatedUseCase: TabBarUseCaseProtocol {
         var delegate: TheMovieDB.UseCaseDelegate?
         
         var topRatedMovie: [Movie] = [

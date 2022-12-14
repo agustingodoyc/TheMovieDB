@@ -45,6 +45,11 @@
 		104F5574290036B50014D4E5 /* RealmDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104F5573290036B50014D4E5 /* RealmDB.swift */; };
 		104F5576290038230014D4E5 /* AlamofireSP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104F5575290038230014D4E5 /* AlamofireSP.swift */; };
 		104F557B29003AF50014D4E5 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 104F557A29003AF50014D4E5 /* Alamofire */; };
+		1058FB91294A1CEF004A3E86 /* LogInOrRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1058FB90294A1CEF004A3E86 /* LogInOrRegisterViewController.swift */; };
+		1058FB94294A1D12004A3E86 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1058FB93294A1D12004A3E86 /* ProfileViewModel.swift */; };
+		1058FB96294A2857004A3E86 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1058FB95294A2857004A3E86 /* User.swift */; };
+		1058FB98294A2952004A3E86 /* RegisterUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1058FB97294A2952004A3E86 /* RegisterUseCase.swift */; };
+		1058FB9A294A386A004A3E86 /* ValidateRegisterUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1058FB99294A386A004A3E86 /* ValidateRegisterUseCase.swift */; };
 		106CADD22922995200D9CE1E /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106CADD12922995200D9CE1E /* SearchViewModel.swift */; };
 		106CADD42922996500D9CE1E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106CADD32922996500D9CE1E /* SearchViewController.swift */; };
 		106CADD62922997700D9CE1E /* SearchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 106CADD52922997700D9CE1E /* SearchScreen.storyboard */; };
@@ -154,6 +159,11 @@
 		104F55712900361C0014D4E5 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DataManager.swift; path = TheMovieDB/Protocols/DataManager.swift; sourceTree = SOURCE_ROOT; };
 		104F5573290036B50014D4E5 /* RealmDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RealmDB.swift; path = TheMovieDB/Protocols/RealmDB.swift; sourceTree = SOURCE_ROOT; };
 		104F5575290038230014D4E5 /* AlamofireSP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AlamofireSP.swift; path = TheMovieDB/Protocols/AlamofireSP.swift; sourceTree = SOURCE_ROOT; };
+		1058FB90294A1CEF004A3E86 /* LogInOrRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInOrRegisterViewController.swift; sourceTree = "<group>"; };
+		1058FB93294A1D12004A3E86 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		1058FB95294A2857004A3E86 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		1058FB97294A2952004A3E86 /* RegisterUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegisterUseCase.swift; path = TheMovieDB/Domain/Entities/RegisterUseCase.swift; sourceTree = SOURCE_ROOT; };
+		1058FB99294A386A004A3E86 /* ValidateRegisterUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ValidateRegisterUseCase.swift; path = TheMovieDB/Domain/Entities/ValidateRegisterUseCase.swift; sourceTree = SOURCE_ROOT; };
 		106CADD12922995200D9CE1E /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		106CADD32922996500D9CE1E /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		106CADD52922997700D9CE1E /* SearchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchScreen.storyboard; sourceTree = "<group>"; };
@@ -263,7 +273,9 @@
 		100DD0CA29476A1700339EAD /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				1058FB93294A1D12004A3E86 /* ProfileViewModel.swift */,
 				100DD0CD29476A4600339EAD /* ProfileViewController.swift */,
+				1058FB90294A1CEF004A3E86 /* LogInOrRegisterViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -498,6 +510,7 @@
 				10361CB729140F3D00973644 /* MovieDetailObjects.swift */,
 				10F28DF72919669B00647235 /* MovieDetail.swift */,
 				106CADDD2922B96000D9CE1E /* SearchCellModel.swift */,
+				1058FB95294A2857004A3E86 /* User.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -512,6 +525,8 @@
 				10BD3D4829154A26000A0EBC /* MovieDetailUseCase.swift */,
 				102F2AD5291AADE800F65D55 /* NetworkConnectionUseCase.swift */,
 				106CADDF2922BB9800D9CE1E /* SearchUseCase.swift */,
+				1058FB97294A2952004A3E86 /* RegisterUseCase.swift */,
+				1058FB99294A386A004A3E86 /* ValidateRegisterUseCase.swift */,
 			);
 			name = UseCases;
 			path = Entities/UseCases;
@@ -779,6 +794,7 @@
 				10281B1E290AC56C00B0C6C8 /* CheckNetworkConnection.swift in Sources */,
 				10CF712D28F8529600F07ACB /* NowPlayingViewController.swift in Sources */,
 				10F50475293508CA00AFA95F /* PopularUseCase.swift in Sources */,
+				1058FB96294A2857004A3E86 /* User.swift in Sources */,
 				10CF712F28F8531900F07ACB /* UpcomingViewController.swift in Sources */,
 				102E84A9291E9502006BD8B6 /* UpcomingUseCase.swift in Sources */,
 				10F28DF82919669B00647235 /* MovieDetail.swift in Sources */,
@@ -786,7 +802,9 @@
 				10191275292533CF00E7AE94 /* ViewModelProtocol.swift in Sources */,
 				106CADD22922995200D9CE1E /* SearchViewModel.swift in Sources */,
 				106CADE02922BB9900D9CE1E /* SearchUseCase.swift in Sources */,
+				1058FB9A294A386A004A3E86 /* ValidateRegisterUseCase.swift in Sources */,
 				D697D22E290719DA00CE310C /* DataManagerDelegate.swift in Sources */,
+				1058FB98294A2952004A3E86 /* RegisterUseCase.swift in Sources */,
 				10361CB62914081000973644 /* MovieDetailData.swift in Sources */,
 				102E84A3291E9352006BD8B6 /* UpcomingCell.swift in Sources */,
 				102F2AD6291AADE800F65D55 /* NetworkConnectionUseCase.swift in Sources */,
@@ -823,6 +841,8 @@
 				106CADD42922996500D9CE1E /* SearchViewController.swift in Sources */,
 				10EBD39E2948B6E7004921A4 /* LoginViewModel.swift in Sources */,
 				10F5046F293504B000AFA95F /* PopularViewModel.swift in Sources */,
+				1058FB94294A1D12004A3E86 /* ProfileViewModel.swift in Sources */,
+				1058FB91294A1CEF004A3E86 /* LogInOrRegisterViewController.swift in Sources */,
 				10281B26290AEEDB00B0C6C8 /* NowPlayingCellModel.swift in Sources */,
 				D6A7A85D29030CF100B9BF61 /* ViewModelDelegate.swift in Sources */,
 				106CADDE2922B96000D9CE1E /* SearchCellModel.swift in Sources */,

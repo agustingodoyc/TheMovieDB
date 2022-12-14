@@ -10,10 +10,10 @@ import Foundation
 class NowPlayingViewModel: ViewModel {
     // MARK: - Properties
     var movies: [Movie] = []
-    var useCase: TabBarUseCase
+    var useCase: TabBarUseCaseProtocol
     weak var delegate: ViewModelDelegate?
     
-    init(nowPlayingUseCase: TabBarUseCase = NowPlayingUseCase()) {
+    init(nowPlayingUseCase: TabBarUseCaseProtocol = NowPlayingUseCase()) {
         useCase = nowPlayingUseCase
         useCase.delegate = self
     }

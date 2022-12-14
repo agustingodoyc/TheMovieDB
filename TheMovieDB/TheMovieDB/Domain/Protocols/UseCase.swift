@@ -7,13 +7,21 @@
 
 import Foundation
 
-protocol TabBarUseCase: AnyObject {
+protocol TabBarUseCaseProtocol: AnyObject {
     var delegate: UseCaseDelegate? { get set }
     func execute(completionHandler: @escaping ([Movie]) -> Void)
 }
 
-protocol SearchUseCaseProtocol {
+protocol UseCaseProtocol {
     func execute(completionHandler: @escaping ([Movie]) -> Void)
+}
+
+protocol RegisterProtocol {
+    func execute(userName: String, password: String)
+}
+
+protocol ValidateRegisterProtocol {
+    func execute(userName: String) -> Bool
 }
 
 protocol DetailsUseCase {

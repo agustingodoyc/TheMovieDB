@@ -7,7 +7,7 @@
 
 import Foundation
 
-class TopRatedUseCase: TabBarUseCase {
+class TopRatedUseCase: TabBarUseCaseProtocol {
     // MARK: - Properties
     private var dataManager: DataManager
     weak var delegate: UseCaseDelegate?

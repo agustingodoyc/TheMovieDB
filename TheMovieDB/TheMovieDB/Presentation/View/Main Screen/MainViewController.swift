@@ -21,7 +21,7 @@ class MainViewController: UITabBarController, BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.barTintColor = UIColor(red: 6, green: 34, blue: 68, alpha: 1)
+        navigationController?.navigationBar.tintColor = UIColor(red: 0.14, green: 0.76, blue: 0.76, alpha: 1)
     }
     
     func setUpTabs() {
@@ -31,9 +31,15 @@ class MainViewController: UITabBarController, BaseViewController {
         viewControllers?.append(popularVC)
         
         let loginItem = UITabBarItem(title: "Profile", image: .init(systemName: "person.fill"), tag: 4)
-        let loginVC = ProfileViewController()
-        loginVC.tabBarItem = loginItem
-        viewControllers?.append(loginVC)
+        if ProfileViewModel().checkStatus() == true {
+            let profileVC = ProfileViewController()
+            profileVC.tabBarItem = loginItem
+            viewControllers?.append(profileVC)
+        } else {
+            let loginVC = LoginOrRegisterViewController()
+            loginVC.tabBarItem = loginItem
+            viewControllers?.append(loginVC)
+        }
         
         guard let viewControllers = viewControllers else {
             return

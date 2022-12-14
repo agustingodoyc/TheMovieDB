@@ -82,4 +82,14 @@ public class DataManager: DataManagerProtocol, DataManagerDetailProtocol, DataMa
             completionHandler(dataBase.getAllData())
         }
     }
+    
+    // MARK: - User
+    func createUser(userName: String, password: String) {
+        let user = User(userName: userName, password: password)
+        dataBase.createUser(user)
+    }
+    
+    func checkUserName(userName: String) -> Bool {
+        dataBase.checkUserName(userName: userName)
+    }
 }

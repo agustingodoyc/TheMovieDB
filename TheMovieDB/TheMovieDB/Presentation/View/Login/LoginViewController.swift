@@ -35,6 +35,7 @@ class LoginViewController: UIViewController {
         let password = UITextField()
         password.backgroundColor = .white.withAlphaComponent(0.5)
         password.placeholder = " Enter your password"
+        password.isSecureTextEntry = true
         return password
     }()
     

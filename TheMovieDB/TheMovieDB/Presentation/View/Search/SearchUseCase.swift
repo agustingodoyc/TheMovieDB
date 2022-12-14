@@ -7,7 +7,7 @@
 
 import Foundation
 
-class SearchUseCase: SearchUseCaseProtocol {
+class SearchUseCase: UseCaseProtocol {
     // MARK: - Properties
     private var dataManager: DataManager
     

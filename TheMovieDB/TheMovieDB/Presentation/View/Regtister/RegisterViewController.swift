@@ -9,21 +9,17 @@ import Foundation
 import UIKit
 
 class RegisterViewController: UIViewController {
-    
-    //Agregar struct de color
-    //Agregar struct constans de radius
     lazy var viewModel = RegisterViewModel()
     weak var coordinator: MainCoordinator?
     lazy var register: UILabel = {
         let register = UILabel()
         register.layer.cornerRadius = 10
         register.clipsToBounds = true
-        register.numberOfLines = 0
         register.adjustsFontSizeToFitWidth = true
         register.font = .preferredFont(forTextStyle: .headline)
         register.font = register.font.withSize(40)
         register.text = " Register "
-        register.textColor = UIColor(red: 0.14, green: 0.76, blue: 0.76, alpha: 1)
+        register.textColor = UIColor(named: "movieLightBlue")
         return register
     }()
     
@@ -38,6 +34,7 @@ class RegisterViewController: UIViewController {
         let password = UITextField()
         password.backgroundColor = .white.withAlphaComponent(0.5)
         password.placeholder = " Enter your password"
+        password.isSecureTextEntry = true
         return password
     }()
     
@@ -45,16 +42,18 @@ class RegisterViewController: UIViewController {
         let passwordConfirm = UITextField()
         passwordConfirm.backgroundColor = .white.withAlphaComponent(0.5)
         passwordConfirm.placeholder = " Enter your password again"
+        passwordConfirm.isSecureTextEntry = true
         return passwordConfirm
     }()
     
     lazy var createAccount: UIButton = {
         let createAccount = UIButton()
-        createAccount.backgroundColor = UIColor(red: 0.14, green: 0.76, blue: 0.76, alpha: 1).withAlphaComponent(0.7)
+        createAccount.backgroundColor = UIColor(named: "movieLightBlue")?.withAlphaComponent(0.7)
         createAccount.setTitle("Create Account", for: .normal)
         createAccount.addTarget(self, action: #selector(registerTapped), for: .touchUpInside)
         return createAccount
     }()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,7 +62,7 @@ class RegisterViewController: UIViewController {
     }
     
     func configureScreen() {
-        view.backgroundColor = UIColor(red: 0.02, green: 0.13, blue: 0.27, alpha: 1)
+        view.backgroundColor = UIColor(named: "movieBlue")
         view.addSubview(register)
         setLoginConstrains()
         view.addSubview(userName)
@@ -77,8 +76,12 @@ class RegisterViewController: UIViewController {
     }
     
     @objc func registerTapped() {
-        coordinator?.start()
-        self.navigationController?.isNavigationBarHidden = false
+        if viewModel.createUser(userName: userName.text ?? "", password: password.text ?? "", passwordConfirm: passwordConfirm.text ?? "") == true {
+            coordinator?.start()
+        } else {
+            var alert: UIAlertController = UIAlertController(title: "Error", message: "The username already exists or the repeated password is incorrect", preferredStyle: .alert)
+
+        }
     }
 }
 

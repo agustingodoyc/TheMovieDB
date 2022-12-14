@@ -12,7 +12,7 @@ final class NowPlayingViewModelTest: XCTestCase {
     
     var sut: NowPlayingViewModel!
     
-    class MockNowPlayingUseCase: TabBarUseCase {
+    class MockNowPlayingUseCase: TabBarUseCaseProtocol {
         var delegate: TheMovieDB.UseCaseDelegate?
         
         var nowPlayingMovie: [Movie] = [

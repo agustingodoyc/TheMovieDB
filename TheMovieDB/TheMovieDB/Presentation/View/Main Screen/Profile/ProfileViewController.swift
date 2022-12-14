@@ -13,23 +13,16 @@ class ProfileViewController: UIViewController, BaseViewController {
     weak var coordinator: MainCoordinator?
     //lazy var viewModel = LoginViewModel()
     lazy var profileTab = UIView()
-    lazy var userNameAndLastNameView: UIView = {
-        let userNameAndLastNameView = UIView()
-        userNameAndLastNameView.layer.cornerRadius = 10
-        userNameAndLastNameView.clipsToBounds = true
-        userNameAndLastNameView.backgroundColor =  UIColor(red: 0.02, green: 0.13, blue: 0.27, alpha: 1)
-        return userNameAndLastNameView
-    }()
+    
     lazy var profile: UILabel = {
         let profile = UILabel()
-        profile.layer.cornerRadius = 10
         profile.clipsToBounds = true
         profile.numberOfLines = 0
         profile.adjustsFontSizeToFitWidth = true
         profile.font = .preferredFont(forTextStyle: .headline)
         profile.font = profile.font.withSize(40)
         profile.text = " Profile "
-        profile.textColor = UIColor(red: 0.14, green: 0.76, blue: 0.76, alpha: 1)
+        profile.textColor = UIColor(named: "movieLightBlue")
         return profile
     }()
     
@@ -40,19 +33,18 @@ class ProfileViewController: UIViewController, BaseViewController {
         nameAndLastName.font = .preferredFont(forTextStyle: .title2)
         nameAndLastName.font = nameAndLastName.font.withSize(25)
         nameAndLastName.text = " - User name and last-name: "
-        nameAndLastName.textColor = UIColor(red: 0.14, green: 0.76, blue: 0.76, alpha: 1)
+        nameAndLastName.textColor = UIColor(named: "movieLightBlue")
         return nameAndLastName
     }()
     
     lazy var userNameAndLastName: UILabel = {
         let userNameAndLastName = UILabel()
         userNameAndLastName.clipsToBounds = true
-        userNameAndLastName.numberOfLines = 0
         userNameAndLastName.adjustsFontSizeToFitWidth = true
         userNameAndLastName.font = .preferredFont(forTextStyle: .title2)
         userNameAndLastName.font = userNameAndLastName.font.withSize(20)
         userNameAndLastName.text = " Angela Lee "
-        userNameAndLastName.textColor = UIColor(red: 0.14, green: 0.76, blue: 0.76, alpha: 1)
+        userNameAndLastName.textColor = UIColor(named: "movieLightBlue")
         return userNameAndLastName
     }()
     
@@ -63,19 +55,18 @@ class ProfileViewController: UIViewController, BaseViewController {
         account.font = .preferredFont(forTextStyle: .title2)
         account.font = account.font.withSize(25)
         account.text = " - User Account: "
-        account.textColor = UIColor(red: 0.14, green: 0.76, blue: 0.76, alpha: 1)
+        account.textColor = UIColor(named: "movieLightBlue")
         return account
     }()
     
     lazy var userAccount: UILabel = {
         let userAccount = UILabel()
         userAccount.clipsToBounds = true
-        userAccount.numberOfLines = 0
         userAccount.adjustsFontSizeToFitWidth = true
         userAccount.font = .preferredFont(forTextStyle: .title2)
         userAccount.font = userAccount.font.withSize(20)
         userAccount.text = " AngieLee99 "
-        userAccount.textColor = UIColor(red: 0.14, green: 0.76, blue: 0.76, alpha: 1)
+        userAccount.textColor = UIColor(named: "movieLightBlue")
         return userAccount
     }()
     
@@ -86,26 +77,25 @@ class ProfileViewController: UIViewController, BaseViewController {
         password.font = .preferredFont(forTextStyle: .title2)
         password.font = password.font.withSize(25)
         password.text = " - Password: "
-        password.textColor = UIColor(red: 0.14, green: 0.76, blue: 0.76, alpha: 1)
+        password.textColor = UIColor(named: "movieLightBlue")
         return password
     }()
     
     lazy var userPassword: UILabel = {
         let userPassword = UILabel()
         userPassword.clipsToBounds = true
-        userPassword.numberOfLines = 0
         userPassword.adjustsFontSizeToFitWidth = true
         userPassword.font = .preferredFont(forTextStyle: .title2)
         userPassword.font = userPassword.font.withSize(20)
         userPassword.text = " Al123 "
-        userPassword.textColor = UIColor(red: 0.14, green: 0.76, blue: 0.76, alpha: 1)
+        userPassword.textColor = UIColor(named: "movieLightBlue")
         return userPassword
     }()
     
     lazy var logout: UIButton = {
         let logout = UIButton()
         logout.layer.cornerRadius = 20
-        logout.backgroundColor = UIColor(red: 0.14, green: 0.76, blue: 0.76, alpha: 1).withAlphaComponent(0.7)
+        logout.backgroundColor = UIColor(named: "movieLightBlue")?.withAlphaComponent(0.7)
         logout.setTitle("Logout", for: .normal)
         logout.addTarget(self, action: #selector(logoutTapped), for: .touchUpInside)
         return logout
@@ -113,12 +103,13 @@ class ProfileViewController: UIViewController, BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.isNavigationBarHidden = true
+        self.navigationController?.navigationBar.topItem?.title = "Profile"
+        self.navigationController?.navigationBar.barTintColor = UIColor(named: "movieLightBlue")
         configureScreen()
     }
 
     func configureScreen() {
-        view.backgroundColor = UIColor(red: 0.02, green: 0.13, blue: 0.27, alpha: 1)
+        view.backgroundColor = UIColor(named: "movieBlue")
         view.addSubview(profileTab)
         profileTab.pin(to: view)
         profileTab.addSubview(profile)
@@ -142,19 +133,25 @@ class ProfileViewController: UIViewController, BaseViewController {
     @objc func logoutTapped() {
         coordinator?.loginScreen()
     }
+    @objc func loginTapped() {
+        coordinator?.loginScreen()
+    }
+    @objc func registerTapped() {
+        coordinator?.registerScreen()
+    }
 }
 
 // MARK: - Constrains
 extension ProfileViewController {
     func setProfileConstrains() {
         profile.translatesAutoresizingMaskIntoConstraints = false
-        profile.topAnchor.constraint(equalTo: profileTab.topAnchor, constant: 80).isActive = true
+        profile.topAnchor.constraint(equalTo: profileTab.topAnchor, constant: 100).isActive = true
         profile.centerXAnchor.constraint(equalTo: profileTab.centerXAnchor).isActive = true
     }
     
     func setUserNameConstrains() {
         nameAndLastName.translatesAutoresizingMaskIntoConstraints = false
-        nameAndLastName.topAnchor.constraint(equalTo: profile.topAnchor, constant: 100).isActive = true
+        nameAndLastName.topAnchor.constraint(equalTo: profile.topAnchor, constant: 80).isActive = true
         nameAndLastName.leadingAnchor.constraint(equalTo: profileTab.leadingAnchor, constant: 15).isActive = true
         nameAndLastName.trailingAnchor.constraint(lessThanOrEqualTo: profileTab.trailingAnchor, constant: -15).isActive = true
     }
@@ -196,10 +193,10 @@ extension ProfileViewController {
     
     func setLogoutConstrains() {
         logout.translatesAutoresizingMaskIntoConstraints = false
-        logout.bottomAnchor.constraint(equalTo: profileTab.bottomAnchor, constant: -200).isActive = true
-        logout.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50).isActive = true
-        logout.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50).isActive = true
+        logout.topAnchor.constraint(equalTo: profileTab.bottomAnchor, constant: -200).isActive = true
+        logout.leadingAnchor.constraint(equalTo: profileTab.leadingAnchor, constant: 50).isActive = true
+        logout.trailingAnchor.constraint(equalTo: profileTab.trailingAnchor, constant: -50).isActive = true
         logout.heightAnchor.constraint(equalTo: logout.widthAnchor, multiplier: 1/8).isActive = true
-        logout.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        logout.centerXAnchor.constraint(equalTo: profileTab.centerXAnchor).isActive = true
     }
 }

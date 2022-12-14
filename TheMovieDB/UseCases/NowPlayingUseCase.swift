@@ -7,7 +7,7 @@
 
 import Foundation
 
-class NowPlayingUseCase: TabBarUseCase {
+class NowPlayingUseCase: TabBarUseCaseProtocol {
     // MARK: - Properties
     private var dataManager: DataManager
     private var movies: [MoviePersisted] = []

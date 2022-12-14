@@ -10,10 +10,10 @@ import Foundation
 class PopularViewModel: ViewModel {
     // MARK: - Properties
     var movies: [Movie] = []
-    var useCase: TabBarUseCase
+    var useCase: TabBarUseCaseProtocol
     weak var delegate: ViewModelDelegate?
     
-    init(popularUseCase: TabBarUseCase = PopularUseCase()) {
+    init(popularUseCase: TabBarUseCaseProtocol = PopularUseCase()) {
         useCase = popularUseCase
         useCase.delegate = self
     }

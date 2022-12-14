@@ -10,10 +10,10 @@ import Foundation
 class TopRatedViewModel: ViewModel {
     // MARK: - Properties
     var movies: [Movie] = []
-    var useCase: TabBarUseCase
+    var useCase: TabBarUseCaseProtocol
     weak var delegate: ViewModelDelegate?
     
-    init(topRatedUseCase: TabBarUseCase = TopRatedUseCase()) {
+    init(topRatedUseCase: TabBarUseCaseProtocol = TopRatedUseCase()) {
         useCase = topRatedUseCase
         useCase.delegate = self
     }

@@ -55,4 +55,25 @@ public class RealmDB: DataBase {
             return
         }
     }
+    
+    func createUser(_ user: User) {
+        do {
+            try realm.write {
+                realm.add(user)
+            }
+        } catch {
+            print(error)
+            return
+        }
+    }
+    
+    func checkUserName(userName: String) -> Bool {
+        let user = realm.objects(User.self).where() {
+            $0.userName == userName
+        }
+        guard user.isEmpty else {
+           return false
+        }
+        return true
+    }
 }
