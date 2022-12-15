@@ -56,7 +56,7 @@ public class RealmDB: DataBase {
         }
     }
     
-    func createUser(_ user: User) {
+    func createUser(_ user: User) { //tipo de retorno Bool
         do {
             try realm.write {
                 realm.add(user)

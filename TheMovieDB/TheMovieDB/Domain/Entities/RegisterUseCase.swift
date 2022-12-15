@@ -16,6 +16,16 @@ class RegisterUseCase: RegisterProtocol {
     }
     
     func execute(userName: String, password: String) {
-        dataManager.createUser(userName: userName, password: password)
+        //checkear usuario
+        guard dataManager.checkUserName(userName: userName) else {
+            //Error username
+            return
+        }
+
+        guard dataManager.createUser(userName: userName, password: password) else {
+            //Database Error
+            return
+        }
+        //success 
     }
 }

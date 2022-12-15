@@ -71,4 +71,12 @@ class MainCoordinator: Coordinator, MovieDetailProtocol {
         vc.viewModel = viewModel
         navigationController.pushViewController(vc, animated: true)
     }
+    
+    func profileScreen() {
+        let viewModel = ProfileViewModel()
+        let vc = ProfileViewController()
+        vc.coordinator = self
+        vc.viewModel = viewModel
+        navigationController.pushViewController(vc, animated: true)
+    }
 }

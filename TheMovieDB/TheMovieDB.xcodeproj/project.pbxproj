@@ -50,6 +50,7 @@
 		1058FB96294A2857004A3E86 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1058FB95294A2857004A3E86 /* User.swift */; };
 		1058FB98294A2952004A3E86 /* RegisterUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1058FB97294A2952004A3E86 /* RegisterUseCase.swift */; };
 		1058FB9A294A386A004A3E86 /* ValidateRegisterUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1058FB99294A386A004A3E86 /* ValidateRegisterUseCase.swift */; };
+		1065268B294B684500BAFCCD /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1065268A294B684500BAFCCD /* Register.swift */; };
 		106CADD22922995200D9CE1E /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106CADD12922995200D9CE1E /* SearchViewModel.swift */; };
 		106CADD42922996500D9CE1E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106CADD32922996500D9CE1E /* SearchViewController.swift */; };
 		106CADD62922997700D9CE1E /* SearchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 106CADD52922997700D9CE1E /* SearchScreen.storyboard */; };
@@ -164,6 +165,7 @@
 		1058FB95294A2857004A3E86 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1058FB97294A2952004A3E86 /* RegisterUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegisterUseCase.swift; path = TheMovieDB/Domain/Entities/RegisterUseCase.swift; sourceTree = SOURCE_ROOT; };
 		1058FB99294A386A004A3E86 /* ValidateRegisterUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ValidateRegisterUseCase.swift; path = TheMovieDB/Domain/Entities/ValidateRegisterUseCase.swift; sourceTree = SOURCE_ROOT; };
+		1065268A294B684500BAFCCD /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
 		106CADD12922995200D9CE1E /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		106CADD32922996500D9CE1E /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		106CADD52922997700D9CE1E /* SearchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchScreen.storyboard; sourceTree = "<group>"; };
@@ -576,6 +578,7 @@
 				10F28DF32919546900647235 /* BaseViewController.swift */,
 				10281B1D290AC56C00B0C6C8 /* CheckNetworkConnection.swift */,
 				10191274292533CF00E7AE94 /* ViewModelProtocol.swift */,
+				1065268A294B684500BAFCCD /* Register.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -824,6 +827,7 @@
 				D67DDA3328EE161A0093B3A0 /* AppDelegate.swift in Sources */,
 				102E849A291E8B1F006BD8B6 /* TopRatedUseCase.swift in Sources */,
 				102E8492291E898F006BD8B6 /* TopRatedCell.swift in Sources */,
+				1065268B294B684500BAFCCD /* Register.swift in Sources */,
 				10361CB829140F3D00973644 /* MovieDetailObjects.swift in Sources */,
 				102E8498291E8AAC006BD8B6 /* TopRatedCellModel.swift in Sources */,
 				102E8490291E894A006BD8B6 /* TopRatedViewModel.swift in Sources */,

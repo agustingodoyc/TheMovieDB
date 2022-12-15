@@ -11,7 +11,7 @@ import SwiftUI
 
 class ProfileViewController: UIViewController, BaseViewController {
     weak var coordinator: MainCoordinator?
-    //lazy var viewModel = LoginViewModel()
+    lazy var viewModel = ProfileViewModel()
     lazy var profileTab = UIView()
     
     lazy var profile: UILabel = {
@@ -104,7 +104,6 @@ class ProfileViewController: UIViewController, BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.topItem?.title = "Profile"
-        self.navigationController?.navigationBar.barTintColor = UIColor(named: "movieLightBlue")
         configureScreen()
     }
 
@@ -132,12 +131,6 @@ class ProfileViewController: UIViewController, BaseViewController {
     
     @objc func logoutTapped() {
         coordinator?.loginScreen()
-    }
-    @objc func loginTapped() {
-        coordinator?.loginScreen()
-    }
-    @objc func registerTapped() {
-        coordinator?.registerScreen()
     }
 }
 

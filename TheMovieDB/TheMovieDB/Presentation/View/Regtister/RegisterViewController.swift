@@ -54,6 +54,28 @@ class RegisterViewController: UIViewController {
         return createAccount
     }()
     
+    lazy var usernameError: UILabel = {
+        let usernameError = UILabel()
+        usernameError.textColor = .red
+        usernameError.text = "Username already exist, please try another"
+        return usernameError
+    }()
+    
+    lazy var passwordConfirmError: UILabel = {
+        let passwordConfirmError = UILabel()
+        passwordConfirmError.numberOfLines = 0
+        passwordConfirmError.textColor = .red
+        passwordConfirmError.text = "The verification password is not correct"
+        return passwordConfirmError
+    }()
+    
+    lazy var emptyFieldError: UILabel = {
+        let emptyFieldError = UILabel()
+        emptyFieldError.numberOfLines = 0
+        emptyFieldError.textColor = .red
+        emptyFieldError.text = "Please complete all fields"
+        return emptyFieldError
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,6 +85,9 @@ class RegisterViewController: UIViewController {
     
     func configureScreen() {
         view.backgroundColor = UIColor(named: "movieBlue")
+        usernameError.isHidden = true
+        passwordConfirmError.isHidden = true
+        emptyFieldError.isHidden = true
         view.addSubview(register)
         setLoginConstrains()
         view.addSubview(userName)
@@ -73,15 +98,54 @@ class RegisterViewController: UIViewController {
         setPasswordConfirmConstrains()
         view.addSubview(createAccount)
         setRegisterButtonConstrains()
+        view.addSubview(usernameError)
+        setUserNameErrorConstrains()
+        view.addSubview(passwordConfirmError)
+        setPasswordConfirmErrorConstrains()
+        view.addSubview(emptyFieldError)
+        setEmptyFieldErrorConstrains()
     }
     
     @objc func registerTapped() {
-        if viewModel.createUser(userName: userName.text ?? "", password: password.text ?? "", passwordConfirm: passwordConfirm.text ?? "") == true {
-            coordinator?.start()
-        } else {
-            var alert: UIAlertController = UIAlertController(title: "Error", message: "The username already exists or the repeated password is incorrect", preferredStyle: .alert)
+        //Verificar a otra función
+        //checkear contraseña coincidan
+        guard let enterUserName = userName.text,
+              !enterUserName.isEmpty,
+              let enterPassword = password.text,
+              !enterPassword.isEmpty,
+              let enterPasswordConfirm = passwordConfirm.text,
+              !enterPasswordConfirm.isEmpty
+        else {
+            emptyFieldError.isHidden = false
 
+            return
         }
+        //solo usuario y contraseña
+        //Un delegate para manejar el error de createUser (usuario existente)
+        guard viewModel.createUser(
+            userName: enterUserName,
+            password: enterPassword,
+            passwordConfirm: enterPasswordConfirm)
+                == .success else {
+            if viewModel.createUser(
+                userName: enterUserName,
+                password: enterPassword,
+                passwordConfirm: enterPasswordConfirm) == .existedUserName {
+                usernameError.isHidden = false
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+                    self.usernameError.isHidden = true
+                }
+            } else {
+                passwordConfirmError.isHidden = false
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+                    self.passwordConfirmError.isHidden = true
+                }
+            }
+            return
+        }
+        coordinator?.start()
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationItem.setHidesBackButton(true, animated: true)
     }
 }
 
@@ -126,5 +190,23 @@ extension RegisterViewController {
         createAccount.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50).isActive = true
         createAccount.heightAnchor.constraint(equalTo: userName.widthAnchor, multiplier: 1/8).isActive = true
         createAccount.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+    }
+    
+    func setUserNameErrorConstrains() {
+        usernameError.translatesAutoresizingMaskIntoConstraints = false
+        usernameError.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        usernameError.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100).isActive = true
+    }
+    
+    func setPasswordConfirmErrorConstrains() {
+        passwordConfirmError.translatesAutoresizingMaskIntoConstraints = false
+        passwordConfirmError.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        passwordConfirmError.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100).isActive = true
+    }
+    
+    func setEmptyFieldErrorConstrains() {
+        emptyFieldError.translatesAutoresizingMaskIntoConstraints = false
+        emptyFieldError.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        emptyFieldError.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100).isActive = true
     }
 }

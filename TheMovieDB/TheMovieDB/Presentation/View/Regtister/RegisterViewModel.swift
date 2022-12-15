@@ -16,13 +16,16 @@ class RegisterViewModel {
         self.validateRegisterUseCase = validateRegisterUseCase
     }
     
-    func createUser(userName: String, password: String, passwordConfirm: String) -> Bool {
-        if (validateRegisterUseCase.execute(userName: userName) == true) && (password == passwordConfirm) {
-            registerUseCase.execute(userName: userName, password: password)
-            return true
-        } else {
-            return false
+    func createUser(userName: String, password: String, passwordConfirm: String) -> RegisterResult {
+        //success o falied
+        guard (validateRegisterUseCase.execute(userName: userName) == true) && (password == passwordConfirm) else {
+            if (validateRegisterUseCase.execute(userName: userName) == false) {
+                return .existedUserName
+            } else {
+                return .passwordError
+            }
         }
-        
+        registerUseCase.execute(userName: userName, password: password)
+        return .success
     }
 }

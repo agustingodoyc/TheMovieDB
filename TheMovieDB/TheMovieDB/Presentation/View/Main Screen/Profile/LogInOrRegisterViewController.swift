@@ -11,7 +11,6 @@ import SwiftUI
 
 class LoginOrRegisterViewController: UIViewController, BaseViewController {
     weak var coordinator: MainCoordinator?
-    //lazy var viewModel = LoginViewModel()
     lazy var profileTab = UIView()
     
     lazy var loginOrRegister: UILabel = {
@@ -68,7 +67,6 @@ class LoginOrRegisterViewController: UIViewController, BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.topItem?.title = "Login or Register"
-        self.navigationController?.navigationBar.barTintColor = UIColor(named: "movieLightBlue")
         configureScreen()
     }
     
@@ -88,9 +86,6 @@ class LoginOrRegisterViewController: UIViewController, BaseViewController {
         setRegisterConstrains()
     }
     
-    @objc func logoutTapped() {
-        coordinator?.loginScreen()
-    }
     @objc func loginTapped() {
         coordinator?.loginScreen()
     }
