@@ -84,9 +84,9 @@ public class DataManager: DataManagerProtocol, DataManagerDetailProtocol, DataMa
     }
     
     // MARK: - User
-    func createUser(userName: String, password: String) { //Retorn de database.createUser
+    func createUser(userName: String, password: String) -> Bool {
         let user = User(userName: userName, password: password)
-        dataBase.createUser(user)
+        return dataBase.createUser(user)
     }
     
     func checkUserName(userName: String) -> Bool {

@@ -9,23 +9,21 @@ import Foundation
 
 class RegisterViewModel {
     var registerUseCase: RegisterProtocol
-    var validateRegisterUseCase: ValidateRegisterProtocol
+    weak var delegate: RegisterViewModelDelegate?
     
-    init (registerUseCase: RegisterProtocol = RegisterUseCase(), validateRegisterUseCase: ValidateRegisterProtocol = ValidateRegisterUseCase()) {
+    init (registerUseCase:
+          RegisterProtocol = RegisterUseCase()) {
         self.registerUseCase = registerUseCase
-        self.validateRegisterUseCase = validateRegisterUseCase
     }
     
-    func createUser(userName: String, password: String, passwordConfirm: String) -> RegisterResult {
-        //success o falied
-        guard (validateRegisterUseCase.execute(userName: userName) == true) && (password == passwordConfirm) else {
-            if (validateRegisterUseCase.execute(userName: userName) == false) {
-                return .existedUserName
+    func createUser(userName: String, password: String) -> RegisterResult {
+        guard registerUseCase.execute(userName: userName, password: password) == .success else {
+            if registerUseCase.execute(userName: userName, password: password) == .usernameError {
+                return.usernameError
             } else {
-                return .passwordError
+                return .dataBaseError
             }
         }
-        registerUseCase.execute(userName: userName, password: password)
         return .success
     }
 }

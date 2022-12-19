@@ -10,3 +10,7 @@ import Foundation
 protocol BaseViewController: AnyObject {
     var coordinator: MainCoordinator? { get set }
 }
+
+protocol ProfileBaseController: AnyObject {
+    var profileCoordinator: ProfileCoordinator? { get set }
+}

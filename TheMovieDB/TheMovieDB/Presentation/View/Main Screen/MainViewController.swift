@@ -31,19 +31,16 @@ class MainViewController: UITabBarController, BaseViewController {
         viewControllers?.append(popularVC)
         
         let loginItem = UITabBarItem(title: "Profile", image: .init(systemName: "person.fill"), tag: 4)
-        if ProfileViewModel().checkStatus() == true {
-            let profileVC = ProfileViewController()
-            profileVC.tabBarItem = loginItem
-            viewControllers?.append(profileVC)
-        } else {
-            let loginVC = LoginOrRegisterViewController()
-            loginVC.tabBarItem = loginItem
-            viewControllers?.append(loginVC)
+        guard let profileCoordinator = coordinator?.getProfileCoordinator() else {
+            return
         }
-        
+        let navigation = profileCoordinator.navigationController
+        navigation.tabBarItem = loginItem
+        viewControllers?.append(navigation)
         guard let viewControllers = viewControllers else {
             return
         }
+        
         for viewController in viewControllers {
             guard let childViewController = viewController as? BaseViewController else {
                 continue

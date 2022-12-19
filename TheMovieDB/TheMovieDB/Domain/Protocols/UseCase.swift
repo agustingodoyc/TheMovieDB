@@ -7,6 +7,12 @@
 
 import Foundation
 
+enum RegisterResult: String {
+    case success
+    case usernameError
+    case dataBaseError
+}
+
 protocol TabBarUseCaseProtocol: AnyObject {
     var delegate: UseCaseDelegate? { get set }
     func execute(completionHandler: @escaping ([Movie]) -> Void)
@@ -17,11 +23,7 @@ protocol UseCaseProtocol {
 }
 
 protocol RegisterProtocol {
-    func execute(userName: String, password: String)
-}
-
-protocol ValidateRegisterProtocol {
-    func execute(userName: String) -> Bool
+    func execute(userName: String, password: String) -> RegisterResult
 }
 
 protocol DetailsUseCase {

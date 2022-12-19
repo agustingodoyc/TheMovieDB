@@ -9,8 +9,8 @@ import Foundation
 import UIKit
 import SwiftUI
 
-class ProfileViewController: UIViewController, BaseViewController {
-    weak var coordinator: MainCoordinator?
+class ProfileViewController: UIViewController, ProfileBaseController {
+    weak var profileCoordinator: ProfileCoordinator?
     lazy var viewModel = ProfileViewModel()
     lazy var profileTab = UIView()
     
@@ -103,7 +103,9 @@ class ProfileViewController: UIViewController, BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationItem.rightBarButtonItem = nil
         self.navigationController?.navigationBar.topItem?.title = "Profile"
+        self.navigationController?.navigationItem.rightBarButtonItem = nil
         configureScreen()
     }
 
@@ -130,7 +132,7 @@ class ProfileViewController: UIViewController, BaseViewController {
     }
     
     @objc func logoutTapped() {
-        coordinator?.loginScreen()
+        profileCoordinator?.goToLoginScreen()
     }
 }
 

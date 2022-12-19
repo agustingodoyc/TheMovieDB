@@ -9,8 +9,8 @@ import Foundation
 import UIKit
 import SwiftUI
 
-class LoginOrRegisterViewController: UIViewController, BaseViewController {
-    weak var coordinator: MainCoordinator?
+class LoginOrRegisterViewController: UIViewController, ProfileBaseController {
+    weak var profileCoordinator: ProfileCoordinator?
     lazy var profileTab = UIView()
     
     lazy var loginOrRegister: UILabel = {
@@ -87,10 +87,11 @@ class LoginOrRegisterViewController: UIViewController, BaseViewController {
     }
     
     @objc func loginTapped() {
-        coordinator?.loginScreen()
+        profileCoordinator?.goToLoginScreen()
     }
     @objc func registerTapped() {
-        coordinator?.registerScreen()
+        profileCoordinator?.goToRegisterScreen()
+        self.navigationController?.navigationBar.isHidden = false
     }
 }
 

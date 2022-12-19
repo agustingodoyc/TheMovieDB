@@ -8,9 +8,9 @@
 import Foundation
 import UIKit
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: UIViewController, ProfileBaseController {
+    weak var profileCoordinator: ProfileCoordinator?
     lazy var viewModel = RegisterViewModel()
-    weak var coordinator: MainCoordinator?
     lazy var register: UILabel = {
         let register = UILabel()
         register.layer.cornerRadius = 10
@@ -29,7 +29,7 @@ class RegisterViewController: UIViewController {
         userName.placeholder = " Enter your username"
         return userName
     }()
-
+    
     lazy var password: UITextField = {
         let password = UITextField()
         password.backgroundColor = .white.withAlphaComponent(0.5)
@@ -79,7 +79,7 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.isNavigationBarHidden = true
+        self.navigationController?.navigationItem.rightBarButtonItem = nil
         configureScreen()
     }
     
@@ -107,8 +107,6 @@ class RegisterViewController: UIViewController {
     }
     
     @objc func registerTapped() {
-        //Verificar a otra función
-        //checkear contraseña coincidan
         guard let enterUserName = userName.text,
               !enterUserName.isEmpty,
               let enterPassword = password.text,
@@ -117,35 +115,28 @@ class RegisterViewController: UIViewController {
               !enterPasswordConfirm.isEmpty
         else {
             emptyFieldError.isHidden = false
-
-            return
-        }
-        //solo usuario y contraseña
-        //Un delegate para manejar el error de createUser (usuario existente)
-        guard viewModel.createUser(
-            userName: enterUserName,
-            password: enterPassword,
-            passwordConfirm: enterPasswordConfirm)
-                == .success else {
-            if viewModel.createUser(
-                userName: enterUserName,
-                password: enterPassword,
-                passwordConfirm: enterPasswordConfirm) == .existedUserName {
-                usernameError.isHidden = false
-                DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-                    self.usernameError.isHidden = true
-                }
-            } else {
-                passwordConfirmError.isHidden = false
-                DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-                    self.passwordConfirmError.isHidden = true
-                }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+                self.emptyFieldError.isHidden = true
             }
             return
         }
-        coordinator?.start()
-        self.navigationController?.isNavigationBarHidden = false
-        self.navigationItem.setHidesBackButton(true, animated: true)
+        guard enterPassword == enterPasswordConfirm else {
+            passwordConfirmError.isHidden = false
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+                self.passwordConfirmError.isHidden = true
+            }
+            return
+        }
+        guard viewModel.createUser(
+            userName: enterUserName,
+            password: enterPassword) == .success else {
+                usernameError.isHidden = false
+                DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+                    self.usernameError.isHidden = true
+                }
+                return
+            }
+        profileCoordinator?.registerSuccess()
     }
 }
 

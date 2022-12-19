@@ -10,3 +10,8 @@ import Foundation
 protocol ViewModelDelegate: AnyObject {
     func reloadData()
 }
+
+protocol RegisterViewModelDelegate: AnyObject {
+    func registerResult(registerResult: RegisterResult) -> RegisterResult
+}
+

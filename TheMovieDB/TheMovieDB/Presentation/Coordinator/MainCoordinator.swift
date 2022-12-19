@@ -56,27 +56,11 @@ class MainCoordinator: Coordinator, MovieDetailProtocol {
         navigationController.pushViewController(vc, animated: true)
     }
     
-    func loginScreen() {
-        let viewModel = LoginViewModel()
-        let vc = LoginViewController()
-        vc.coordinator = self
-        vc.viewModel = viewModel
-        navigationController.pushViewController(vc, animated: true)
-    }
-    
-    func registerScreen() {
-        let viewModel = RegisterViewModel()
-        let vc = RegisterViewController()
-        vc.coordinator = self
-        vc.viewModel = viewModel
-        navigationController.pushViewController(vc, animated: true)
-    }
-    
-    func profileScreen() {
-        let viewModel = ProfileViewModel()
-        let vc = ProfileViewController()
-        vc.coordinator = self
-        vc.viewModel = viewModel
-        navigationController.pushViewController(vc, animated: true)
+    func getProfileCoordinator() -> ProfileCoordinator {
+        let profileCoordinator = ProfileCoordinator()
+        profileCoordinator.delegate = self
+        profileCoordinator.start()
+        childCoordinator.append(profileCoordinator)
+        return profileCoordinator
     }
 }

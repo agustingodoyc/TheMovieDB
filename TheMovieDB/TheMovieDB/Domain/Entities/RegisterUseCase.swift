@@ -15,17 +15,14 @@ class RegisterUseCase: RegisterProtocol {
         self.dataManager = dataManager
     }
     
-    func execute(userName: String, password: String) {
-        //checkear usuario
+    func execute(userName: String, password: String) -> RegisterResult {
         guard dataManager.checkUserName(userName: userName) else {
-            //Error username
-            return
+            return .usernameError
         }
-
+        
         guard dataManager.createUser(userName: userName, password: password) else {
-            //Database Error
-            return
+            return .dataBaseError
         }
-        //success 
+        return .success
     }
 }

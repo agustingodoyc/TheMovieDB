@@ -8,9 +8,9 @@
 import Foundation
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, ProfileBaseController {
+    weak var profileCoordinator: ProfileCoordinator?
     lazy var viewModel = LoginViewModel()
-    weak var coordinator: MainCoordinator?
     lazy var welcome: UILabel = {
         let welcome = UILabel()
         welcome.layer.cornerRadius = 10
@@ -89,12 +89,12 @@ class LoginViewController: UIViewController {
     }
     
     @objc func loginTapped() {
-        coordinator?.start()
+        profileCoordinator?.start()
         self.navigationController?.isNavigationBarHidden = false
     }
     
     @objc func registerTapped() {
-        coordinator?.registerScreen()
+        //profileCoordinator?.goToRegisterScreen()
     }
 }
 
