@@ -55,7 +55,6 @@ final class DataManagerTest: XCTestCase {
     }
     
     class MockDataBase: DataBase {
-        
         var moviePersisted: [MoviePersisted] = []
         var isEmpty: Bool { return moviePersisted.isEmpty }
         
@@ -75,6 +74,21 @@ final class DataManagerTest: XCTestCase {
         
         func getAllData() -> [MoviePersisted] {
             return moviePersisted
+        }
+        
+        func createUser(_ user: TheMovieDB.User) -> Bool {
+            if user.userName == "AngelaLee" && user.password == "1234" {
+                return true
+            } else {
+                return false
+            }
+        }
+        
+        func validateUserName(userName: String) -> Bool {
+            guard userName == "AngelaLee" else {
+                return false
+            }
+            return true
         }
 
     }
@@ -195,5 +209,21 @@ final class DataManagerTest: XCTestCase {
         }
         
         waitForExpectations(timeout: 5, handler: nil)
+    }
+    
+    func testCreatedUser() {
+        let user: User = User(userName: "AngelaLee", password: "1234")
+        let dataBase = MockDataBase()
+        let sut: DataManager = DataManager(service: MockProvider(), dataBase: dataBase)
+        
+        XCTAssertEqual(sut.createUser(userName: user.userName, password: user.password), true)
+    }
+    
+    func testValidateUsername() {
+        let user: User = User(userName: "AngelaLee", password: "1234")
+        let dataBase = MockDataBase()
+        let sut: DataManager = DataManager(service: MockProvider(), dataBase: dataBase)
+        
+        XCTAssertEqual(sut.checkUserName(userName: user.userName), true)
     }
 }

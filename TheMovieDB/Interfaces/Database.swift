@@ -14,5 +14,5 @@ protocol DataBase {
     func getAllData() -> [MoviePersisted]
     func clearData(endPoint: String)
     func createUser(_ user: User) -> Bool
-    func checkUserName(userName: String) -> Bool
+    func validateUserName(userName: String) -> Bool
 }

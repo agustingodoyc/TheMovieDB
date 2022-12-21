@@ -10,6 +10,7 @@ import UIKit
 import SwiftUI
 
 class ProfileViewController: UIViewController, ProfileBaseController {
+    // MARK: - Properties
     weak var profileCoordinator: ProfileCoordinator?
     lazy var viewModel = ProfileViewModel()
     lazy var profileTab = UIView()
@@ -101,6 +102,7 @@ class ProfileViewController: UIViewController, ProfileBaseController {
         return logout
     }()
     
+    // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationItem.rightBarButtonItem = nil

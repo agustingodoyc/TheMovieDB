@@ -68,7 +68,7 @@ public class RealmDB: DataBase {
         return true
     }
     
-    func checkUserName(userName: String) -> Bool {
+    func validateUserName(userName: String) -> Bool {
         let user = realm.objects(User.self).where() {
             $0.userName == userName
         }

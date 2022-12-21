@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 class RegisterViewController: UIViewController, ProfileBaseController {
+    // MARK: - Properties
     weak var profileCoordinator: ProfileCoordinator?
     lazy var viewModel = RegisterViewModel()
     lazy var register: UILabel = {
@@ -77,6 +78,7 @@ class RegisterViewController: UIViewController, ProfileBaseController {
         return emptyFieldError
     }()
     
+    // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationItem.rightBarButtonItem = nil
@@ -140,6 +142,7 @@ class RegisterViewController: UIViewController, ProfileBaseController {
     }
 }
 
+// MARK: - Constrains
 extension RegisterViewController {
     func setLoginConstrains() {
         register.translatesAutoresizingMaskIntoConstraints = false

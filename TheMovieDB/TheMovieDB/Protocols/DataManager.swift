@@ -10,7 +10,7 @@ import Foundation
 public class DataManager: DataManagerProtocol, DataManagerDetailProtocol, DataManagerSearchProtocol {
     // MARK: - Properties
     private var service: ServiceProtocol
-    var delegate: DataManagerDelegate?
+    weak var delegate: DataManagerDelegate?
     private var dataBase: DataBase
     
     init (service: ServiceProtocol = AlamofireSP(), dataBase: DataBase = RealmDB()) {
@@ -90,6 +90,6 @@ public class DataManager: DataManagerProtocol, DataManagerDetailProtocol, DataMa
     }
     
     func checkUserName(userName: String) -> Bool {
-        dataBase.checkUserName(userName: userName)
+        dataBase.validateUserName(userName: userName)
     }
 }

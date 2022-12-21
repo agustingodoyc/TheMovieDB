@@ -7,6 +7,11 @@
 
 import Foundation
 
+protocol RegisterViewModelProtocol {
+    var registerUseCase: RegisterProtocol { get set }
+    var delegate: RegisterViewModelDelegate? { get set }
+    func createUser(userName: String, password: String) -> RegisterResult
+}
 protocol SearchViewModelProtocol {
     func getNumberOfRowOfMovies() -> Int
     func getMovies(indexPath: Int) -> SearchCellModel

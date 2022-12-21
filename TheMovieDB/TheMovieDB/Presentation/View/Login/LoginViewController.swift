@@ -9,18 +9,17 @@ import Foundation
 import UIKit
 
 class LoginViewController: UIViewController, ProfileBaseController {
+    // MARK: - Properties
     weak var profileCoordinator: ProfileCoordinator?
     lazy var viewModel = LoginViewModel()
     lazy var welcome: UILabel = {
         let welcome = UILabel()
-        welcome.layer.cornerRadius = 10
         welcome.clipsToBounds = true
-        welcome.numberOfLines = 0
         welcome.adjustsFontSizeToFitWidth = true
         welcome.font = .preferredFont(forTextStyle: .headline)
         welcome.font = welcome.font.withSize(40)
         welcome.text = " Welcome "
-        welcome.textColor = UIColor(red: 0.14, green: 0.76, blue: 0.76, alpha: 1)
+        welcome.textColor = UIColor(named: "movieLightBlue")
         return welcome
     }()
     
@@ -41,7 +40,7 @@ class LoginViewController: UIViewController, ProfileBaseController {
     
     lazy var loginButton: UIButton = {
         let loginButton = UIButton()
-        loginButton.backgroundColor = UIColor(red: 0.14, green: 0.76, blue: 0.76, alpha: 1).withAlphaComponent(0.7)
+        loginButton.backgroundColor = UIColor(named: "movieLightBlue")?.withAlphaComponent(0.7)
         loginButton.setTitle("Login", for: .normal)
         loginButton.addTarget(self, action: #selector(loginTapped), for: .touchUpInside)
         return loginButton
@@ -51,29 +50,29 @@ class LoginViewController: UIViewController, ProfileBaseController {
         let createdAccountText = UILabel()
         createdAccountText.text = "If you don't have an account yet..."
         createdAccountText.textColor = .white
-        createdAccountText.numberOfLines = 0
         createdAccountText.font = .preferredFont(forTextStyle: .headline)
         createdAccountText.font = welcome.font.withSize(18)
-        createdAccountText.backgroundColor = UIColor(red: 0.02, green: 0.13, blue: 0.27, alpha: 1)
+        createdAccountText.backgroundColor = UIColor(named: "movieBlue")
         return createdAccountText
     }()
     
     lazy var registerButton: UIButton = {
         let registerButton = UIButton()
-        registerButton.backgroundColor = UIColor(red: 0.14, green: 0.76, blue: 0.76, alpha: 1).withAlphaComponent(0.7)
+        registerButton.backgroundColor = UIColor(named: "movieLightBlue")?.withAlphaComponent(0.7)
         registerButton.setTitle("Register", for: .normal)
         registerButton.addTarget(self, action: #selector(registerTapped), for: .touchUpInside)
         return registerButton
     }()
     
+    // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.isNavigationBarHidden = true
+        self.navigationController?.navigationBar.topItem?.title = "Login"
         configureScreen()
     }
     
     func configureScreen() {
-        view.backgroundColor = UIColor(red: 0.02, green: 0.13, blue: 0.27, alpha: 1)
+        view.backgroundColor = UIColor(named: "movieBlue")
         view.addSubview(welcome)
         setLoginConstrains()
         view.addSubview(userName)
@@ -89,19 +88,20 @@ class LoginViewController: UIViewController, ProfileBaseController {
     }
     
     @objc func loginTapped() {
-        profileCoordinator?.start()
+        profileCoordinator?.loginSuccess()
         self.navigationController?.isNavigationBarHidden = false
     }
     
     @objc func registerTapped() {
-        //profileCoordinator?.goToRegisterScreen()
+        profileCoordinator?.goToRegisterScreen()
     }
 }
 
+// MARK: - Constrains
 extension LoginViewController {
     func setLoginConstrains() {
         welcome.translatesAutoresizingMaskIntoConstraints = false
-        welcome.topAnchor.constraint(equalTo: view.topAnchor, constant: 180).isActive = true
+        welcome.topAnchor.constraint(equalTo: view.topAnchor, constant: 130).isActive = true
         welcome.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
     

@@ -36,6 +36,7 @@
 		102E84A7291E94E6006BD8B6 /* UpcomingCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102E84A6291E94E6006BD8B6 /* UpcomingCellModel.swift */; };
 		102E84A9291E9502006BD8B6 /* UpcomingUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102E84A8291E9502006BD8B6 /* UpcomingUseCase.swift */; };
 		102F2AD6291AADE800F65D55 /* NetworkConnectionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102F2AD5291AADE800F65D55 /* NetworkConnectionUseCase.swift */; };
+		102FB1B82953AA6C0010B611 /* RegisterUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102FB1B72953AA6C0010B611 /* RegisterUseCaseTest.swift */; };
 		10361CB62914081000973644 /* MovieDetailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10361CB52914081000973644 /* MovieDetailData.swift */; };
 		10361CB829140F3D00973644 /* MovieDetailObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10361CB729140F3D00973644 /* MovieDetailObjects.swift */; };
 		104F556B290033A40014D4E5 /* MoviePersisted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104F556A290033A40014D4E5 /* MoviePersisted.swift */; };
@@ -45,7 +46,6 @@
 		104F5574290036B50014D4E5 /* RealmDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104F5573290036B50014D4E5 /* RealmDB.swift */; };
 		104F5576290038230014D4E5 /* AlamofireSP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104F5575290038230014D4E5 /* AlamofireSP.swift */; };
 		104F557B29003AF50014D4E5 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 104F557A29003AF50014D4E5 /* Alamofire */; };
-		1058FB91294A1CEF004A3E86 /* LogInOrRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1058FB90294A1CEF004A3E86 /* LogInOrRegisterViewController.swift */; };
 		1058FB94294A1D12004A3E86 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1058FB93294A1D12004A3E86 /* ProfileViewModel.swift */; };
 		1058FB96294A2857004A3E86 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1058FB95294A2857004A3E86 /* User.swift */; };
 		1058FB98294A2952004A3E86 /* RegisterUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1058FB97294A2952004A3E86 /* RegisterUseCase.swift */; };
@@ -151,6 +151,7 @@
 		102E84A6291E94E6006BD8B6 /* UpcomingCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingCellModel.swift; sourceTree = SOURCE_ROOT; };
 		102E84A8291E9502006BD8B6 /* UpcomingUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingUseCase.swift; sourceTree = SOURCE_ROOT; };
 		102F2AD5291AADE800F65D55 /* NetworkConnectionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConnectionUseCase.swift; sourceTree = SOURCE_ROOT; };
+		102FB1B72953AA6C0010B611 /* RegisterUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUseCaseTest.swift; sourceTree = "<group>"; };
 		10361CB52914081000973644 /* MovieDetailData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailData.swift; sourceTree = SOURCE_ROOT; };
 		10361CB729140F3D00973644 /* MovieDetailObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailObjects.swift; sourceTree = SOURCE_ROOT; };
 		1041CA6D28F5D07D00D24760 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
@@ -159,7 +160,6 @@
 		104F55712900361C0014D4E5 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DataManager.swift; path = TheMovieDB/Protocols/DataManager.swift; sourceTree = SOURCE_ROOT; };
 		104F5573290036B50014D4E5 /* RealmDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RealmDB.swift; path = TheMovieDB/Protocols/RealmDB.swift; sourceTree = SOURCE_ROOT; };
 		104F5575290038230014D4E5 /* AlamofireSP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AlamofireSP.swift; path = TheMovieDB/Protocols/AlamofireSP.swift; sourceTree = SOURCE_ROOT; };
-		1058FB90294A1CEF004A3E86 /* LogInOrRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInOrRegisterViewController.swift; sourceTree = "<group>"; };
 		1058FB93294A1D12004A3E86 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		1058FB95294A2857004A3E86 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1058FB97294A2952004A3E86 /* RegisterUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegisterUseCase.swift; path = TheMovieDB/Domain/Entities/RegisterUseCase.swift; sourceTree = SOURCE_ROOT; };
@@ -275,7 +275,6 @@
 			children = (
 				1058FB93294A1D12004A3E86 /* ProfileViewModel.swift */,
 				100DD0CD29476A4600339EAD /* ProfileViewController.swift */,
-				1058FB90294A1CEF004A3E86 /* LogInOrRegisterViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -429,6 +428,7 @@
 				10FF07C7291D593D00ECE00E /* DetailViewModelTest.swift */,
 				1019127029252D2D00E7AE94 /* SearchUseCaseTest.swift */,
 				1019127229252DD100E7AE94 /* SearchViewModelTest.swift */,
+				102FB1B72953AA6C0010B611 /* RegisterUseCaseTest.swift */,
 			);
 			path = TheMovieDBTests;
 			sourceTree = "<group>";
@@ -842,7 +842,6 @@
 				10EBD39E2948B6E7004921A4 /* LoginViewModel.swift in Sources */,
 				10F5046F293504B000AFA95F /* PopularViewModel.swift in Sources */,
 				1058FB94294A1D12004A3E86 /* ProfileViewModel.swift in Sources */,
-				1058FB91294A1CEF004A3E86 /* LogInOrRegisterViewController.swift in Sources */,
 				10281B26290AEEDB00B0C6C8 /* NowPlayingCellModel.swift in Sources */,
 				D6A7A85D29030CF100B9BF61 /* ViewModelDelegate.swift in Sources */,
 				106CADDE2922B96000D9CE1E /* SearchCellModel.swift in Sources */,
@@ -872,6 +871,7 @@
 				1019127329252DD100E7AE94 /* SearchViewModelTest.swift in Sources */,
 				102E8494291E89F8006BD8B6 /* TopRatedUseCaseTest.swift in Sources */,
 				10FF07C8291D593D00ECE00E /* DetailViewModelTest.swift in Sources */,
+				102FB1B82953AA6C0010B611 /* RegisterUseCaseTest.swift in Sources */,
 				106F8F07291E9DBF00B9C256 /* UpcomingUseCaseTest.swift in Sources */,
 				D6C6CC7728F99BF7009F41A1 /* CoordinatorTest.swift in Sources */,
 				100CA9C7291013E600E73390 /* DataBaseTest.swift in Sources */,

@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 class MainCoordinator: Coordinator, MovieDetailProtocol {
+    
     // MARK: - Properties
     var childCoordinator = [Coordinator]()
     var navigationController: UINavigationController

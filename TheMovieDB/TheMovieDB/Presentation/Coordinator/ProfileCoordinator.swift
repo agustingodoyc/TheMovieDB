@@ -28,7 +28,7 @@ class ProfileCoordinator: Coordinator {
             navigationController.pushViewController(vc, animated: true)
             
         } else {
-            let vc = LoginOrRegisterViewController()
+            let vc = LoginViewController()
             vc.profileCoordinator = self
             navigationController.pushViewController(vc, animated: true)
         }

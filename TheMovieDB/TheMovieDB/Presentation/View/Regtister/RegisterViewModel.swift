@@ -8,6 +8,7 @@
 import Foundation
 
 class RegisterViewModel {
+    // MARK: -Properties
     var registerUseCase: RegisterProtocol
     weak var delegate: RegisterViewModelDelegate?
     

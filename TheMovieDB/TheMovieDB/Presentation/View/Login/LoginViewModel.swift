@@ -8,5 +8,11 @@
 import Foundation
 
 class LoginViewModel {
+    var registerUseCase: RegisterProtocol
+    weak var delegate: RegisterViewModelDelegate?
     
+    init (registerUseCase:
+          RegisterProtocol = RegisterUseCase()) {
+        self.registerUseCase = registerUseCase
+    }
 }

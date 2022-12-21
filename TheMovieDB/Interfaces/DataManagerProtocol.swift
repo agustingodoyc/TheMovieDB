@@ -18,3 +18,8 @@ protocol DataManagerDetailProtocol {
 protocol DataManagerSearchProtocol {
     func getAllMovies(completionHandler: @escaping ([MoviePersisted]) -> Void)
 }
+
+protocol CreateUserProtocol {
+    func createUser(userName: String, password: String) -> Bool
+    func checkUserName(userName: String) -> Bool
+}
