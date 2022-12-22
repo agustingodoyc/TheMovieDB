@@ -38,7 +38,6 @@ final class DataBaseTest: XCTestCase {
         XCTAssertEqual(sut.getData(endPoint: "Now_Playing").count, 3)
     }
     
-    
     func testClearData() {
         sut.clearData(endPoint: "Now_Playing")
         XCTAssertEqual(sut.getData(endPoint: "Now_Playing").count, 0)

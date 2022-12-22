@@ -12,9 +12,27 @@ final class RegisterUseCaseTest: XCTestCase {
 
     var sut: RegisterUseCase!
     
+    class DataManagerMock: CreateUserProtocol {
+        func createUser(userName: String, password: String) -> Bool {
+            if userName == "User2" && password == "1234" {
+                return true
+            } else {
+                return false
+            }
+        }
+        
+        func checkUserName(userName: String) -> Bool {
+            if userName == "AngelaLee" {
+                return false
+            } else {
+                return true
+            }
+        }
+    }
+    
     override func setUpWithError() throws {
         try super.setUpWithError()
-        sut = RegisterUseCase()
+        sut =   RegisterUseCase(dataManager: DataManagerMock())
     }
     
     override func tearDownWithError() throws {
@@ -29,7 +47,7 @@ final class RegisterUseCaseTest: XCTestCase {
     }
     
     func testUseCaseExecuteWithNewUser() {
-        let newUser = User(userName: "AngieLee", password: "1234")
+        let newUser = User(userName: "User2", password: "1234")
         let test = sut.execute(userName: newUser.userName, password: newUser.password)
         XCTAssertEqual(test, .success)
     }

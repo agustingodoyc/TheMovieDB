@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class DataManager: DataManagerProtocol, DataManagerDetailProtocol, DataManagerSearchProtocol {
+public class DataManager: DataManagerProtocol, DataManagerDetailProtocol, DataManagerSearchProtocol, CreateUserProtocol {
     // MARK: - Properties
     private var service: ServiceProtocol
     weak var delegate: DataManagerDelegate?

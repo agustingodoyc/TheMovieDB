@@ -39,7 +39,7 @@ class MainViewController: UITabBarController, BaseViewController, UITabBarContro
         let navigation = profileCoordinator.navigationController
         navigation.tabBarItem = loginItem
         viewControllers?.append(navigation)
-        
+    
         guard let viewControllers = viewControllers else {
             return
         }

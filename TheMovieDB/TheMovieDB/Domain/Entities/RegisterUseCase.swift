@@ -9,9 +9,9 @@ import Foundation
 
 class RegisterUseCase: RegisterProtocol {
     
-    private var dataManager: DataManager
+    private var dataManager: CreateUserProtocol
     
-    init(_ dataManager: DataManager = DataManager()) {
+    init(dataManager: CreateUserProtocol = DataManager()) {
         self.dataManager = dataManager
     }
     
