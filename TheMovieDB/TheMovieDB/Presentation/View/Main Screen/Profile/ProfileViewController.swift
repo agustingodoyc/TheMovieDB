@@ -18,7 +18,6 @@ class ProfileViewController: UIViewController, ProfileBaseController {
     lazy var profile: UILabel = {
         let profile = UILabel()
         profile.clipsToBounds = true
-        profile.numberOfLines = 0
         profile.adjustsFontSizeToFitWidth = true
         profile.font = .preferredFont(forTextStyle: .headline)
         profile.font = profile.font.withSize(40)
@@ -44,7 +43,7 @@ class ProfileViewController: UIViewController, ProfileBaseController {
         userNameAndLastName.adjustsFontSizeToFitWidth = true
         userNameAndLastName.font = .preferredFont(forTextStyle: .title2)
         userNameAndLastName.font = userNameAndLastName.font.withSize(20)
-        userNameAndLastName.text = " Angela Lee "
+        userNameAndLastName.text = "Angela Lee"
         userNameAndLastName.textColor = UIColor(named: "movieLightBlue")
         return userNameAndLastName
     }()
@@ -66,7 +65,7 @@ class ProfileViewController: UIViewController, ProfileBaseController {
         userAccount.adjustsFontSizeToFitWidth = true
         userAccount.font = .preferredFont(forTextStyle: .title2)
         userAccount.font = userAccount.font.withSize(20)
-        userAccount.text = " AngieLee99 "
+        userAccount.text = "AngelaLee"
         userAccount.textColor = UIColor(named: "movieLightBlue")
         return userAccount
     }()
@@ -88,7 +87,7 @@ class ProfileViewController: UIViewController, ProfileBaseController {
         userPassword.adjustsFontSizeToFitWidth = true
         userPassword.font = .preferredFont(forTextStyle: .title2)
         userPassword.font = userPassword.font.withSize(20)
-        userPassword.text = " Al123 "
+        userPassword.text = "****"
         userPassword.textColor = UIColor(named: "movieLightBlue")
         return userPassword
     }()
@@ -134,7 +133,7 @@ class ProfileViewController: UIViewController, ProfileBaseController {
     }
     
     @objc func logoutTapped() {
-        profileCoordinator?.goToLoginScreen()
+        profileCoordinator?.logoutSuccess()
     }
 }
 

@@ -7,13 +7,12 @@
 
 import Foundation
 
-class RegisterViewModel {
+class RegisterViewModel: RegisterViewModelProtocol {
     // MARK: -Properties
-    var registerUseCase: RegisterProtocol
-    weak var delegate: RegisterViewModelDelegate?
+    var registerUseCase: RegisterUseCaseProtocol
     
     init (registerUseCase:
-          RegisterProtocol = RegisterUseCase()) {
+          RegisterUseCaseProtocol = RegisterUseCase()) {
         self.registerUseCase = registerUseCase
     }
     

@@ -7,10 +7,26 @@
 
 import Foundation
 
+enum RegisterResult: String {
+    case success
+    case usernameError
+    case dataBaseError
+}
+
+enum LoginResult: String {
+    case success
+    case usernameError
+    case passwordError
+}
+
 protocol RegisterViewModelProtocol {
-    var registerUseCase: RegisterProtocol { get set }
-    var delegate: RegisterViewModelDelegate? { get set }
+    var registerUseCase: RegisterUseCaseProtocol { get set }
     func createUser(userName: String, password: String) -> RegisterResult
+}
+
+protocol LoginViewModelProtocol {
+    var loginUseCase: LoginUseCaseProtocol { get set }
+    func login(userName: String, password: String) -> LoginResult
 }
 protocol SearchViewModelProtocol {
     func getNumberOfRowOfMovies() -> Int

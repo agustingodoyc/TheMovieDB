@@ -14,4 +14,3 @@ protocol ViewModelDelegate: AnyObject {
 protocol RegisterViewModelDelegate: AnyObject {
     func registerResult(registerResult: RegisterResult) -> RegisterResult
 }
-

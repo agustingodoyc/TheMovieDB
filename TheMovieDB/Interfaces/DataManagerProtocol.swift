@@ -7,6 +7,10 @@
 
 import Foundation
 
+enum ValidateUserResult: Error {
+    case userNotFound
+}
+
 protocol DataManagerProtocol {
     func getMovie(_ endpoint: Endpoints, completionHandler: @escaping ([MoviePersisted]) -> Void)
 }
@@ -21,5 +25,10 @@ protocol DataManagerSearchProtocol {
 
 protocol CreateUserProtocol {
     func createUser(userName: String, password: String) -> Bool
+    func checkUserName(userName: String) -> Bool
+}
+
+protocol LoginProtocol {
+    func validateUser(userName: String, password: String) -> Bool
     func checkUserName(userName: String) -> Bool
 }

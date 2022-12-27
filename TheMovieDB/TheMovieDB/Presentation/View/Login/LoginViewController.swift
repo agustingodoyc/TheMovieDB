@@ -29,7 +29,7 @@ class LoginViewController: UIViewController, ProfileBaseController {
         userName.placeholder = " Enter your username"
         return userName
     }()
-
+    
     lazy var password: UITextField = {
         let password = UITextField()
         password.backgroundColor = .white.withAlphaComponent(0.5)
@@ -64,6 +64,29 @@ class LoginViewController: UIViewController, ProfileBaseController {
         return registerButton
     }()
     
+    lazy var userNameError: UILabel = {
+        let usernameError = UILabel()
+        usernameError.textColor = .red
+        usernameError.text = "Username does not exist, please try again"
+        return usernameError
+    }()
+    
+    lazy var passwordError: UILabel = {
+        let passwordConfirmError = UILabel()
+        passwordConfirmError.numberOfLines = 0
+        passwordConfirmError.textColor = .red
+        passwordConfirmError.text = "The password is not correct, please try again"
+        return passwordConfirmError
+    }()
+    
+    lazy var emptyFieldError: UILabel = {
+        let emptyFieldError = UILabel()
+        emptyFieldError.numberOfLines = 0
+        emptyFieldError.textColor = .red
+        emptyFieldError.text = "Please complete all fields"
+        return emptyFieldError
+    }()
+    
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,6 +96,9 @@ class LoginViewController: UIViewController, ProfileBaseController {
     
     func configureScreen() {
         view.backgroundColor = UIColor(named: "movieBlue")
+        userNameError.isHidden = true
+        passwordError.isHidden = true
+        emptyFieldError.isHidden = true
         view.addSubview(welcome)
         setLoginConstrains()
         view.addSubview(userName)
@@ -85,9 +111,40 @@ class LoginViewController: UIViewController, ProfileBaseController {
         setCreatedAccountTextConstrains()
         view.addSubview(registerButton)
         setRegisterButtonConstrains()
+        view.addSubview(userNameError)
+        setUserNameErrorConstrains()
+        view.addSubview(passwordError)
+        setPasswordConfirmErrorConstrains()
+        view.addSubview(emptyFieldError)
+        setEmptyFieldErrorConstrains()
     }
     
     @objc func loginTapped() {
+        guard let enterUserName = userName.text,
+              !enterUserName.isEmpty,
+              let enterPassword = password.text,
+              !enterPassword.isEmpty
+        else {
+            emptyFieldError.isHidden = false
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+                self.emptyFieldError.isHidden = true
+            }
+            return
+        }
+        guard viewModel.login(userName: enterUserName, password: enterPassword) == .success else {
+            if viewModel.login(userName: enterUserName, password: enterPassword) == .usernameError {
+                userNameError.isHidden = false
+                DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+                    self.userNameError.isHidden = true
+                }
+            } else {
+                passwordError.isHidden = false
+                DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+                    self.passwordError.isHidden = true
+                }
+            }
+            return
+        }
         profileCoordinator?.loginSuccess()
         self.navigationController?.isNavigationBarHidden = false
     }
@@ -147,5 +204,23 @@ extension LoginViewController {
         registerButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50).isActive = true
         registerButton.heightAnchor.constraint(equalTo: userName.widthAnchor, multiplier: 1/8).isActive = true
         registerButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+    }
+    
+    func setUserNameErrorConstrains() {
+        userNameError.translatesAutoresizingMaskIntoConstraints = false
+        userNameError.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        userNameError.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100).isActive = true
+    }
+    
+    func setPasswordConfirmErrorConstrains() {
+        passwordError.translatesAutoresizingMaskIntoConstraints = false
+        passwordError.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        passwordError.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100).isActive = true
+    }
+    
+    func setEmptyFieldErrorConstrains() {
+        emptyFieldError.translatesAutoresizingMaskIntoConstraints = false
+        emptyFieldError.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        emptyFieldError.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100).isActive = true
     }
 }

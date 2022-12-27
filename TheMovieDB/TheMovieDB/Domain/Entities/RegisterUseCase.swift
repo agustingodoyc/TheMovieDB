@@ -7,7 +7,7 @@
 
 import Foundation
 
-class RegisterUseCase: RegisterProtocol {
+class RegisterUseCase: RegisterUseCaseProtocol {
     
     private var dataManager: CreateUserProtocol
     

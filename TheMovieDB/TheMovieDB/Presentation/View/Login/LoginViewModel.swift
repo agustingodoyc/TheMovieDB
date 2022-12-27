@@ -7,12 +7,24 @@
 
 import Foundation
 
-class LoginViewModel {
-    var registerUseCase: RegisterProtocol
+class LoginViewModel: LoginViewModelProtocol {
+    var loginUseCase: LoginUseCaseProtocol
     weak var delegate: RegisterViewModelDelegate?
     
-    init (registerUseCase:
-          RegisterProtocol = RegisterUseCase()) {
-        self.registerUseCase = registerUseCase
+    init (loginUseCase:
+          LoginUseCaseProtocol = LoginUseCase()) {
+        self.loginUseCase = loginUseCase
+    }
+    
+    func login(userName: String, password: String) -> LoginResult {
+        guard loginUseCase.execute(userName: userName, password: password) == .success else {
+            if loginUseCase.execute(userName: userName, password: password) == .usernameError {
+                return .usernameError
+            } else {
+                return .passwordError
+            }
+        }
+        return .success
+        
     }
 }

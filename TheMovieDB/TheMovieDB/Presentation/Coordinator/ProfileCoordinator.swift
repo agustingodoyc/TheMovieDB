@@ -24,7 +24,7 @@ class ProfileCoordinator: Coordinator {
             let viewModel = ProfileViewModel()
             let vc = ProfileViewController()
             vc.profileCoordinator = self
-            vc.viewModel = viewModel
+            //vc.viewModel = viewModel
             navigationController.pushViewController(vc, animated: true)
             
         } else {
@@ -59,6 +59,14 @@ class ProfileCoordinator: Coordinator {
         let vc = ProfileViewController()
         vc.profileCoordinator = self
         vc.viewModel = viewModel
-        navigationController.pushViewController(vc, animated: true)
+        navigationController.setViewControllers([vc], animated: true)
+    }
+    
+    func logoutSuccess() {
+        let viewModel = LoginViewModel()
+        let vc = LoginViewController()
+        vc.profileCoordinator = self
+        vc.viewModel = viewModel
+        navigationController.setViewControllers([vc], animated: true)
     }
 }

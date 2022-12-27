@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class DataManager: DataManagerProtocol, DataManagerDetailProtocol, DataManagerSearchProtocol, CreateUserProtocol {
+public class DataManager: DataManagerProtocol, DataManagerDetailProtocol, DataManagerSearchProtocol, CreateUserProtocol, LoginProtocol {
     // MARK: - Properties
     private var service: ServiceProtocol
     weak var delegate: DataManagerDelegate?
@@ -91,5 +91,9 @@ public class DataManager: DataManagerProtocol, DataManagerDetailProtocol, DataMa
     
     func checkUserName(userName: String) -> Bool {
         dataBase.validateUserName(userName: userName)
+    }
+    
+    func validateUser(userName: String, password: String) -> Bool {
+        return dataBase.validateUser(userName: userName, password: password)
     }
 }

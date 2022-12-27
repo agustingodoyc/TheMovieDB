@@ -12,7 +12,7 @@ final class RegisterViewModelTest: XCTestCase {
 
     var sut: RegisterViewModel!
     
-    class RegisterUseCaseMock: RegisterProtocol {
+    class RegisterUseCaseMock: RegisterUseCaseProtocol {
         func execute(userName: String, password: String) -> TheMovieDB.RegisterResult {
             guard userName == "NewUser" && password == "1234" else {
                 if userName == "ExistentUser" {

@@ -15,4 +15,5 @@ protocol DataBase {
     func clearData(endPoint: String)
     func createUser(_ user: User) -> Bool
     func validateUserName(userName: String) -> Bool
+    func validateUser(userName: String, password: String) -> Bool
 }

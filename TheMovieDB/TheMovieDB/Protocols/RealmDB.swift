@@ -77,4 +77,13 @@ public class RealmDB: DataBase {
         }
         return true
     }
+    
+    func validateUser(userName: String, password: String) -> Bool {
+        guard realm.objects(User.self).first(where: {
+            $0.userName == userName && $0.password == password
+        }) != nil else {
+            return false
+        }
+        return true
+    }
 }
