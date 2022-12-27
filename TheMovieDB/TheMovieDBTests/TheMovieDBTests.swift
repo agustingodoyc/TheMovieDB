@@ -6,7 +6,6 @@
 //
 
 import XCTest
-@testable import TheMovieDB
 
 final class TheMovieDBTests: XCTestCase {
 
